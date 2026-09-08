@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4 mx-auto" style="max-width: 700px;">
+    <h2 class="text-success text-center mb-4">Complaint Submitted Successfully!</h2>
+
+    <h5 class="fw-bold">Customer Details</h5>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Contact:</strong> {{ contact }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Address:</strong> {{ address }}</p>
+
+    <h5 class="fw-bold mt-4">Complaint Details</h5>
+    <p>{{ complaint }}</p>
+    <p><strong>Predicted Department:</strong> <span class="badge bg-primary">{{ department }}</span></p>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('home') }}" class="btn btn-secondary">Submit Another Complaint</a>
+    </div>
+</div>
+{% endblock %}

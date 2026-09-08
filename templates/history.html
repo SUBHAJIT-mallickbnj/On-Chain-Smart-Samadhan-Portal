@@ -1,0 +1,904 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>My Complaint History</h2>
+                    <p class="text-muted mb-0">All complaints submitted from your wallet address</p>
+                </div>
+                <div>
+                    <span class="badge bg-primary fs-6">{{ complaints|length }} Total Complaints</span>
+                </div>
+            </div>
+
+            <!-- Wallet Info -->
+            <div class="alert alert-info">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-wallet fa-lg me-3"></i>
+                    <div class="flex-grow-1">
+                        <strong>Connected Wallet:</strong>
+                        <code class="wallet-address ms-2">{{ wallet_address }}</code>
+                        {% if network_info %}
+                        <br>
+                        <small class="text-muted">
+                            <strong>Network:</strong> {{ network_info.network_name }}
+                            {% if network_info.explorer_url %}
+                            | <a href="{{ network_info.explorer_url }}" target="_blank" class="text-decoration-none">
+                                🔍 View Explorer
+                            </a>
+                            {% endif %}
+                        </small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons with Counters -->
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="{{ url_for('view_history', filter='all', state=state_filter) }}"
+                            class="btn {% if filter_status == 'all' or not filter_status %}btn-primary{% else %}btn-outline-primary{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.total }}</h4>
+                            <span>Total</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='processing', state=state_filter) }}"
+                            class="btn {% if filter_status == 'processing' %}btn-warning{% else %}btn-outline-warning{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.processing }}</h4>
+                            <span>Processing</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='resolved', state=state_filter) }}"
+                            class="btn {% if filter_status == 'resolved' %}btn-success{% else %}btn-outline-success{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.resolved }}</h4>
+                            <span>Resolved</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='discarded', state=state_filter) }}"
+                            class="btn {% if filter_status == 'discarded' %}btn-danger{% else %}btn-outline-danger{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.discarded }}</h4>
+                            <span>Discarded</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='authority_solved', state=state_filter) }}"
+                            class="btn {% if filter_status == 'authority_solved' %}btn-success{% else %}btn-outline-success{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.authority_solved }}</h4>
+                            <span>Marked Solved</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='disputed', state=state_filter) }}"
+                            class="btn {% if filter_status == 'disputed' %}btn-info text-white{% else %}btn-outline-info{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.disputed }}</h4>
+                            <span>Disputed</span>
+                        </a>
+                        <a href="{{ url_for('view_history', filter='reopened', state=state_filter) }}"
+                            class="btn {% if filter_status == 'reopened' %}btn-dark{% else %}btn-outline-dark{% endif %} btn-lg d-flex flex-column align-items-center p-3"
+                            style="min-width: 120px;">
+                            <h4 class="mb-1">{{ stats.reopened }}</h4>
+                            <span>Reopened</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- State Filter -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">📍 Filter by State</h5>
+                </div>
+                <div class="card-body">
+                    <form method="GET" action="{{ url_for('view_history') }}">
+                        <input type="hidden" name="filter" value="{{ filter_status }}">
+                        <div class="row g-2 align-items-end">
+                            <div class="col-md-8">
+                                <label for="history_state_filter" class="form-label">State:</label>
+                                <!-- Custom Dropdown Container -->
+                                <div class="dropdown w-100" id="customStateDropdownContainer">
+                                    <input type="hidden" name="state" id="selectedStateInput"
+                                        value="{{ state_filter or 'all' }}">
+                                    <button type="button"
+                                        class="form-control text-start d-flex align-items-center justify-content-between dropdown-toggle"
+                                        id="customStateButton" data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #fff; border: 2px solid #e2e8f0; border-radius: 15px; padding: 0.8rem 1rem; font-size: 0.85rem;">
+                                        <span id="selectedStateText"
+                                            class="{% if not state_filter or state_filter == 'all' %}text-muted{% endif %}">
+                                            {% if state_filter and state_filter != 'all' %}{{ state_filter }}{% else
+                                            %}All States{% endif %}
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="customStateButton"
+                                        style="min-width: 100%; width: max-content; max-width: 140%; max-height: 300px; overflow-y: auto; border: 2px solid #e2e8f0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 0.5rem 0; scrollbar-width: thin; white-space: normal;">
+                                        <li><a class="dropdown-item py-2 px-3 {% if not state_filter or state_filter == 'all' %}active{% endif %}"
+                                                href="#" data-value="all">All States</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Andaman and Nicobar Islands' %}active{% endif %}"
+                                                href="#" data-value="Andaman and Nicobar Islands">Andaman and Nicobar
+                                                Islands</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Andhra Pradesh' %}active{% endif %}"
+                                                href="#" data-value="Andhra Pradesh">Andhra Pradesh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Arunachal Pradesh' %}active{% endif %}"
+                                                href="#" data-value="Arunachal Pradesh">Arunachal Pradesh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Assam' %}active{% endif %}"
+                                                href="#" data-value="Assam">Assam</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Bihar' %}active{% endif %}"
+                                                href="#" data-value="Bihar">Bihar</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Chandigarh' %}active{% endif %}"
+                                                href="#" data-value="Chandigarh">Chandigarh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Chhattisgarh' %}active{% endif %}"
+                                                href="#" data-value="Chhattisgarh">Chhattisgarh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Delhi' %}active{% endif %}"
+                                                href="#" data-value="Delhi">Delhi</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Goa' %}active{% endif %}"
+                                                href="#" data-value="Goa">Goa</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Gujarat' %}active{% endif %}"
+                                                href="#" data-value="Gujarat">Gujarat</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Haryana' %}active{% endif %}"
+                                                href="#" data-value="Haryana">Haryana</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Himachal Pradesh' %}active{% endif %}"
+                                                href="#" data-value="Himachal Pradesh">Himachal Pradesh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Jammu and Kashmir' %}active{% endif %}"
+                                                href="#" data-value="Jammu and Kashmir">Jammu and Kashmir</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Jharkhand' %}active{% endif %}"
+                                                href="#" data-value="Jharkhand">Jharkhand</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Karnataka' %}active{% endif %}"
+                                                href="#" data-value="Karnataka">Karnataka</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Kerala' %}active{% endif %}"
+                                                href="#" data-value="Kerala">Kerala</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Ladakh' %}active{% endif %}"
+                                                href="#" data-value="Ladakh">Ladakh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Lakshadweep' %}active{% endif %}"
+                                                href="#" data-value="Lakshadweep">Lakshadweep</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Madhya Pradesh' %}active{% endif %}"
+                                                href="#" data-value="Madhya Pradesh">Madhya Pradesh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Maharashtra' %}active{% endif %}"
+                                                href="#" data-value="Maharashtra">Maharashtra</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Manipur' %}active{% endif %}"
+                                                href="#" data-value="Manipur">Manipur</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Meghalaya' %}active{% endif %}"
+                                                href="#" data-value="Meghalaya">Meghalaya</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Mizoram' %}active{% endif %}"
+                                                href="#" data-value="Mizoram">Mizoram</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Nagaland' %}active{% endif %}"
+                                                href="#" data-value="Nagaland">Nagaland</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Odisha' %}active{% endif %}"
+                                                href="#" data-value="Odisha">Odisha</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Puducherry' %}active{% endif %}"
+                                                href="#" data-value="Puducherry">Puducherry</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Punjab' %}active{% endif %}"
+                                                href="#" data-value="Punjab">Punjab</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Rajasthan' %}active{% endif %}"
+                                                href="#" data-value="Rajasthan">Rajasthan</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Sikkim' %}active{% endif %}"
+                                                href="#" data-value="Sikkim">Sikkim</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Tamil Nadu' %}active{% endif %}"
+                                                href="#" data-value="Tamil Nadu">Tamil Nadu</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Telangana' %}active{% endif %}"
+                                                href="#" data-value="Telangana">Telangana</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Tripura' %}active{% endif %}"
+                                                href="#" data-value="Tripura">Tripura</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Uttar Pradesh' %}active{% endif %}"
+                                                href="#" data-value="Uttar Pradesh">Uttar Pradesh</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'Uttarakhand' %}active{% endif %}"
+                                                href="#" data-value="Uttarakhand">Uttarakhand</a></li>
+                                        <li><a class="dropdown-item py-2 px-3 {% if state_filter == 'West Bengal' %}active{% endif %}"
+                                                href="#" data-value="West Bengal">West Bengal</a></li>
+                                    </ul>
+                                </div>
+                                <style>
+                                    #customStateDropdownContainer .dropdown-item {
+                                        transition: background-color 0.2s ease, color 0.2s ease;
+                                        font-size: 0.95rem;
+                                    }
+
+                                    #customStateDropdownContainer .dropdown-item:hover {
+                                        background-color: #f1f5f9;
+                                        color: var(--primary-color);
+                                    }
+
+                                    #customStateDropdownContainer .dropdown-item.active,
+                                    #customStateDropdownContainer .dropdown-item:active {
+                                        background-color: var(--primary-color);
+                                        color: #fff;
+                                    }
+                                </style>
+                            </div>
+                            <div class="col-md-4 d-flex gap-2">
+                                <button type="submit" class="btn btn-primary"><i
+                                        class="fas fa-search me-1"></i>Apply</button>
+                                {% if state_filter != 'all' %}
+                                <a href="{{ url_for('view_history', filter=filter_status) }}"
+                                    class="btn btn-outline-secondary">Clear</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if complaints %}
+    <!-- Complaints List -->
+    <div class="row">
+        {% for complaint in complaints %}
+        {% set status = complaint.get("Status", "Unknown") %}
+        <div class="col-12 mb-3">
+            <div class="card fade-in" style="animation-delay: {{ loop.index0 * 0.1 }}s;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-2">
+                            <i class="fas fa-file-alt me-2"></i>
+                            Reference: <code
+                                class="bg-light text-dark px-2 py-1 rounded fw-bold border">{{ complaint["Reference No"] }}</code>
+                        </h6>
+                        <small class="bg-light text-dark fw-bold fs-6 px-2 py-1 rounded d-inline-block">
+                            <strong>Department:</strong> {{ complaint.get("Department", "Unknown Department") }}
+                        </small>
+                    </div>
+                    <div class="text-end">
+                        {% if status in ["Submitted", "Processing"] and complaint.get("Dispute Raised") != "Yes" %}
+                        <span class="badge bg-warning fs-6 px-3 py-2">Processing</span>
+                        {% elif status in ["Submitted", "Processing"] and complaint.get("Dispute Raised") == "Yes" %}
+                        <span class="badge bg-info fs-6 px-3 py-2">Reopened (Dispute)</span>
+                        {% elif status in ["Resolved", "Solved", "Closed"] %}
+                        <span class="badge bg-success fs-6 px-3 py-2">{{ status }}</span>
+                        {% elif status == "Rejected" %}
+                        <span class="badge bg-danger fs-6 px-3 py-2">{{ status }}</span>
+                        {% elif status == "Discarded by Authority" %}
+                        <span class="badge bg-danger fs-6 px-3 py-2">Discarded by Authority</span>
+                        {% elif status == "Marked as Solved by Authority" %}
+                        <span class="badge bg-success fs-6 px-3 py-2">Marked as Solved by Authority</span>
+                        {% elif status == "Permanently Closed" %}
+                        <span class="badge bg-secondary fs-6 px-3 py-2">Permanently Closed</span>
+                        {% else %}
+                        <span class="badge bg-secondary fs-6 px-3 py-2">{{ status }}</span>
+                        {% endif %}
+                        <br>
+                        <small class="bg-light text-dark fw-bold fs-6 px-2 py-1 rounded mt-1 d-inline-block">{{
+                            complaint.get("Date", "Unknown Date") }}</small>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6 class="text-primary">Customer & Complaint Details</h6>
+                            {% if complaint.get("Name") != "Blockchain Record" %}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p class="mb-2"><strong>Customer Name:</strong> {{ complaint.get("Name", "N/A") }}
+                                    </p>
+                                    <p class="mb-2"><strong>Contact Number:</strong> {{ complaint.get("Phone", "N/A") }}
+                                    </p>
+                                    <p class="mb-2"><strong>Email:</strong> {{ complaint.get("Email", "N/A") }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mb-2"><strong>Address:</strong></p>
+                                    <div class="small text-muted">
+                                        {{ complaint.get("Address", "N/A") }}<br>
+                                        {{ complaint.get("City", "") }}{% if complaint.get("City") and
+                                        complaint.get("State") %}, {% endif %}{{ complaint.get("State", "") }} {{
+                                        complaint.get("Zip", "") }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="complaint-text p-3 bg-light rounded">
+                                <strong>Complaint:</strong><br>
+                                {{ complaint.get("Complaint", "No description available") }}
+                            </div>
+
+                            <!-- View Uploaded Media button - right after complaint text -->
+                            {% set _media_urls = complaint.get("Media URLs", "") | string | trim %}
+                            {% if _media_urls and _media_urls not in ["", "nan", "None"] %}
+                            <button class="btn btn-outline-info btn-sm mt-2"
+                                onclick="openMediaGallery('{{ _media_urls }}')">
+                                <i class="fas fa-photo-video me-1"></i>View Uploaded Media
+                                <span class="badge bg-info ms-1" style="font-size:.68rem;">
+                                    {{ _media_urls.split('|') | length }}
+                                </span>
+                            </button>
+                            {% endif %}
+
+                            <!-- Authority action info boxes -->
+                            {% if complaint.get("Discard Reason") %}
+                            <div class="mt-2 p-3 rounded border-start border-danger border-3"
+                                style="background:#fff5f5;">
+                                <strong class="text-danger"><i class="fas fa-ban me-1"></i>Complaint Discarded by
+                                    Authority</strong><br>
+                                <strong>Reason:</strong> {{ complaint.get("Discard Reason", "No reason provided") }}<br>
+                                <span class="text-muted small">{{ complaint.get("Discarded By", "") }} &bull; {{
+                                    complaint.get("Discarded At", "") }}</span>
+                            </div>
+                            {% endif %}
+
+                            {% if complaint.get("Authority Solved Note") %}
+                            <div class="mt-2 p-3 rounded border-start border-success border-3"
+                                style="background:#f0fdf4;">
+                                <strong class="text-success"><i class="fas fa-check-circle me-1"></i>Marked as Solved by
+                                    Authority</strong><br>
+                                <strong>Resolution:</strong> {{ complaint.get("Authority Solved Note", "") }}<br>
+                                <span class="text-muted small">{{ complaint.get("Authority Solved By", "") }} &bull; {{
+                                    complaint.get("Authority Solved At", "") }}</span>
+                            </div>
+                            {% endif %}
+
+                            {% if complaint.get("Dispute Raised") == "Yes" %}
+                            <div class="mt-2 p-3 rounded border-start border-info border-3" style="background:#eff6ff;">
+                                <strong class="text-info"><i class="fas fa-gavel me-1"></i>Dispute Raised &amp;
+                                    Complaint Reopened</strong>
+                                <span class="small ms-2 text-muted">on {{ complaint.get("Dispute Raised At", "")
+                                    }}</span><br>
+                                <span class="small">Your complaint has been <strong>reopened</strong> and is under
+                                    review by the concerned authority.</span>
+                            </div>
+                            {% endif %}
+
+                            <!-- Activity timeline (if available) -->
+                            {% if complaint.get("_activity") %}
+                            <div class="mt-3">
+                                <h6 class="text-secondary small fw-bold">
+                                    <i class="fas fa-history me-1"></i>Complaint History
+                                </h6>
+                                <div style="border-left:2px solid #e2e8f0; padding-left:1rem; margin-top:.4rem;">
+                                    {% for ev in complaint["_activity"] %}
+                                    {% set al = ev.action | lower %}
+                                    {% if 'discard' in al %}
+                                    {% set evcolor = 'danger' %}
+                                    {% elif 'solved by authority' in al %}
+                                    {% set evcolor = 'success' %}
+                                    {% elif 'dispute' in al %}
+                                    {% set evcolor = 'info' %}
+                                    {% elif 'permanently' in al %}
+                                    {% set evcolor = 'secondary' %}
+                                    {% else %}
+                                    {% set evcolor = 'primary' %}
+                                    {% endif %}
+                                    <div class="mb-2">
+                                        <span class="badge bg-{{ evcolor }} me-1" style="font-size:.7rem;">{{ ev.action
+                                            }}</span>
+                                        <span class="text-muted small">{{ ev.at }}</span><br>
+                                        <span class="small text-secondary">{{ ev.by }}</span>
+                                        {% if ev.note %}
+                                        <div class="small ps-2 text-dark" style="border-left:2px solid #cbd5e1;">{{
+                                            ev.note }}</div>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% else %}
+                            <div class="alert alert-warning">
+                                <strong>Blockchain Record:</strong> Detailed information is stored on the blockchain.
+                                Use the track feature to view more details.
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-success">Blockchain Status</h6>
+                            {% if complaint.get("Blockchain Status") == "Success" %}
+                            <p class="text-success mb-2">
+                                <i class="fas fa-check-circle me-1"></i>✅ Verified on Blockchain
+                            </p>
+                            {% else %}
+                            <p class="text-warning mb-2">
+                                <i class="fas fa-exclamation-triangle me-1"></i>⚠️ Blockchain: {{
+                                complaint.get("Blockchain Status", "Unknown") }}
+                            </p>
+                            {% endif %}
+
+                            {% if complaint.get("Transaction Hash") and complaint["Transaction Hash"] != "N/A" %}
+                            <div class="mt-3 p-3 bg-light rounded border-start border-success border-3">
+                                <p class="mb-2"><strong>Proof of Complaint:</strong></p>
+                                <div class="mb-2">
+                                    <small class="font-monospace text-break d-block mb-2">0x{{ complaint["Transaction Hash"] }}</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    {% if network_info and network_info.explorer_url %}
+                                    <a href="{{ network_info.explorer_url }}/tx/0x{{ complaint['Transaction Hash'] }}"
+                                        target="_blank" class="btn btn-outline-primary btn-sm">
+                                        🔍 View on {{ network_info.network_name.split()[0] }} Explorer
+                                    </a>
+                                    {% else %}
+                                    <a href="https://etherscan.io/tx/0x{{ complaint['Transaction Hash'] }}"
+                                        target="_blank" class="btn btn-outline-primary btn-sm">
+                                        🔍 View on Etherscan
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-outline-secondary btn-sm copy-hash-btn"
+                                        data-hash="0x{{ complaint['Transaction Hash'] }}">
+                                        📋 Copy Hash
+                                    </button>
+                                </div>
+                            </div>
+                            {% elif complaint.get("Blockchain Status") == "Legacy" %}
+                            <div class="mt-3 p-3 bg-warning bg-opacity-25 rounded border-start border-warning border-3">
+                                <p class="mb-1"><strong>📜 Legacy Record:</strong></p>
+                                <small class="text-muted">This complaint was submitted before blockchain
+                                    integration.</small>
+                            </div>
+                            {% endif %}
+
+                            {% if complaint.get("Status") in ["Solved", "Resolved", "Closed"] and complaint.get("Solve Hash") and complaint["Solve Hash"] != "" %}
+                            {% set solve_hash = complaint["Solve Hash"] %}
+                            {% if not solve_hash.startswith("0x") %}
+                            {% set solve_hash = "0x" + solve_hash %}
+                            {% endif %}
+                            <div class="mt-3 p-3 bg-success bg-opacity-10 rounded border-start border-success border-3">
+                                <p class="mb-2"><strong>✅ Proof of Solution:</strong></p>
+                                <div class="mb-2">
+                                    <small class="font-monospace text-break d-block mb-2">{{ solve_hash }}</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    {% if network_info and network_info.explorer_url %}
+                                    <a href="{{ network_info.explorer_url }}/tx/{{ solve_hash }}" target="_blank"
+                                        class="btn btn-outline-success btn-sm">
+                                        🔍 View Verification on {{ network_info.network_name.split()[0] }}
+                                    </a>
+                                    {% else %}
+                                    <a href="https://sepolia.etherscan.io/tx/{{ solve_hash }}" target="_blank"
+                                        class="btn btn-outline-success btn-sm">
+                                        🔍 View Verification
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-outline-secondary btn-sm copy-hash-btn"
+                                        data-hash="{{ solve_hash }}">
+                                        📋 Copy Hash
+                                    </button>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <div class="mt-3">
+                                {% set status = complaint.get("Status", "") %}
+                                {% if status not in ["Solved", "Resolved", "Closed",
+                                "Discarded by Authority",
+                                "Marked as Solved by Authority",
+                                "Permanently Closed"] %}
+                                <button class="btn btn-success btn-sm w-100 mark-solved-btn"
+                                    data-ref="{{ complaint['Reference No'] }}">
+                                    ✅ Mark as Solved
+                                </button>
+                                {% elif status in ["Solved", "Resolved", "Closed"] %}
+                                <span class="badge bg-success w-100 p-2">✅ Complaint Solved</span>
+                                {% elif status in ["Discarded by Authority",
+                                "Marked as Solved by Authority"]
+                                and complaint.get("Dispute Raised") != "Yes"
+                                and complaint.get("Permanently Closed") != "Yes" %}
+                                <button class="btn btn-primary btn-sm w-100 raise-dispute-btn"
+                                    data-ref="{{ complaint['Reference No'] }}" data-discarded-at="{{ complaint.get('Last Authority Action At',
+                                                                  complaint.get('Discarded At',
+                                                                  complaint.get('Authority Solved At', ''))) }}">
+                                    <i class="fas fa-gavel me-1"></i>Raise Dispute
+                                </button>
+                                <div class="text-muted small mt-1 text-center">
+                                    <i class="fas fa-clock me-1"></i>Available for 48 hours
+                                </div>
+                                {% elif status in ["Discarded by Authority",
+                                "Marked as Solved by Authority"]
+                                and complaint.get("Dispute Raised") == "Yes" %}
+                                <span class="badge bg-info w-100 p-2 text-white">
+                                    🏛️ Dispute Raised – Complaint Reopened
+                                </span>
+                                {% elif status == "Permanently Closed" %}
+                                <span class="badge bg-secondary w-100 p-2">🔒 Permanently Closed</span>
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- No Complaints Found -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card">
+                <div class="card-body py-5">
+                    <i class="fas fa-inbox fa-4x text-muted mb-4"></i>
+                    <h4>No Complaints Found</h4>
+                    <p class="text-muted mb-4">
+                        You haven't submitted any complaints yet from this wallet address,
+                        or your complaints are still being synchronized with the blockchain.
+                    </p>
+                    <div class="d-grid gap-2 d-md-block">
+                        <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-plus me-2"></i>Submit Your First Complaint
+                        </a>
+                        <button class="btn btn-outline-secondary btn-lg refresh-btn">
+                            <i class="fas fa-refresh me-2"></i>Refresh Page
+                        </button>
+                    </div>
+
+                    <!-- Troubleshooting Tips -->
+                    <div class="mt-4 text-start">
+                        <h6>Troubleshooting Tips:</h6>
+                        <ul class="list-unstyled small text-muted">
+                            <li>• Make sure you're connected to the correct wallet</li>
+                            <li>• Check if you've submitted complaints from this address</li>
+                            <li>• Wait a few minutes for blockchain synchronization</li>
+                            <li>• Try refreshing the page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Action Buttons -->
+    <div class="text-center mt-4 mb-4">
+        <a href="{{ url_for('home') }}" class="btn btn-primary me-2">
+            <i class="fas fa-plus me-1"></i>🆕 New Complaint
+        </a>
+        <a href="{{ url_for('track_complaint') }}" class="btn btn-info me-2">
+            <i class="fas fa-search me-1"></i>📍 Track Complaint
+        </a>
+        <a href="{{ url_for('all_complaints') }}" class="btn btn-warning me-2">
+            <i class="fas fa-list me-1"></i>📋 All Complaints
+        </a>
+        <button class="btn btn-outline-secondary print-btn">
+            <i class="fas fa-print me-1"></i>🖨️ Print History
+        </button>
+    </div>
+</div>
+
+<!-- CAPTCHA Modal -->
+<div class="modal fade" id="captchaModal" tabindex="-1" aria-labelledby="captchaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="captchaModalLabel">🔐 Verify to Mark as Solved</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>To mark this complaint as solved, please enter the text shown below:</p>
+                <div class="text-center mb-3">
+                    <div class="bg-light p-3 rounded border"
+                        style="font-family: monospace; font-size: 1.5rem; letter-spacing: 0.2rem;">
+                        <span id="captchaText">Loading...</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="captchaInput" class="form-label">Enter the text above:</label>
+                    <input type="text" class="form-control" id="captchaInput" placeholder="Enter CAPTCHA text">
+                </div>
+                <div id="captchaError" class="alert alert-danger d-none"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="confirmSolvedBtn">
+                    <span class="spinner-border spinner-border-sm d-none" id="solveSpinner"></span>
+                    ✅ Mark as Solved
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setTrackingNumber(refNo) {
+        // Store the reference number in localStorage for the track page
+        localStorage.setItem('trackingNumber', refNo);
+    }
+
+    function copyToClipboard(text, button) {
+        // Copy transaction hash to clipboard
+        navigator.clipboard.writeText(text).then(function () {
+            // Show success message
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Copied!';
+            button.classList.add('btn-success');
+            button.classList.remove('btn-outline-secondary');
+
+            setTimeout(function () {
+                button.innerHTML = originalText;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        }).catch(function (err) {
+            console.error('Failed to copy text: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Copied!';
+            setTimeout(function () {
+                button.innerHTML = originalText;
+            }, 2000);
+        });
+    }
+
+    // Auto-fill tracking number if coming from history
+    document.addEventListener('DOMContentLoaded', function () {
+        const trackingNumber = localStorage.getItem('trackingNumber');
+        if (trackingNumber && window.location.pathname.includes('track')) {
+            const input = document.querySelector('input[name="ref_no"]');
+            if (input) {
+                input.value = trackingNumber;
+                localStorage.removeItem('trackingNumber');
+            }
+        }
+
+        // Add event listeners to copy buttons
+        document.querySelectorAll('.copy-hash-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const hash = this.getAttribute('data-hash');
+                copyToClipboard(hash, this);
+            });
+        });
+
+        // Custom Dropdown Selection Handling
+        const dropdownItems = document.querySelectorAll('#customStateDropdownContainer .dropdown-item');
+        const inputVal = document.getElementById('selectedStateInput');
+        const buttonText = document.getElementById('selectedStateText');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const val = this.getAttribute('data-value');
+                const text = this.textContent;
+
+                // Remove active class from all items and set it on the selected one
+                dropdownItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update inputs and label
+                inputVal.value = val;
+                buttonText.textContent = text;
+
+                if (val === 'all') {
+                    buttonText.classList.add('text-muted');
+                } else {
+                    buttonText.classList.remove('text-muted');
+                }
+            });
+        });
+
+        // Add event listeners to track buttons
+        document.querySelectorAll('.track-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const refNo = this.getAttribute('data-ref');
+                setTrackingNumber(refNo);
+            });
+        });
+
+        // Add event listeners to mark as solved buttons
+        document.querySelectorAll('.mark-solved-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const refNo = this.getAttribute('data-ref');
+                showCaptchaModal(refNo);
+            });
+        });
+
+        // Add event listeners to refresh and print buttons
+        const refreshBtn = document.querySelector('.refresh-btn');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function () {
+                window.location.reload();
+            });
+        }
+
+        const printBtn = document.querySelector('.print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', function () {
+                window.print();
+            });
+        }
+    });
+
+    let currentRefNo = '';
+    let currentCaptcha = '';
+
+    function showCaptchaModal(refNo) {
+        currentRefNo = refNo;
+
+        // Generate new CAPTCHA
+        fetch('/api/generate_captcha')
+            .then(response => response.json())
+            .then(data => {
+                currentCaptcha = data.captcha;
+                document.getElementById('captchaText').textContent = currentCaptcha;
+                document.getElementById('captchaInput').value = '';
+                document.getElementById('captchaError').classList.add('d-none');
+
+                // Show modal
+                const modal = new bootstrap.Modal(document.getElementById('captchaModal'));
+                modal.show();
+            })
+            .catch(error => {
+                console.error('Error generating CAPTCHA:', error);
+                alert('Error generating CAPTCHA. Please try again.');
+            });
+    }
+
+    document.getElementById('confirmSolvedBtn').addEventListener('click', function () {
+        const captchaInput = document.getElementById('captchaInput').value.trim();
+        const errorDiv = document.getElementById('captchaError');
+        const spinner = document.getElementById('solveSpinner');
+        const btn = this;
+
+        if (!captchaInput) {
+            errorDiv.textContent = 'Please enter the CAPTCHA text.';
+            errorDiv.classList.remove('d-none');
+            return;
+        }
+
+        // Show loading
+        spinner.classList.remove('d-none');
+        btn.disabled = true;
+
+        // Submit mark as solved request
+        fetch('/mark_solved', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ref_no: currentRefNo,
+                captcha_text: captchaInput,
+                expected_captcha: currentCaptcha
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                spinner.classList.add('d-none');
+                btn.disabled = false;
+
+                if (data.success) {
+                    // Hide modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('captchaModal'));
+                    modal.hide();
+
+                    // Show success message
+                    alert('✅ Complaint marked as solved successfully!');
+
+                    // Reload page to reflect changes
+                    window.location.reload();
+                } else {
+                    errorDiv.textContent = data.message || 'Failed to mark complaint as solved.';
+                    errorDiv.classList.remove('d-none');
+                }
+            })
+            .catch(error => {
+                spinner.classList.add('d-none');
+                btn.disabled = false;
+                console.error('Error:', error);
+                errorDiv.textContent = 'Network error. Please try again.';
+                errorDiv.classList.remove('d-none');
+            });
+    });
+
+    // ─── Raise Dispute ───────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.raise-dispute-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const refNo = this.dataset.ref;
+                const discardedAt = this.dataset.discardedAt;
+
+                // Client-side 48h check
+                if (discardedAt) {
+                    const discardedTime = new Date(discardedAt).getTime();
+                    const elapsed = (Date.now() - discardedTime) / 1000;
+                    if (elapsed > 48 * 3600) {
+                        alert('⏳ The 48-hour dispute window has expired. This complaint is now permanently closed.');
+                        location.reload();
+                        return;
+                    }
+                }
+
+                if (!confirm('Are you sure you want to raise a dispute for complaint ' + refNo + '?\n\nThis will reopen your complaint for further review.')) {
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Submitting…';
+
+                fetch('/raise_dispute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ref_no: refNo })
+                })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('✅ ' + data.message);
+                            location.reload();
+                        } else {
+                            alert('❌ ' + data.message);
+                            btn.disabled = false;
+                            btn.innerHTML = '<i class="fas fa-gavel me-1"></i>Raise Dispute';
+                        }
+                    })
+                    .catch(() => {
+                        alert('❌ Network error. Please try again.');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-gavel me-1"></i>Raise Dispute';
+                    });
+            });
+        });
+    });
+</script>
+
+<style>
+    .fade-in {
+        animation: fadeIn 0.5s ease-in forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .complaint-text {
+        max-height: 100px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+    }
+
+    .blockchain-hash {
+        background-color: #f8f9fa;
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+        font-family: 'Courier New', monospace;
+        font-size: 0.75rem;
+        word-break: break-all;
+        color: #495057;
+    }
+
+    .wallet-address {
+        background-color: #e9ecef;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+    }
+
+    @media print {
+
+        .btn,
+        .navbar {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: none !important;
+        }
+
+        .card {
+            break-inside: avoid;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .complaint-text {
+            max-height: 80px;
+        }
+
+        .blockchain-hash {
+            font-size: 0.7rem;
+        }
+    }
+</style>
+{% endblock %}

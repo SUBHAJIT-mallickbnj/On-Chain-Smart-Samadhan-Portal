@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Chain Smart Samadhan Portal - Blockchain Powered AI Complaint Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: var(--gradient-bg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.1"/><stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .blockchain-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            background: var(--gradient-bg);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .problem-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 5rem 0;
+        }
+
+        .solution-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            padding: 5rem 0;
+        }
+
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 300% 300%;
+            border: none;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            color: white;
+        }
+
+        .btn-gradient:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .btn-launch {
+            position: relative;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .btn-launch::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 300% 300%;
+            border-radius: 50px;
+            z-index: -1;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .btn-launch:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(102, 126, 234, 0.5), 0 0 20px rgba(102, 126, 234, 0.3); }
+            100% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
+        }
+
+        .btn-learn-more {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-learn-more::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-learn-more:hover::before {
+            left: 100%;
+        }
+
+        .btn-learn-more:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-learn-more:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 0.25rem;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-bg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-custom .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #374151 !important;
+            padding: 0.75rem 1rem !important;
+            margin: 0 0.25rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(37, 99, 235, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .navbar-custom .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-custom .nav-link:hover:before {
+            width: 60%;
+        }
+
+        .navbar-brand {
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+        }
+
+        .wallet-address {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-right: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            height: auto;
+            line-height: 1;
+        }
+
+        .navbar-custom .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .disconnect-btn {
+            transition: all 0.3s ease;
+            border: 1px solid #dc3545 !important;
+        }
+
+        .disconnect-btn:hover {
+            background-color: #dc3545 !important;
+            color: white !important;
+            transform: scale(1.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .highlight-text {
+            background: linear-gradient(120deg, var(--accent-color) 0%, var(--accent-color) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            transition: background-size 0.25s ease-in;
+        }
+
+        .highlight-text:hover {
+            background-size: 100% 88%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color);">
+                <i class="fas fa-shield-alt me-2"></i>On-Chain Smart Samadhan Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#problem">Problem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solution">Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    {% if is_logged_in %}
+                        <li class="nav-item d-flex align-items-center">
+                            <span class="wallet-address">
+                                <i class="fas fa-wallet me-1"></i>{{ wallet_address[:6] }}...{{ wallet_address[-4:] }}
+                            </span>
+                            <a href="{{ url_for('logout') }}" class="btn btn-sm btn-outline-danger disconnect-btn ms-2" 
+                               style="padding: 0.25rem 0.5rem; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"
+                               data-bs-toggle="tooltip" title="Disconnect Wallet">
+                                <i class="fas fa-sign-out-alt" style="font-size: 0.8rem;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('home') }}" class="btn btn-gradient ms-2" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Dashboard</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{{ url_for('login') }}" class="btn btn-gradient ms-2" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Get Started</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('admin_login') }}" class="btn btn-sm ms-2"
+                           style="padding: 0.4rem 1rem; font-size: 0.85rem; border-radius: 20px;
+                                  background: rgba(30,58,95,0.12); color: #1e3a5f; border: 1.5px solid #1e3a5f;
+                                  font-weight: 600; transition: all 0.25s;">
+                            <i class="fas fa-user-shield me-1"></i>Super Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="blockchain-animation">
+            <div class="floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;">
+                <i class="fas fa-cube fa-2x text-white-50"></i>
+            </div>
+            <div class="floating-icon" style="top: 20%; right: 15%; animation-delay: 1s;">
+                <i class="fas fa-link fa-2x text-white-50"></i>
+            </div>
+            <div class="floating-icon" style="bottom: 30%; left: 20%; animation-delay: 2s;">
+                <i class="fas fa-shield-alt fa-2x text-white-50"></i>
+            </div>
+            <div class="floating-icon" style="bottom: 20%; right: 10%; animation-delay: 3s;">
+                <i class="fas fa-robot fa-2x text-white-50"></i>
+            </div>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">
+                        <span class="highlight-text">On-Chain Smart</span><br>
+                        Samadhan Portal
+                    </h1>
+                    <p class="h4 mb-4 text-light">
+                        <i class="fas fa-quote-left me-2"></i>
+                        The Blockchain Powered AI Complaint Portal
+                        <i class="fas fa-quote-right ms-2"></i>
+                    </p>
+                    <p class="lead mb-5">
+                        Revolutionary complaint management system that combines the power of artificial intelligence with blockchain technology to ensure transparency, immutability, and efficient resolution of public grievances.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        {% if is_logged_in %}
+                            <a href="{{ url_for('home') }}" class="btn-launch">
+                                <i class="fas fa-plus me-2"></i>Raise Complaint
+                            </a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}" class="btn-launch">
+                                <i class="fas fa-rocket me-2"></i>Launch Portal
+                            </a>
+                        {% endif %}
+                        <a href="#how-it-works" class="btn-learn-more">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div class="d-inline-block" style="font-size: 20rem; opacity: 0.1;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <a href="#features" class="text-white">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Revolutionary Features</h2>
+                    <p class="lead">Transforming complaint management with cutting-edge technology</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI-Powered Classification</h4>
+                        <p>Advanced machine learning algorithms automatically categorize complaints and route them to the appropriate departments for faster resolution.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h4>Blockchain Transparency</h4>
+                        <p>Every complaint is recorded on the blockchain, ensuring immutable records and complete transparency in the complaint resolution process.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Real-time Tracking</h4>
+                        <p>Track your complaint status in real-time with blockchain verification and get notified of every update in the resolution process.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Secure & Private</h4>
+                        <p>Your personal data is encrypted and secured using blockchain technology, ensuring privacy while maintaining transparency of the process.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>24/7 Availability</h4>
+                        <p>Submit complaints anytime, anywhere. Our system works around the clock to ensure your grievances are heard and processed immediately.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Analytics Dashboard</h4>
+                        <p>Comprehensive analytics and insights for administrators to track complaint patterns and improve service delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">The Problem</h2>
+                    <h3 class="h3 mb-4">Traditional Complaint Systems Are Broken</h3>
+                    <div class="timeline-item">
+                        <h5>Lack of Transparency</h5>
+                        <p>Citizens have no visibility into complaint processing, leading to frustration and loss of trust in public services.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Manual Processing</h5>
+                        <p>Manual sorting and routing of complaints causes delays, misclassification, and inefficient resource allocation.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>No Accountability</h5>
+                        <p>Complaints can be lost, modified, or ignored without any permanent record or accountability mechanism.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Poor Communication</h5>
+                        <p>Limited feedback mechanisms leave citizens in the dark about their complaint status and resolution progress.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-danger">73%</div>
+                                    <p class="mb-0">Complaints Lost</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-warning">45</div>
+                                    <p class="mb-0">Days Average</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-danger">28%</div>
+                                    <p class="mb-0">Satisfaction Rate</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-warning">0%</div>
+                                    <p class="mb-0">Transparency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-success">100%</div>
+                                    <p class="mb-0">Transparency</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-success">3</div>
+                                    <p class="mb-0">Days Average</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-success">95%</div>
+                                    <p class="mb-0">Auto-Classification</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white p-4 rounded-3 shadow">
+                                    <div class="stats-counter text-success">24/7</div>
+                                    <p class="mb-0">Availability</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Our Solution</h2>
+                    <h3 class="h3 mb-4">Smart Samadhan Portal Revolution</h3>
+                    <div class="timeline-item">
+                        <h5>Blockchain Immutability</h5>
+                        <p>Every complaint is permanently recorded on the blockchain, creating an immutable audit trail that ensures accountability.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>AI-Powered Intelligence</h5>
+                        <p>Machine learning algorithms automatically classify complaints and route them to appropriate departments with 95% accuracy.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Real-time Transparency</h5>
+                        <p>Citizens can track their complaints in real-time and receive instant notifications about status updates and resolutions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Smart Contracts</h5>
+                        <p>Automated workflows ensure timely processing and prevent complaints from being ignored or lost in the system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="lead">Simple, secure, and transparent complaint resolution process</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <span class="fw-bold">1</span>
+                        </div>
+                        <h5>Connect Wallet</h5>
+                        <p>Connect your blockchain wallet for secure and authenticated access to the portal.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <span class="fw-bold">2</span>
+                        </div>
+                        <h5>Submit Complaint</h5>
+                        <p>Fill out the complaint form. Our AI automatically categorizes and routes it to the right department.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <span class="fw-bold">3</span>
+                        </div>
+                        <h5>Blockchain Recording</h5>
+                        <p>Your complaint is permanently recorded on the blockchain with a unique transaction hash for verification.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <span class="fw-bold">4</span>
+                        </div>
+                        <h5>Track & Resolve</h5>
+                        <p>Track your complaint in real-time and receive updates. Get blockchain proof when it's resolved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5" style="background: var(--gradient-bg);">
+        <div class="container text-center text-white">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-4 fw-bold mb-4">Ready to Experience the Future?</h2>
+                    <p class="lead mb-5">Join the revolution in complaint management. Experience transparency, efficiency, and accountability like never before.</p>
+                    <a href="{{ url_for('login') }}" class="btn-launch me-3">
+                        <i class="fas fa-rocket me-2"></i>Get Started Now
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-shield-alt me-2"></i>On-Chain Smart Samadhan Portal</h5>
+                    <p class="text-white-50">The Blockchain Powered AI Complaint Portal</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Counter animation
+        const animateCounters = () => {
+            document.querySelectorAll('.stats-counter').forEach(counter => {
+                const target = counter.textContent;
+                const isPercentage = target.includes('%');
+                const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = numericValue / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                        current = numericValue;
+                        clearInterval(timer);
+                    }
+                    
+                    if (isPercentage) {
+                        counter.textContent = Math.floor(current) + '%';
+                    } else if (target.includes('/')) {
+                        counter.textContent = Math.floor(current) + '/7';
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+        };
+
+        // Trigger counter animation when problem section is visible
+        const problemSection = document.getElementById('problem');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counterObserver.observe(problemSection);
+    </script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div clas                                                              <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>                                     <button class="btn btn-outline-secondary btn-sm copy-hash-btn" 
+                                                    data-hash="{{ complaint['Transaction Hash'] }}">
+                                                📋 Copy Hash
+                                            </button>ol-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>📜 My Complaint History</h2>
+                    <p class="text-muted mb-0">All complaints submitted from your wallet address</p>
+                </div>
+                <div>
+                    <span class="badge bg-primary fs-6">{{ complaints|length }} Total Complaints</span>
+                </div>
+            </div>
+            
+            <!-- Wallet Info -->
+            <div class="alert alert-info">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-wallet fa-lg me-3"></i>
+                    <div class="flex-grow-1">
+                        <strong>Connected Wallet:</strong>
+                        <code class="wallet-address ms-2">{{ wallet_address }}</code>
+                        {% if network_info %}
+                        <br>
+                        <small class="text-muted">
+                            <strong>Network:</strong> {{ network_info.network_name }} 
+                            {% if network_info.explorer_url %}
+                            | <a href="{{ network_info.explorer_url }}" target="_blank" class="text-decoration-none">
+                                🔍 View Explorer
+                            </a>
+                            {% endif %}
+                        </small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if complaints %}
+        <!-- Complaints List -->
+        <div class="row">
+            {% for complaint in complaints %}
+            <div class="col-12 mb-3">
+                <div class="card fade-in" style="animation-delay: {{ loop.index0 * 0.1 }}s;">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-0">
+                                <i class="fas fa-file-alt me-2"></i>
+                                Reference: <code>{{ complaint["Reference No"] }}</code>
+                            </h6>
+                            <small class="text-muted">{{ complaint.get("Department", "Unknown Department") }}</small>
+                        </div>
+                        <div class="text-end">
+                            {% set status = complaint.get("Status", "Unknown") %}
+                            {% if status == "Submitted" %}
+                                <span class="badge bg-info">{{ status }}</span>
+                            {% elif status == "Processing" %}
+                                <span class="badge bg-warning">{{ status }}</span>
+                            {% elif status == "Resolved" %}
+                                <span class="badge bg-success">{{ status }}</span>
+                            {% elif status == "Rejected" %}
+                                <span class="badge bg-danger">{{ status }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ status }}</span>
+                            {% endif %}
+                            <br>
+                            <small class="text-muted">{{ complaint.get("Date", "Unknown Date") }}</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6 class="text-primary">Complaint Details</h6>
+                                {% if complaint.get("Name") != "Blockchain Record" %}
+                                    <p class="mb-2"><strong>Name:</strong> {{ complaint.get("Name", "N/A") }}</p>
+                                    <p class="mb-2"><strong>Email:</strong> {{ complaint.get("Email", "N/A") }}</p>
+                                    <div class="complaint-text p-3 bg-light rounded">
+                                        <strong>Description:</strong><br>
+                                        {{ complaint.get("Complaint", "No description available") }}
+                                    </div>
+                                {% else %}
+                                    <div class="alert alert-warning">
+                                        <strong>Blockchain Record:</strong> Detailed information is stored on the blockchain. 
+                                        Use the track feature to view more details.
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-success">Blockchain Status</h6>
+                                {% if complaint.get("Blockchain Status") == "Success" %}
+                                    <p class="text-success mb-2">
+                                        <i class="fas fa-check-circle me-1"></i>✅ Verified on Blockchain
+                                    </p>
+                                {% else %}
+                                    <p class="text-warning mb-2">
+                                        <i class="fas fa-exclamation-triangle me-1"></i>⚠️ Blockchain: {{ complaint.get("Blockchain Status", "Unknown") }}
+                                    </p>
+                                {% endif %}
+                                
+                                {% if complaint.get("Transaction Hash") and complaint["Transaction Hash"] != "N/A" %}
+                                    <div class="mt-3 p-3 bg-light rounded border-start border-success border-3">
+                                        <p class="mb-2"><strong>🔗 Blockchain Transaction:</strong></p>
+                                        <div class="mb-2">
+                                            <small class="font-monospace text-break d-block mb-2">{{ complaint["Transaction Hash"] }}</small>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            {% if network_info and network_info.explorer_url %}
+                                            <a href="{{ network_info.explorer_url }}/tx/{{ complaint['Transaction Hash'] }}" 
+                                               target="_blank" class="btn btn-outline-primary btn-sm">
+                                                🔍 View on {{ network_info.network_name.split()[0] }} Explorer
+                                            </a>
+                                            {% else %}
+                                            <a href="https://etherscan.io/tx/{{ complaint['Transaction Hash'] }}" 
+                                               target="_blank" class="btn btn-outline-primary btn-sm">
+                                                🔍 View on Etherscan
+                                            </a>
+                                            {% endif %}
+                                            <button class="btn btn-outline-secondary btn-sm" 
+                                                    onclick="copyToClipboard('{{ complaint['Transaction Hash'] }}')">
+                                                � Copy Hash
+                                            </button>
+                                        </div>
+                                    </div>
+                                {% elif complaint.get("Blockchain Status") == "Legacy" %}
+                                    <div class="mt-3 p-3 bg-warning bg-opacity-25 rounded border-start border-warning border-3">
+                                        <p class="mb-1"><strong>📜 Legacy Record:</strong></p>
+                                        <small class="text-muted">This complaint was submitted before blockchain integration.</small>
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="mt-3">
+                                    <a href="{{ url_for('track_complaint') }}" 
+                                       class="btn btn-primary btn-sm w-100 track-btn"
+                                       data-ref="{{ complaint['Reference No'] }}">
+                                        📍 Track Status
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Summary Statistics -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="text-primary">{{ complaints|length }}</h4>
+                        <p class="mb-0">Total Complaints</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="text-info">{{ complaints|selectattr("Status", "equalto", "Submitted")|list|length }}</h4>
+                        <p class="mb-0">Submitted</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="text-warning">{{ complaints|selectattr("Status", "equalto", "Processing")|list|length }}</h4>
+                        <p class="mb-0">Processing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="text-success">{{ complaints|selectattr("Status", "equalto", "Resolved")|list|length }}</h4>
+                        <p class="mb-0">Resolved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    {% else %}
+        <!-- No Complaints Found -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="card">
+                    <div class="card-body py-5">
+                        <i class="fas fa-inbox fa-4x text-muted mb-4"></i>
+                        <h4>No Complaints Found</h4>
+                        <p class="text-muted mb-4">
+                            You haven't submitted any complaints yet from this wallet address, 
+                            or your complaints are still being synchronized with the blockchain.
+                        </p>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-plus me-2"></i>Submit Your First Complaint
+                            </a>
+                            <button class="btn btn-outline-secondary btn-lg refresh-btn">
+                                <i class="fas fa-refresh me-2"></i>Refresh Page
+                            </button>
+                        </div>
+                        
+                        <!-- Troubleshooting Tips -->
+                        <div class="mt-4 text-start">
+                            <h6>Troubleshooting Tips:</h6>
+                            <ul class="list-unstyled small text-muted">
+                                <li>• Make sure you're connected to the correct wallet</li>
+                                <li>• Check if you've submitted complaints from this address</li>
+                                <li>• Wait a few minutes for blockchain synchronization</li>
+                                <li>• Try refreshing the page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+    <!-- Action Buttons -->
+    <div class="text-center mt-4 mb-4">
+        <a href="{{ url_for('home') }}" class="btn btn-primary me-2">
+            <i class="fas fa-plus me-1"></i>🆕 New Complaint
+        </a>
+        <a href="{{ url_for('track_complaint') }}" class="btn btn-info me-2">
+            <i class="fas fa-search me-1"></i>📍 Track Complaint
+        </a>
+        <button class="btn btn-outline-secondary print-btn">
+            <i class="fas fa-print me-1"></i>🖨️ Print History
+        </button>
+    </div>
+</div>
+
+<script>
+function setTrackingNumber(refNo) {
+    // Store the reference number in localStorage for the track page
+    localStorage.setItem('trackingNumber', refNo);
+}
+
+function copyToClipboard(text, button) {
+    // Copy transaction hash to clipboard
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success message
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copied!';
+        button.classList.add('btn-success');
+        button.classList.remove('btn-outline-secondary');
+        
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-secondary');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy text: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copied!';
+        setTimeout(function() {
+            button.innerHTML = originalText;
+        }, 2000);
+    });
+}
+
+// Auto-fill tracking number if coming from history
+document.addEventListener('DOMContentLoaded', function() {
+    const trackingNumber = localStorage.getItem('trackingNumber');
+    if (trackingNumber && window.location.pathname.includes('track')) {
+        const input = document.querySelector('input[name="ref_no"]');
+        if (input) {
+            input.value = trackingNumber;
+            localStorage.removeItem('trackingNumber');
+        }
+    }
+    
+    // Add event listeners to copy buttons
+    document.querySelectorAll('.copy-hash-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const hash = this.getAttribute('data-hash');
+            copyToClipboard(hash, this);
+        });
+    });
+    
+    // Add event listeners to track buttons
+    document.querySelectorAll('.track-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const refNo = this.getAttribute('data-ref');
+            setTrackingNumber(refNo);
+        });
+    });
+    
+    // Add event listeners to refresh and print buttons
+    const refreshBtn = document.querySelector('.refresh-btn');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', function() {
+            window.location.reload();
+        });
+    }
+    
+    const printBtn = document.querySelector('.print-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', function() {
+            window.print();
+        });
+    }
+});
+</script>
+
+<style>
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.complaint-text {
+    max-height: 100px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.blockchain-hash {
+    background-color: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    word-break: break-all;
+    color: #495057;
+}
+
+.wallet-address {
+    background-color: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+@media print {
+    .btn, 
+    .navbar {
+        display: none !important;
+    }
+    
+    .fade-in { 
+        animation: none !important; 
+    }
+    
+    .card { 
+        break-inside: avoid; 
+    }
+}
+
+@media (max-width: 768px) {
+    .complaint-text { 
+        max-height: 80px; 
+    }
+    
+    .blockchain-hash { 
+        font-size: 0.7rem; 
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4 text-center">
+    <div class="alert alert-success">
+        <h3>🎉 Complaint Submitted Successfully!</h3>
+        <p>Your complaint has been recorded on the blockchain for transparency and immutability.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4>📋 Complaint Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Reference Number:</h5>
+                            <h2 class="text-primary">{{ ref_no }}</h2>
+                            <p class="text-muted">Save this number to track your complaint</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Your Wallet:</h6>
+                            <code>{{ wallet_address[:10] }}...{{ wallet_address[-8:] }}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if blockchain_result.success %}
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5>⛓️ Blockchain Transaction</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Transaction Hash:</strong><br>
+                            <small class="text-break">0x{{ blockchain_result.tx_hash }}</small>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Block Number:</strong><br>
+                            {{ blockchain_result.block_number }}
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Gas Used:</strong><br>
+                            {{ blockchain_result.gas_used }}
+                        </div>
+                    </div>
+                    
+                    {% if blockchain_result.network %}
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <strong>Network:</strong><br>
+                            <span class="badge bg-info">{{ blockchain_result.network }}</span>
+                        </div>
+                        {% if blockchain_result.actual_cost_eth %}
+                        <div class="col-md-6">
+                            <strong>Transaction Cost:</strong><br>
+                            {{ "%.6f"|format(blockchain_result.actual_cost_eth) }} ETH
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="mt-3">
+                        {% if blockchain_result.explorer_urls %}
+                        <a href="{{ blockchain_result.explorer_urls.transaction }}" 
+                           target="_blank" class="btn btn-outline-primary btn-sm me-2">
+                            🔍 View Transaction
+                        </a>
+                        <a href="{{ blockchain_result.explorer_urls.contract }}" 
+                           target="_blank" class="btn btn-outline-secondary btn-sm">
+                            📄 View Contract
+                        </a>
+                        {% else %}
+                        <a href="https://etherscan.io/tx/0x{{ blockchain_result.tx_hash }}" 
+                           target="_blank" class="btn btn-outline-primary btn-sm">
+                            🔍 View on Etherscan
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h5>⚠️ Blockchain Status</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-warning">
+                        <strong>Warning:</strong> Your complaint was saved locally but could not be recorded on the blockchain.
+                    </p>
+                    <p><strong>Reason:</strong> {{ blockchain_result.message }}</p>
+                    <p class="small text-muted">
+                        The system administrator has been notified and will retry the blockchain submission.
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{{ url_for('home') }}" class="btn btn-primary me-2">🆕 Raise Another Complaint</a>
+        <a href="{{ url_for('track_complaint') }}" class="btn btn-info me-2">📍 Track Complaint</a>
+        <a href="{{ url_for('view_history') }}" class="btn btn-secondary me-2">📜 View History</a>
+        {% if media_urls and media_urls != '' %}
+        <button type="button" class="btn btn-outline-info"
+                onclick="openMediaGallery('{{ media_urls }}')">
+            <i class="fas fa-photo-video me-1"></i>View Uploaded Media
+            <span class="badge bg-info ms-1" style="font-size:.68rem;">
+                {{ media_urls.split('|') | length }}
+            </span>
+        </button>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

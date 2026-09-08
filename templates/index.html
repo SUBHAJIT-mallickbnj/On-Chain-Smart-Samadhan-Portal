@@ -1,0 +1,371 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-11">
+        <div class="text-center mb-4">
+            <h1 class="page-title display-5">
+                <i class="fas fa-file-alt me-3"></i>Raise a New Complaint
+            </h1>
+            <p class="lead text-muted">Submit your complaint with AI-powered department classification and blockchain
+                verification</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-user me-2"></i>Complaint Submission Form</h4>
+            </div>
+            <div class="card-body p-4">
+                <form action="{{ url_for('preview_complaint') }}" method="POST" enctype="multipart/form-data"
+                    id="complaintForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3"><i class="fas fa-user-circle me-2"></i>Personal Information
+                            </h6>
+                            <div class="mb-3">
+                                <label class="form-label fw-medium">
+                                    <i class="fas fa-user me-1"></i>Full Name
+                                </label>
+                                <input type="text" class="form-control" name="name" required
+                                    placeholder="Enter your full name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-medium">
+                                    <i class="fas fa-phone me-1"></i>Contact Number
+                                </label>
+                                <input type="text" class="form-control" name="phone" required
+                                    placeholder="Enter your phone number">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-medium">
+                                    <i class="fas fa-envelope me-1"></i>Email Address
+                                </label>
+                                <input type="email" class="form-control" name="email" required
+                                    placeholder="Enter your email address">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Location Details
+                            </h6>
+                            <div class="mb-3">
+                                <label class="form-label fw-medium">
+                                    <i class="fas fa-road me-1"></i>Street Address
+                                </label>
+                                <input type="text" class="form-control" name="address" required
+                                    placeholder="Enter your street address">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-medium">
+                                            <i class="fas fa-city me-1"></i>City
+                                        </label>
+                                        <input type="text" class="form-control" name="city" required
+                                            placeholder="Enter city">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-medium">
+                                            <i class="fas fa-flag me-1"></i>State
+                                        </label>
+                                        <!-- Custom Dropdown Container -->
+                                        <div class="dropdown w-100" id="customStateDropdownContainer">
+                                            <!-- Invisible input to submit value -->
+                                            <input type="hidden" name="state" id="selectedStateInput" required>
+                                            <button type="button"
+                                                class="form-control text-start d-flex align-items-center justify-content-between dropdown-toggle"
+                                                id="customStateButton" data-bs-toggle="dropdown" aria-expanded="false"
+                                                style="background-color: #fff; border: 2px solid #e2e8f0; border-radius: 15px; padding: 0.8rem 1rem;">
+                                                <span id="selectedStateText" class="text-muted">Select State</span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="customStateButton"
+                                                style="min-width: 100%; width: max-content; max-width: 140%; max-height: 380px; overflow-y: auto; border: 2px solid #e2e8f0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 0.5rem 0; scrollbar-width: thin; white-space: normal;">
+                                                <li><a class="dropdown-item py-2 px-3 text-muted" href="#"
+                                                        data-value="">Select State</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Andaman and Nicobar Islands">Andaman and Nicobar
+                                                        Islands</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Andhra Pradesh">Andhra Pradesh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Arunachal Pradesh">Arunachal Pradesh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Assam">Assam</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Bihar">Bihar</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Chandigarh">Chandigarh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Chhattisgarh">Chhattisgarh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Delhi">Delhi</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#" data-value="Goa">Goa</a>
+                                                </li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Gujarat">Gujarat</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Haryana">Haryana</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Himachal Pradesh">Himachal Pradesh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Jammu and Kashmir">Jammu and Kashmir</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Jharkhand">Jharkhand</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Karnataka">Karnataka</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Kerala">Kerala</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Ladakh">Ladakh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Lakshadweep">Lakshadweep</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Madhya Pradesh">Madhya Pradesh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Maharashtra">Maharashtra</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Manipur">Manipur</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Meghalaya">Meghalaya</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Mizoram">Mizoram</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Nagaland">Nagaland</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Odisha">Odisha</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Puducherry">Puducherry</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Punjab">Punjab</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Rajasthan">Rajasthan</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Sikkim">Sikkim</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Tamil Nadu">Tamil Nadu</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Telangana">Telangana</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Tripura">Tripura</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Uttar Pradesh">Uttar Pradesh</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="Uttarakhand">Uttarakhand</a></li>
+                                                <li><a class="dropdown-item py-2 px-3" href="#"
+                                                        data-value="West Bengal">West Bengal</a></li>
+                                            </ul>
+                                        </div>
+                                        <style>
+                                            #customStateDropdownContainer .dropdown-item {
+                                                transition: background-color 0.2s ease, color 0.2s ease;
+                                                font-size: 0.95rem;
+                                            }
+
+                                            #customStateDropdownContainer .dropdown-item:hover {
+                                                background-color: #f1f5f9;
+                                                color: var(--primary-color);
+                                            }
+
+                                            #customStateDropdownContainer .dropdown-item.active,
+                                            #customStateDropdownContainer .dropdown-item:active {
+                                                background-color: var(--primary-color);
+                                                color: #fff;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-medium">
+                                    <i class="fas fa-map-pin me-1"></i>Zip Code
+                                </label>
+                                <input type="text" class="form-control" name="zip" required
+                                    placeholder="Enter zip code">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="mb-4">
+                        <h6 class="text-primary mb-3"><i class="fas fa-exclamation-triangle me-2"></i>Complaint Details
+                        </h6>
+                        <label class="form-label fw-medium">
+                            <i class="fas fa-comment-alt me-1"></i>Describe Your Complaint
+                        </label>
+                        <textarea class="form-control" name="complaint" rows="5" required
+                            placeholder="Please provide detailed information about your complaint. Our AI will automatically determine the appropriate department."></textarea>
+                        <div class="form-text">
+                            <i class="fas fa-robot me-1"></i>
+                            Our AI system will automatically classify your complaint and route it to the appropriate
+                            department.
+                        </div>
+                    </div>
+
+                    <!-- ── Media Upload ───────────────────────────────── -->
+                    <div class="mb-4">
+                        <h6 class="text-primary mb-3">
+                            <i class="fas fa-paperclip me-2"></i>Supporting Evidence
+                            <span class="badge bg-secondary fw-normal ms-2" style="font-size:.72rem;">Optional</span>
+                        </h6>
+
+                        <div id="dropZone" class="border border-2 border-dashed rounded-3 p-4 text-center"
+                            style="border-color:#6c757d!important; cursor:pointer; transition:border-color .2s, background .2s;"
+                            onclick="document.getElementById('mediaInput').click()"
+                            ondragover="event.preventDefault();this.style.borderColor='#2563eb';this.style.background='#eff6ff';"
+                            ondragleave="this.style.borderColor='';this.style.background='';"
+                            ondrop="handleDrop(event)">
+                            <i class="fas fa-cloud-upload-alt fa-2x text-muted mb-2"></i>
+                            <p class="mb-1 fw-semibold">Click to upload or drag &amp; drop</p>
+                            <p class="text-muted small mb-0">Photos (JPG, PNG, WebP) &amp; Videos (MP4, MOV, WebM)
+                                &bull; Max 2 files &bull; 50 MB each</p>
+                        </div>
+
+                        <input type="file" id="mediaInput" name="media_files"
+                            accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/quicktime,video/x-msvideo,video/webm"
+                            multiple class="d-none" onchange="handleFileSelect(this.files)">
+
+                        <div id="mediaPreviewArea" class="mt-3 row g-2" style="display:none!important;"></div>
+                        <div id="mediaError" class="alert alert-danger mt-2 py-2 d-none small"></div>
+                    </div>
+                    <!-- ─────────────────────────────────────────────── -->
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-gradient btn-lg">
+                            <i class="fas fa-eye me-2"></i>Preview Complaint
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Action Button -->
+<div class="floating-action">
+    <a href="{{ url_for('track_complaint') }}" class="btn btn-primary" data-bs-toggle="tooltip" title="Track Complaint">
+        <i class="fas fa-search"></i>
+    </a>
+</div>
+
+{% block scripts %}
+<script>
+    const MAX_MEDIA = 2;
+    const ALLOWED = ['image/jpeg', 'image/png', 'image/gif', 'image/webp',
+        'video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/webm'];
+    let selectedFiles = [];
+
+    function handleDrop(e) {
+        e.preventDefault();
+        document.getElementById('dropZone').style.borderColor = '';
+        document.getElementById('dropZone').style.background = '';
+        processFiles(Array.from(e.dataTransfer.files));
+    }
+
+    function handleFileSelect(fileList) {
+        processFiles(Array.from(fileList));
+    }
+
+    function processFiles(incoming) {
+        const errEl = document.getElementById('mediaError');
+        errEl.classList.add('d-none');
+
+        for (const f of incoming) {
+            if (selectedFiles.length >= MAX_MEDIA) {
+                errEl.textContent = `Maximum ${MAX_MEDIA} files allowed.`;
+                errEl.classList.remove('d-none');
+                break;
+            }
+            if (!ALLOWED.includes(f.type)) {
+                errEl.textContent = `"${f.name}" is not a supported format.`;
+                errEl.classList.remove('d-none');
+                continue;
+            }
+            if (f.size > 50 * 1024 * 1024) {
+                errEl.textContent = `"${f.name}" exceeds the 50 MB size limit.`;
+                errEl.classList.remove('d-none');
+                continue;
+            }
+            selectedFiles.push(f);
+        }
+
+        // Sync to file input via DataTransfer
+        const dt = new DataTransfer();
+        selectedFiles.forEach(f => dt.items.add(f));
+        document.getElementById('mediaInput').files = dt.files;
+        renderPreviews();
+    }
+
+    function removeFile(idx) {
+        selectedFiles.splice(idx, 1);
+        const dt = new DataTransfer();
+        selectedFiles.forEach(f => dt.items.add(f));
+        document.getElementById('mediaInput').files = dt.files;
+        renderPreviews();
+    }
+
+    function renderPreviews() {
+        const area = document.getElementById('mediaPreviewArea');
+        area.innerHTML = '';
+        if (!selectedFiles.length) { area.style.setProperty('display', 'none', 'important'); return; }
+        area.style.removeProperty('display');
+
+        selectedFiles.forEach((f, i) => {
+            const col = document.createElement('div');
+            col.className = 'col-6 col-md-4 position-relative';
+            const isVideo = f.type.startsWith('video/');
+            const url = URL.createObjectURL(f);
+
+            col.innerHTML = isVideo
+                ? `<video src="${url}" class="w-100 rounded" style="max-height:120px;object-fit:cover;" muted></video>`
+                : `<img src="${url}" class="w-100 rounded" style="max-height:120px;object-fit:cover;" alt="${f.name}">`;
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'btn btn-danger btn-sm position-absolute top-0 end-0 m-1 rounded-circle';
+            btn.style = 'width:26px;height:26px;padding:0;line-height:1;font-size:.7rem;';
+            btn.innerHTML = '<i class="fas fa-times"></i>';
+            btn.onclick = () => removeFile(i);
+            col.appendChild(btn);
+
+            const label = document.createElement('div');
+            label.className = 'text-truncate small text-muted mt-1';
+            label.textContent = f.name;
+            col.appendChild(label);
+
+            area.appendChild(col);
+        });
+    }
+
+    // Custom Dropdown Selection Handling
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownItems = document.querySelectorAll('#customStateDropdownContainer .dropdown-item');
+        const inputVal = document.getElementById('selectedStateInput');
+        const buttonText = document.getElementById('selectedStateText');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const val = this.getAttribute('data-value');
+                const text = this.textContent;
+
+                // Remove active class from all items and set it on the selected one
+                dropdownItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update inputs and label
+                inputVal.value = val;
+                buttonText.textContent = text;
+
+                if (val === '') {
+                    buttonText.classList.add('text-muted');
+                } else {
+                    buttonText.classList.remove('text-muted');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}

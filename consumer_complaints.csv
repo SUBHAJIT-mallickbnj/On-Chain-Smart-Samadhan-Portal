@@ -1,0 +1,4225 @@
+complaint_text,product
+light gone,Electricity
+bijli chali gayi,Electricity
+power cut,Electricity
+no current,Electricity
+electrcity issue,Electricity
+fuse down,Electricity
+streetlight broken,Electricity
+ligt blink,Electricity
+power outage,Electricity
+light fuse,Electricity
+bulb burst,Electricity
+tar tut gaya,Electricity
+wire tut gayi,Electricity
+transformer phat gaya,Electricity
+light blink ho rahi hai,Electricity
+bijli gayi,Electricity
+light,Electricity
+power,Electricity
+current,Electricity
+bijli,Electricity
+light chali gayi,Electricity
+light nahi aa rahi,Electricity
+bijli band ho gayi,Electricity
+power chala gaya,Electricity
+power supply gone,Electricity
+light cut ho gaya,Electricity
+load shedding ho rahi hai,Electricity
+current nahi hai,Electricity
+bijli kaam nahi kar rahi,Electricity
+tar latak raha hai,Electricity
+tar loose hai,Electricity
+wire jhul raha hai,Electricity
+transformer se awaaz aa rahi,Electricity
+transformer se dhuaan aa raha,Electricity
+electric pole gir gaya,Electricity
+bijli blink kar rahi hai,Electricity
+light on off ho rahi hai,Electricity
+current aa jaata hai fir chala jaata hai,Electricity
+phase cut ho gaya,Electricity
+single phase only,Electricity
+3 phase nahi aa raha,Electricity
+electric short circuit,Electricity
+electric spark,Electricity
+pole se spark aa raha,Electricity
+meter kaam nahi kar raha,Electricity
+meter band hai,Electricity
+electric meter damage,Electricity
+fuse ud gaya,Electricity
+fuse box broken,Electricity
+streetlight on nahi hai,Electricity
+street light damage,Electricity
+street light jal nahi rahi,Electricity
+streetlight band,Electricity
+pole light fuse,Electricity
+light ka bulb foot gaya,Electricity
+bulb kharab ho gaya,Electricity
+tube light flicker kar rahi hai,Electricity
+tube light band hai,Electricity
+current weak hai,Electricity
+voltage low,Electricity
+voltage high,Electricity
+light ki voltage zyada hai,Electricity
+current se shock lag raha,Electricity
+electric wire cut,Electricity
+tar toot gaya,Electricity
+pole gir gaya,Electricity
+tar zameen pe gir gaya,Electricity
+wire se chingari,Electricity
+electric wire leak current,Electricity
+switch board heat ho raha hai,Electricity
+plug se spark aa raha,Electricity
+socket damage,Electricity
+plug kaam nahi kar raha,Electricity
+apartment mein bijli gayi,Electricity
+ghar mein light nahi hai,Electricity
+office ka power cut,Electricity
+shop ka bijli band,Electricity
+market mein power nahi,Electricity
+factory mein bijli gayi,Electricity
+school mein light chali gayi,Electricity
+hospital mein light band,Electricity
+emergency power cut,Electricity
+generator start nahi ho raha,Electricity
+UPS kaam nahi kar raha,Electricity
+inverter charge nahi ho raha,Electricity
+electric panel damage,Electricity
+MCB trip ho gaya,Electricity
+electric board kaam nahi kar raha,Electricity
+overhead wire damage,Electricity
+underground cable cut,Electricity
+electric pole bend,Electricity
+tar loose ho gaya,Electricity
+line se current nahi aa raha,Electricity
+power restore karo,Electricity
+light jalane ka request,Electricity
+streetlight repair karo,Electricity
+transformer replace karo,Electricity
+tar fix karo,Electricity
+voltage issue fix karo,Electricity
+line kaam nahi kar rahi,Electricity
+electric fault,Electricity
+electric repair chahiye,Electricity
+electric kaam pending,Electricity
+load shedding problem,Electricity
+light blink fix karo,Electricity
+electric supply irregular,Electricity
+current kab aayega,Electricity
+bijli kab aayegi,Electricity
+power ka time batao,Electricity
+power cut schedule,Electricity
+unexpected power cut,Electricity
+sudden power cut,Electricity
+line testing ho rahi hai,Electricity
+electric wire hanging,Electricity
+electric pole broken,Electricity
+wire joint loose,Electricity
+transformer blast,Electricity
+tar se fire,Electricity
+light repair urgent,Electricity
+power failure,Electricity
+electric blackout,Electricity
+electric shutdown,Electricity
+electric tripping,Electricity
+short circuit repair,Electricity
+power surge,Electricity
+voltage fluctuation,Electricity
+low voltage supply,Electricity
+high voltage problem,Electricity
+electric burn smell,Electricity
+burning wire smell,Electricity
+main switch off,Electricity
+main line cut,Electricity
+power ka connection cut,Electricity
+bijli ka bill issue,Electricity
+meter reading wrong,Electricity
+meter ka display off,Electricity
+meter seal broken,Electricity
+meter change chahiye,Electricity
+electric bill zyada aaya,Electricity
+electric disconnection,Electricity
+electric reconnection,Electricity
+light repair karo,Electricity
+power restore karo urgent,Electricity
+tar replace karo,Electricity
+pole repair karo,Electricity
+streetlight install karo,Electricity
+light jal nahi rahi,Electricity
+lamp fuse ho gaya,Electricity
+lamp post down,Electricity
+pole wire loose,Electricity
+electric accident,Electricity
+electric hazard,Electricity
+shock danger,Electricity
+electric safety issue,Electricity
+electric problem urgent,Electricity
+tap water dirty,Water Supply
+no water,Water Supply
+paani nahi aa raha,Water Supply
+water cut,Water Supply
+tap dry,Water Supply
+low water,Water Supply
+paani ka pressure kam hai,Water Supply
+water leak,Water Supply
+pipe leak ho gaya,Water Supply
+tank khaali,Water Supply
+paani mein badbu hai,Water Supply
+muddy water,Water Supply
+smelly water,Water Supply
+water shortage,Water Supply
+nal ka paani ganda hai,Water Supply
+paani,Water Supply
+water,Water Supply
+nal,Water Supply
+pipe,Water Supply
+tank,Water Supply
+no water at home,Water Supply
+ghar mein paani nahi aa raha,Water Supply
+water cut ho gaya,Water Supply
+paani band hai,Water Supply
+no water supply,Water Supply
+paani ka supply band,Water Supply
+tap dry hai,Water Supply
+nal se paani nahi aa raha,Water Supply
+pipe se paani band,Water Supply
+paani nahi aa raha subah se,Water Supply
+water ka pressure low,Water Supply
+low water pressure,Water Supply
+tap water slow,Water Supply
+paani leak ho raha hai,Water Supply
+water leakage from pipe,Water Supply
+pipe se paani gir raha hai,Water Supply
+tank khaali ho gaya,Water Supply
+water tank empty,Water Supply
+paani khatam ho gaya,Water Supply
+paani nahi bhar raha,Water Supply
+tap se ganda paani aa raha,Water Supply
+dirty water supply,Water Supply
+paani ka rang badal gaya,Water Supply
+brown water aa raha,Water Supply
+muddy water aa raha,Water Supply
+smelly water supply,Water Supply
+water me gandagi hai,Water Supply
+water contaminated,Water Supply
+paani unsafe hai,Water Supply
+paani peene layak nahi hai,Water Supply
+paani filter nahi hai,Water Supply
+tap broken hai,Water Supply
+nal tut gaya,Water Supply
+water tap damage,Water Supply
+tap ka handle toot gaya,Water Supply
+pipe burst ho gaya,Water Supply
+pipeline damage,Water Supply
+underground pipe leak,Water Supply
+overhead tank leak,Water Supply
+paani overflow ho raha hai,Water Supply
+water overflow,Water Supply
+tank se paani gir raha hai,Water Supply
+paani bhar gaya tank se,Water Supply
+motor kaam nahi kar raha,Water Supply
+water pump broken,Water Supply
+pump ka switch kaam nahi kar raha,Water Supply
+pump se paani nahi aa raha,Water Supply
+motor repair chahiye,Water Supply
+motor se awaz aa rahi,Water Supply
+motor burn smell,Water Supply
+water meter kaam nahi kar raha,Water Supply
+paani ka bill galat hai,Water Supply
+paani ka connection cut,Water Supply
+water supply time change,Water Supply
+paani jaldi band ho gaya,Water Supply
+water timing problem,Water Supply
+paani ka schedule change,Water Supply
+night water supply band,Water Supply
+morning water supply band,Water Supply
+water tanker chahiye,Water Supply
+paani tanker ki request,Water Supply
+emergency water chahiye,Water Supply
+no water from tanker,Water Supply
+tanker late aaya,Water Supply
+tanker se ganda paani aaya,Water Supply
+pipe mein hawa aa rahi hai,Water Supply
+air lock in water pipe,Water Supply
+paani ka flow irregular,Water Supply
+water ka flow ruk gaya,Water Supply
+paani pressure zyada hai,Water Supply
+high pressure se pipe foot gaya,Water Supply
+paani se awaz aa rahi,Water Supply
+pipe line block ho gaya,Water Supply
+water blockage in pipe,Water Supply
+line flush karni hai,Water Supply
+line mein kachra jam gaya,Water Supply
+water ka taste kharab hai,Water Supply
+paani mein tel ki smell hai,Water Supply
+water smell chemical,Water Supply
+chlorine smell zyada hai,Water Supply
+water chlorination needed,Water Supply
+water filter change karo,Water Supply
+RO kaam nahi kar raha,Water Supply
+filter water slow hai,Water Supply
+paani ki supply irregular,Water Supply
+barish mein paani band ho gaya,Water Supply
+summer mein paani kam hai,Water Supply
+winter mein paani late aata hai,Water Supply
+paani ka complaint register karo,Water Supply
+jal board ko complaint,Water Supply
+water department call karo,Water Supply
+jal board ka number chahiye,Water Supply
+water supply restore karo,Water Supply
+paani ka pressure badhao,Water Supply
+pipe repair urgent,Water Supply
+motor repair urgent,Water Supply
+tank clean karo,Water Supply
+overhead tank saaf nahi hai,Water Supply
+underground tank saaf karo,Water Supply
+paani ka taste change karo,Water Supply
+filtered water chahiye,Water Supply
+jal supply theek karo,Water Supply
+no water since morning,Water Supply
+no water since yesterday,Water Supply
+water issue urgent,Water Supply
+paani ka problem solve karo,Water Supply
+paani ka shortage fix karo,Water Supply
+paani ka leak repair karo,Water Supply
+pipeline change karo,Water Supply
+tanker paani jaldi bhejo,Water Supply
+emergency jal supply,Water Supply
+tap ka nut tight karo,Water Supply
+tap fitting theek karo,Water Supply
+water ka filter install karo,Water Supply
+motor fitting karo,Water Supply
+paani ka line extend karo,Water Supply
+ghar tak paani ka connection do,Water Supply
+pipe ka valve change karo,Water Supply
+paani ka bill clear karo,Water Supply
+water meter repair karo,Water Supply
+paani ka record wrong hai,Water Supply
+jal ka connection cut mat karo,Water Supply
+jal ka bill zyada aaya,Water Supply
+garbage collection missed,Sanitation
+kooda nahi utha,Sanitation
+overflowing dustbin,Sanitation
+waste not cleared,Sanitation
+gali ganda hai,Sanitation
+trash on road,Sanitation
+dirty street,Sanitation
+unclean area,Sanitation
+garbage smell,Sanitation
+garbage heap,Sanitation
+kachra bahut jama ho gaya,Sanitation
+cleaning staff nahi aaya,Sanitation
+public bin full,Sanitation
+unclean drains,Sanitation
+waste,Sanitation
+kachra,Sanitation
+kooda,Sanitation
+garbage,Sanitation
+dustbin,Sanitation
+refuse,Sanitation
+garbage not collected,Sanitation
+kachra nahi uthaya,Sanitation
+dustbin overflow ho raha hai,Sanitation
+dustbin full hai,Sanitation
+overflowing bin,Sanitation
+garbage heap road pe,Sanitation
+kachra road pe phela hai,Sanitation
+street dirty hai,Sanitation
+unclean gali,Sanitation
+gali mein badbu hai,Sanitation
+smelly street,Sanitation
+garbage smell aa raha,Sanitation
+kachra ki badbu,Sanitation
+foul smell from waste,Sanitation
+public dustbin full hai,Sanitation
+bin ka cover missing,Sanitation
+garbage dump road ke side,Sanitation
+kachra dump ho gaya,Sanitation
+street pe waste,Sanitation
+road pe kachra,Sanitation
+waste scattered,Sanitation
+trash everywhere,Sanitation
+drain mein kachra,Sanitation
+nali mein waste,Sanitation
+garbage blocking drain,Sanitation
+kachra bahut jama hai,Sanitation
+waste collection late,Sanitation
+garbage truck late,Sanitation
+kachra gaadi nahi aayi,Sanitation
+waste van nahi aayi,Sanitation
+municipal waste gaadi missing,Sanitation
+garbage pick up missed,Sanitation
+cleaning staff absent,Sanitation
+safai karmchari nahi aaya,Sanitation
+safai staff absent,Sanitation
+street cleaning nahi hui,Sanitation
+area dirty hai,Sanitation
+public area dirty,Sanitation
+garden mein kachra,Sanitation
+park dirty,Sanitation
+playground mein garbage,Sanitation
+school ke paas waste,Sanitation
+hospital ke bahar garbage,Sanitation
+market area dirty,Sanitation
+market mein foul smell,Sanitation
+safai nahi ho rahi,Sanitation
+daily cleaning nahi hoti,Sanitation
+weekly cleaning missing,Sanitation
+dirty colony,Sanitation
+area unhygienic hai,Sanitation
+garbage flies aa rahe,Sanitation
+kachra pe machhar,Sanitation
+waste pe keede makode,Sanitation
+garbage se bimari fail rahi,Sanitation
+kachra se smell bahut hai,Sanitation
+garbage se gandagi fail rahi,Sanitation
+open garbage dump,Sanitation
+garbage without cover,Sanitation
+waste ka dhankna missing,Sanitation
+kachra openly phela hai,Sanitation
+waste openly dump hua,Sanitation
+plastic waste road pe,Sanitation
+plastic bags scattered,Sanitation
+paper waste everywhere,Sanitation
+construction waste road pe,Sanitation
+mala kachra jama hai,Sanitation
+debris road pe,Sanitation
+building waste road pe,Sanitation
+waste ka removal karo,Sanitation
+garbage removal request,Sanitation
+kachra saaf karo,Sanitation
+dustbin clean karo,Sanitation
+public bin wash karo,Sanitation
+bin ka dhakkan lagao,Sanitation
+garbage pick up karo,Sanitation
+truck bhejo waste le jane,Sanitation
+kachra van bhejo,Sanitation
+garbage clearance chahiye,Sanitation
+bin replace karo,Sanitation
+broken bin replace karo,Sanitation
+damaged bin replace karo,Sanitation
+waste segregation nahi hua,Sanitation
+dry waste aur wet waste mix,Sanitation
+recycling nahi hua,Sanitation
+waste recycle system fail,Sanitation
+compost pit overflow,Sanitation
+garbage dump remove karo,Sanitation
+kachra jal raha hai,Sanitation
+burning garbage smell,Sanitation
+smoke from waste burning,Sanitation
+illegal garbage dump,Sanitation
+kachra illegal dump ho raha,Sanitation
+private property pe waste dump,Sanitation
+roadside waste pick karo,Sanitation
+road cleaning urgent,Sanitation
+safai urgent chahiye,Sanitation
+emergency cleaning,Sanitation
+festival ke baad waste,Sanitation
+mela ke baad garbage,Sanitation
+event ke baad kachra,Sanitation
+waste clearance after function,Sanitation
+animal waste road pe,Sanitation
+dog waste,Sanitation
+cow dung road pe,Sanitation
+bird droppings,Sanitation
+animal dead body road pe,Sanitation
+dead animal smell,Sanitation
+waste se badbu bahut,Sanitation
+gali saaf nahi hai,Sanitation
+slum area dirty,Sanitation
+basti mein kachra,Sanitation
+unauthorised dumping,Sanitation
+garbage ka illegal disposal,Sanitation
+night cleaning nahi hoti,Sanitation
+morning cleaning nahi hoti,Sanitation
+cleaning schedule follow nahi,Sanitation
+maintenance fail,Sanitation
+street sweep nahi hui,Sanitation
+road pe mitti,Sanitation
+dust pollution road pe,Sanitation
+kachra se road block,Sanitation
+bin relocate karo,Sanitation
+waste ka bin shift karo,Sanitation
+extra bins chahiye,Sanitation
+bin shortage,Sanitation
+large bin chahiye,Sanitation
+community bin install karo,Sanitation
+gutter mein garbage,Sanitation
+drain ka cover garbage se block,Sanitation
+waste collection point dirty,Sanitation
+waste dump smell,Sanitation
+garbage pickup daily karo,Sanitation
+weekly pickup kam hai,Sanitation
+public toilet dirty,Sanitation
+urinal dirty,Sanitation
+toilet smell,Sanitation
+washroom cleaning chahiye,Sanitation
+public restroom ka maintenance nahi,Sanitation
+toilet ka flush broken,Sanitation
+urinal ka water supply band,Sanitation
+public toilet ke bahar waste,Sanitation
+toilet ke paas kachra,Sanitation
+road potholes,Road Maintenance
+road mein gaddha,Road Maintenance
+bumpy road,Road Maintenance
+sadak toot gayi,Road Maintenance
+road crack,Road Maintenance
+hole in road,Road Maintenance
+road damaged,Road Maintenance
+bridge pe crack hai,Road Maintenance
+footpath tut gaya,Road Maintenance
+road unsafe,Road Maintenance
+manhole cover missing,Road Maintenance
+cycle track broken,Road Maintenance
+bad road,Road Maintenance
+sadak,Road Maintenance
+road,Road Maintenance
+gaddha,Road Maintenance
+bridge,Road Maintenance
+footpath,Road Maintenance
+asphalt,Road Maintenance
+street,Road Maintenance
+sadak pe gaddha hai,Road Maintenance
+uneven road surface,Road Maintenance
+sadak mein crack,Road Maintenance
+sadak mein bada hole,Road Maintenance
+sadak damage ho gaya,Road Maintenance
+pull toot raha hai,Road Maintenance
+sidewalk broken,Road Maintenance
+footpath ka tile nikal gaya,Road Maintenance
+cycle path damage,Road Maintenance
+dangerous road,Road Maintenance
+manhole ka dhakkan khula,Road Maintenance
+open manhole,Road Maintenance
+road ke beech hole hai,Road Maintenance
+sadak kharab hai,Road Maintenance
+road tar kharab,Road Maintenance
+gali kharab,Road Maintenance
+road patching needed,Road Maintenance
+sadak patch karo,Road Maintenance
+asphalt lagana hai,Road Maintenance
+road resurfacing chahiye,Road Maintenance
+road widening request,Road Maintenance
+sadak chaurai badhao,Road Maintenance
+road ka paint gayab,Road Maintenance
+lane marking missing,Road Maintenance
+speed breaker broken,Road Maintenance
+bump kharab hai,Road Maintenance
+speed hump missing,Road Maintenance
+road signs missing,Road Maintenance
+signboard gira hua,Road Maintenance
+road pe debris hai,Road Maintenance
+stones road pe,Road Maintenance
+mud road pe,Road Maintenance
+road pe construction waste,Road Maintenance
+repair ka kaam incomplete,Road Maintenance
+roadwork chal raha hai,Road Maintenance
+construction se road block,Road Maintenance
+detour road,Road Maintenance
+road diversion ka board missing,Road Maintenance
+streetlight ke pole se road block,Road Maintenance
+flood water road pe,Road Maintenance
+paani se road damage,Road Maintenance
+rain se road kharab,Road Maintenance
+snow road pe,Road Maintenance
+ice se road slippery,Road Maintenance
+road slippery hai,Road Maintenance
+oil spill road pe,Road Maintenance
+tar coal nikal raha,Road Maintenance
+cement road crack,Road Maintenance
+paver block broken,Road Maintenance
+footpath pe obstacle,Road Maintenance
+sidewalk pe debris,Road Maintenance
+footpath ka slope kharab,Road Maintenance
+crosswalk ka paint missing,Road Maintenance
+zebra crossing faint ho gaya,Road Maintenance
+signal ke paas road kharab,Road Maintenance
+junction pe gaddha,Road Maintenance
+highway damaged,Road Maintenance
+expressway ka patch kharab,Road Maintenance
+service road kharab,Road Maintenance
+internal road kharab,Road Maintenance
+residential road crack,Road Maintenance
+industrial area road damage,Road Maintenance
+market road broken,Road Maintenance
+school ke paas road kharab,Road Maintenance
+hospital ke paas road kharab,Road Maintenance
+bus stop ke paas road damage,Road Maintenance
+railway crossing road broken,Road Maintenance
+culvert damage,Road Maintenance
+drain cover broken,Road Maintenance
+roadside slope collapse,Road Maintenance
+embankment damaged,Road Maintenance
+road pe weeds ug gaye,Road Maintenance
+overgrown grass footpath pe,Road Maintenance
+tree roots road tod diye,Road Maintenance
+road block by fallen tree,Road Maintenance
+road block by landslide,Road Maintenance
+road block by accident,Road Maintenance
+road cleaning chahiye,Road Maintenance
+dust pollution road pe,Road Maintenance
+muddy road,Road Maintenance
+kachcha road kharab,Road Maintenance
+road grading needed,Road Maintenance
+gravel road damaged,Road Maintenance
+brick road broken,Road Maintenance
+road ka surface uneven,Road Maintenance
+road erosion,Road Maintenance
+road ka shoulder collapse,Road Maintenance
+speed breaker height jyada,Road Maintenance
+speed breaker galat jagah,Road Maintenance
+rumble strips missing,Road Maintenance
+cat eye reflector missing,Road Maintenance
+median pe crack,Road Maintenance
+divider toot gaya,Road Maintenance
+road widening ka kaam incomplete,Road Maintenance
+pothole filling needed,Road Maintenance
+patch repair pending,Road Maintenance
+asphalt ka layer utar gaya,Road Maintenance
+road base weak,Road Maintenance
+road sinking ho raha hai,Road Maintenance
+road subsidence,Road Maintenance
+flyover joint broken,Road Maintenance
+overbridge damage,Road Maintenance
+underpass water logging,Road Maintenance
+tunnel wall crack,Road Maintenance
+parking lot damage,Road Maintenance
+bus bay ka surface kharab,Road Maintenance
+foot overbridge floor broken,Road Maintenance
+cycle lane marking missing,Road Maintenance
+bike lane damaged,Road Maintenance
+road accident ke baad repair nahi hua,Road Maintenance
+road corner sharp without marking,Road Maintenance
+blind turn pe warning sign missing,Road Maintenance
+traffic signals off,Public Lighting
+signal kaam nahi kar raha,Public Lighting
+street lamp off,Public Lighting
+lamp post broken,Public Lighting
+lamp flicker,Public Lighting
+signal dead,Public Lighting
+traffic light issue,Public Lighting
+lamp out,Public Lighting
+pole light off,Public Lighting
+street light dead,Public Lighting
+signal not blinking,Public Lighting
+signal damaged,Public Lighting
+post light missing,Public Lighting
+signal,Public Lighting
+lamp,Public Lighting
+pole,Public Lighting
+streetlight,Public Lighting
+traffic light,Public Lighting
+light post,Public Lighting
+lamp post,Public Lighting
+traffic signal band hai,Public Lighting
+signal kharab,Public Lighting
+signal light fused,Public Lighting
+signal light ka bulb fused,Public Lighting
+signal light not changing,Public Lighting
+red light kaam nahi kar rahi,Public Lighting
+green light not working,Public Lighting
+yellow light not blinking,Public Lighting
+pedestrian signal off,Public Lighting
+crosswalk light missing,Public Lighting
+streetlight broken,Public Lighting
+streetlight ka pole gir gaya,Public Lighting
+light post tilted,Public Lighting
+lamp ke wire cut gaye,Public Lighting
+light switch box broken,Public Lighting
+streetlight ka cover missing,Public Lighting
+pole pe light blink ho rahi hai,Public Lighting
+streetlight continuously on,Public Lighting
+streetlight din mein jal raha hai,Public Lighting
+automatic light sensor fail,Public Lighting
+lamp ka glass toot gaya,Public Lighting
+streetlight ka bulb change karo,Public Lighting
+lamp ka choke kharab,Public Lighting
+lamp ka starter fail,Public Lighting
+LED streetlight band,Public Lighting
+sodium light fused,Public Lighting
+halogen lamp not working,Public Lighting
+light tower off,Public Lighting
+high mast light off,Public Lighting
+stadium light not working,Public Lighting
+public park lamp off,Public Lighting
+garden light fused,Public Lighting
+footpath light missing,Public Lighting
+foot overbridge light off,Public Lighting
+underpass light missing,Public Lighting
+tunnel light not working,Public Lighting
+signal ka timer display off,Public Lighting
+signal ke countdown kaam nahi kar raha,Public Lighting
+traffic light pe spider web,Public Lighting
+signal ke pole pe rust,Public Lighting
+lamp ke pole pe short circuit,Public Lighting
+pole se spark aa raha hai,Public Lighting
+pole ke wire exposed hai,Public Lighting
+streetlight pole pe hanging wire,Public Lighting
+lamp ka base loose,Public Lighting
+light post pe dent,Public Lighting
+pole crooked,Public Lighting
+streetlight pe poster laga hai,Public Lighting
+lamp shade dirty,Public Lighting
+lamp shade missing,Public Lighting
+lamp water se fill ho gaya,Public Lighting
+lamp me moisture,Public Lighting
+lamp tube black ho gaya,Public Lighting
+light ka connector loose,Public Lighting
+lamp ka ballast burnt,Public Lighting
+light ke switch box ka lock missing,Public Lighting
+switch box khula hai,Public Lighting
+lamp ka bracket broken,Public Lighting
+streetlight ke neeche paani jama,Public Lighting
+lamp ka cover yellow ho gaya,Public Lighting
+lamp ka brightness low,Public Lighting
+lamp dim ho gaya,Public Lighting
+light ka voltage low,Public Lighting
+lamp over bright,Public Lighting
+lamp glare zyada hai,Public Lighting
+lamp ka beam angle galat,Public Lighting
+pole pe lamp ka alignment galat,Public Lighting
+lamp ka focus road pe nahi hai,Public Lighting
+lamp ka design kharab,Public Lighting
+pole pe paint utar gaya,Public Lighting
+light pole girne wala hai,Public Lighting
+lamp ka nut bolt loose,Public Lighting
+streetlight maintenance pending,Public Lighting
+light ka annual service due,Public Lighting
+lamp ke spare part missing,Public Lighting
+signal pole ka paint fade,Public Lighting
+signal pole crooked,Public Lighting
+signal ka housing toot gaya,Public Lighting
+signal ka visor missing,Public Lighting
+traffic light lens crack,Public Lighting
+traffic light ka LED module fail,Public Lighting
+signal ke bulb ka holder loose,Public Lighting
+signal ke bulb water se bhar gaya,Public Lighting
+signal ke wires cut,Public Lighting
+signal ke wires chori ho gaye,Public Lighting
+lamp post ka earthing missing,Public Lighting
+streetlight grounding fail,Public Lighting
+lamp ka fuse board burnt,Public Lighting
+signal ke control box ka lock broken,Public Lighting
+control box ka door missing,Public Lighting
+lamp ka maintenance slip missing,Public Lighting
+signal pole pe dent,Public Lighting
+lamp ka circuit breaker trip ho gaya,Public Lighting
+streetlight ka MCCB faulty,Public Lighting
+signal ke junction box khula,Public Lighting
+signal ke cable exposed,Public Lighting
+streetlight timer fail,Public Lighting
+signal ke timer ka battery khatam,Public Lighting
+lamp ka photocell fail,Public Lighting
+automatic light system fail,Public Lighting
+lamp ka wiring loose,Public Lighting
+pole ke neeche open junction box,Public Lighting
+lamp ke fuse kharab,Public Lighting
+signal ke bulb black ho gaya,Public Lighting
+traffic light pe dust,Public Lighting
+signal ka lens dirty,Public Lighting
+lamp ka glass dirty,Public Lighting
+lamp ka reflector black,Public Lighting
+lamp ka reflector missing,Public Lighting
+lamp ka color badal gaya,Public Lighting
+light ka mount loose,Public Lighting
+lamp ka arm bend,Public Lighting
+signal pole ka anchor bolt loose,Public Lighting
+pole ka base crack,Public Lighting
+lamp ka power supply fail,Public Lighting
+signal ka SMPS burnt,Public Lighting
+lamp ke switch board me short,Public Lighting
+lamp ka MCB trip,Public Lighting
+lamp ka circuit faulty,Public Lighting
+lamp ke PCB burnt,Public Lighting
+lamp ka driver fail,Public Lighting
+lamp ka LED strip loose,Public Lighting
+gas smell,Gas Leaks
+gas leak ho raha,Gas Leaks
+pipeline leak,Gas Leaks
+gas pipe burst,Gas Leaks
+gas leakage near home,Gas Leaks
+gas odor,Gas Leaks
+gas leak kitchen,Gas Leaks
+pipeline crack,Gas Leaks
+LPG leak,Gas Leaks
+cylinder leak,Gas Leaks
+smell gas,Gas Leaks
+gas escaping,Gas Leaks
+gas hazard,Gas Leaks
+gas,Gas Leaks
+lpg,Gas Leaks
+smell,Gas Leaks
+cylinder,Gas Leaks
+pipeline,Gas Leaks
+gas leak,Gas Leaks
+cylinder se gas nikal raha,Gas Leaks
+gas pipe se leak,Gas Leaks
+pipeline se badbu,Gas Leaks
+kitchen me gas ki smell,Gas Leaks
+gas connection leak,Gas Leaks
+burner se gas aa raha,Gas Leaks
+stove se gas leak,Gas Leaks
+regulator leak,Gas Leaks
+LPG ka regulator kharab,Gas Leaks
+gas pipe loose,Gas Leaks
+pipe connection loose,Gas Leaks
+gas ka knob loose,Gas Leaks
+stove ka valve leak,Gas Leaks
+burner ka seal kharab,Gas Leaks
+pipeline ka joint leak,Gas Leaks
+gas tank se leak,Gas Leaks
+underground pipe leak,Gas Leaks
+LPG tanker leak,Gas Leaks
+gas tanker se smell,Gas Leaks
+gas chamber leak,Gas Leaks
+industrial gas leak,Gas Leaks
+factory me gas leak,Gas Leaks
+plant me gas ki smell,Gas Leaks
+boiler se gas leak,Gas Leaks
+gas cylinder phat gaya,Gas Leaks
+LPG ka cylinder blast,Gas Leaks
+cylinder se seeti ki awaaz,Gas Leaks
+gas ka pressure zyada,Gas Leaks
+gas ka pressure kam,Gas Leaks
+gas meter se leak,Gas Leaks
+meter ka seal toot gaya,Gas Leaks
+gas pipe ka coating kharab,Gas Leaks
+pipeline ka rust lag gaya,Gas Leaks
+pipe pe dent,Gas Leaks
+gas line se bubbles aa raha,Gas Leaks
+water test me leak,Gas Leaks
+gas ka gauge fail,Gas Leaks
+gauge se gas leak,Gas Leaks
+gas pipe ka clamp loose,Gas Leaks
+gas hose kharab,Gas Leaks
+hose ka naya lagana hai,Gas Leaks
+old gas pipe crack,Gas Leaks
+gas pipe hard ho gaya,Gas Leaks
+pipe ka colour change,Gas Leaks
+gas smell basement me,Gas Leaks
+parking area me gas smell,Gas Leaks
+balcony me gas leak,Gas Leaks
+roof pe gas pipeline leak,Gas Leaks
+pipeline ka nut bolt loose,Gas Leaks
+gas plant explosion risk,Gas Leaks
+chemical gas leak,Gas Leaks
+poisonous gas leak,Gas Leaks
+toxic gas smell,Gas Leaks
+ammonia leak,Gas Leaks
+chlorine gas leak,Gas Leaks
+carbon monoxide leak,Gas Leaks
+CO leak,Gas Leaks
+CNG leak,Gas Leaks
+PNG leak,Gas Leaks
+natural gas leak,Gas Leaks
+methane leak,Gas Leaks
+gas sensor alarm,Gas Leaks
+gas detector beeping,Gas Leaks
+gas alarm baj raha,Gas Leaks
+gas ka red indicator on,Gas Leaks
+gas warning light,Gas Leaks
+pipeline ka valve kharab,Gas Leaks
+main gas valve se leak,Gas Leaks
+isolation valve fail,Gas Leaks
+shut off valve kaam nahi kar raha,Gas Leaks
+gas flow stop nahi ho raha,Gas Leaks
+pressure relief valve se leak,Gas Leaks
+gas ka emergency stop fail,Gas Leaks
+pipe ka welding crack,Gas Leaks
+gas joint se seeti awaaz,Gas Leaks
+burner ignition ke baad smell,Gas Leaks
+gas stove on karte hi smell,Gas Leaks
+cylinder seal kharab,Gas Leaks
+cylinder cap loose,Gas Leaks
+gas ka cap toot gaya,Gas Leaks
+rubber washer missing,Gas Leaks
+rubber seal kharab,Gas Leaks
+gasket crack,Gas Leaks
+O-ring se leak,Gas Leaks
+gas fitting loose,Gas Leaks
+fitting ka nut loose,Gas Leaks
+flange joint se leak,Gas Leaks
+gas pipeline test fail,Gas Leaks
+pressure test fail,Gas Leaks
+vacuum test fail,Gas Leaks
+gas leak emergency,Gas Leaks
+gas evacuation required,Gas Leaks
+public area me gas leak,Gas Leaks
+market me gas leak,Gas Leaks
+school ke pass gas leak,Gas Leaks
+hospital ke pass gas leak,Gas Leaks
+residential area me gas smell,Gas Leaks
+colony me gas leak,Gas Leaks
+apartment me gas leak,Gas Leaks
+flat ke kitchen me leak,Gas Leaks
+shop me gas leak,Gas Leaks
+restaurant me gas leak,Gas Leaks
+hotel kitchen gas leak,Gas Leaks
+canteen me gas smell,Gas Leaks
+dhaba me gas leak,Gas Leaks
+industrial zone me gas leak,Gas Leaks
+petrol pump ke pass gas leak,Gas Leaks
+pipeline burst,Gas Leaks
+pipe rupture,Gas Leaks
+gas ka spray aa raha,Gas Leaks
+gas pipeline blast,Gas Leaks
+pipeline me crack,Gas Leaks
+gas chamber me leak,Gas Leaks
+cylinder godown me leak,Gas Leaks
+LPG storage tank leak,Gas Leaks
+storage vessel crack,Gas Leaks
+gas truck se leak,Gas Leaks
+delivery cylinder se leak,Gas Leaks
+pipeline alignment galat,Gas Leaks
+pipe vibration se leak,Gas Leaks
+gas ka hiss sound,Gas Leaks
+gas ka continuous smell,Gas Leaks
+strong gas odor,Gas Leaks
+mild gas smell,Gas Leaks
+intermittent gas smell,Gas Leaks
+kabhi kabhi gas smell,Gas Leaks
+gas smell after rain,Gas Leaks
+gas smell after digging,Gas Leaks
+pipeline damage construction se,Gas Leaks
+road digging me pipeline cut,Gas Leaks
+JCB se pipeline damage,Gas Leaks
+drilling se pipe cut,Gas Leaks
+gas pipe bent,Gas Leaks
+pipe dent se leak,Gas Leaks
+line pressure drop,Gas Leaks
+meter reading me error,Gas Leaks
+meter reading abnormal,Gas Leaks
+meter ka dial fast,Gas Leaks
+meter ka needle stuck,Gas Leaks
+gas ka bill high after leak,Gas Leaks
+gas ka bill low after leak,Gas Leaks
+pipeline ka colour change,Gas Leaks
+pipe surface blister,Gas Leaks
+pipeline sweating,Gas Leaks
+condensation on gas pipe,Gas Leaks
+pipeline pe ice ban raha,Gas Leaks
+cold gas pipe,Gas Leaks
+hot gas pipe,Gas Leaks
+gas regulator se hiss,Gas Leaks
+regulator vent se gas,Gas Leaks
+gas ka flow irregular,Gas Leaks
+burner flame yellow,Gas Leaks
+flame blue nahi hai,Gas Leaks
+flame small ho gaya,Gas Leaks
+flame zyada ho gaya,Gas Leaks
+flame unstable,Gas Leaks
+burner se pop sound,Gas Leaks
+burner ka ignition slow,Gas Leaks
+burner band hone me time lagta,Gas Leaks
+burner se black soot,Gas Leaks
+burner ka heat kam,Gas Leaks
+burner ka fire zyada,Gas Leaks
+loud noise,Noise
+bahut shor hai,Noise
+noisy area,Noise
+construction ka shor,Noise
+factory noise,Noise
+music loud,Noise
+high volume noise,Noise
+speaker noise,Noise
+generator noise,Noise
+vehicle honking,Noise
+horn sound,Noise
+drilling sound,Noise
+dj noise,Noise
+shor,Noise
+noise,Noise
+dj,Noise
+loud,Noise
+sound,Noise
+speaker,Noise
+music,Noise
+neighbour loud music,Noise
+padosi ki loud party,Noise
+party ka shor,Noise
+wedding band noise,Noise
+baraat ka shor,Noise
+band baaja,Noise
+band ka shor,Noise
+band baja raha,Noise
+festival loudspeaker,Noise
+loud speaker baja raha,Noise
+mandir ka loudspeaker,Noise
+masjid ka loudspeaker,Noise
+religious loudspeaker,Noise
+azan ka shor,Noise
+bhajan loud,Noise
+kirtan ka shor,Noise
+jagran loud music,Noise
+garba loud music,Noise
+navratri ka shor,Noise
+diwali crackers noise,Noise
+patakhe ka shor,Noise
+cracker burst loud,Noise
+bomb blast noise,Noise
+fireworks ka shor,Noise
+school band noise,Noise
+rally loudspeaker,Noise
+political rally ka shor,Noise
+protest loud noise,Noise
+march ka shor,Noise
+crowd shouting,Noise
+public shouting,Noise
+slogans loud,Noise
+stadium ka shor,Noise
+match ka shor,Noise
+cricket match noise,Noise
+goal celebration noise,Noise
+sports event loud,Noise
+dj sound system,Noise
+sound system blast,Noise
+music system loud,Noise
+bass zyada hai,Noise
+subwoofer loud,Noise
+woofer noise,Noise
+mic feedback noise,Noise
+microphone se awaz,Noise
+speaker humming,Noise
+speaker se hiss sound,Noise
+amplifier noise,Noise
+amp ka shor,Noise
+sound distortion,Noise
+audio distortion,Noise
+high pitch noise,Noise
+ultra sound noise,Noise
+shrill sound,Noise
+sharp noise,Noise
+piercing noise,Noise
+metal grinding noise,Noise
+iron cutting ka shor,Noise
+welding ka shor,Noise
+hammering ka shor,Noise
+drill machine noise,Noise
+road cutting ka shor,Noise
+pavement breaking ka shor,Noise
+construction work loud,Noise
+cement mixer ka shor,Noise
+road roller noise,Noise
+bulldozer noise,Noise
+truck horn loud,Noise
+bus horn loud,Noise
+train horn loud,Noise
+railway crossing horn,Noise
+air horn,Noise
+ship horn,Noise
+boat engine noise,Noise
+ferry horn,Noise
+airplane loud noise,Noise
+flight ka shor,Noise
+helicopter loud noise,Noise
+chopper ka shor,Noise
+jet plane ka shor,Noise
+airport loud noise,Noise
+engine testing loud,Noise
+car exhaust noise,Noise
+bike exhaust loud,Noise
+silencer noise,Noise
+modified silencer loud,Noise
+race ka shor,Noise
+drag race noise,Noise
+tyre screeching,Noise
+brake squeal,Noise
+clutch noise,Noise
+gearbox ka shor,Noise
+fan belt ka shor,Noise
+machine ka humming,Noise
+industrial machine noise,Noise
+factory ka loud noise,Noise
+press machine ka shor,Noise
+lathe machine ka shor,Noise
+printing press noise,Noise
+textile machine ka shor,Noise
+loom ka shor,Noise
+grinder machine noise,Noise
+mixer grinder loud,Noise
+blender loud noise,Noise
+vacuum cleaner ka shor,Noise
+washing machine loud,Noise
+dryer machine noise,Noise
+fridge compressor noise,Noise
+ac ka compressor loud,Noise
+fan ka shor,Noise
+cooler ka shor,Noise
+exhaust fan loud,Noise
+bathroom exhaust noise,Noise
+toilet flush loud,Noise
+water pump loud,Noise
+motor pump ka shor,Noise
+borewell pump ka shor,Noise
+overhead tank ka pump noise,Noise
+lift ka shor,Noise
+elevator ka noise,Noise
+door closing loud,Noise
+gate ka bang sound,Noise
+rolling shutter loud,Noise
+shutter closing ka shor,Noise
+iron gate ka shor,Noise
+metal door ka bang,Noise
+window ka noise,Noise
+glass breaking loud,Noise
+bottle breaking noise,Noise
+utensil ka shor,Noise
+plate gir gaya ka shor,Noise
+spoon fall noise,Noise
+pressure cooker whistle,Noise
+cooker ka shor,Noise
+steamer ka shor,Noise
+gas leak hiss noise,Noise
+geyser ka shor,Noise
+boiler ka noise,Noise
+pipeline se awaz,Noise
+water hammer ka shor,Noise
+pipe me seeti,Noise
+waterfall loud noise,Noise
+river ka shor,Noise
+sea waves loud,Noise
+storm ka shor,Noise
+wind ka noise,Noise
+heavy rain ka shor,Noise
+hailstorm ka shor,Noise
+lightning ka shor,Noise
+thunder loud noise,Noise
+cloud burst ka shor,Noise
+garbage smell,Waste Management
+dustbin full,Waste Management
+bin overflow,Waste Management
+trash pile,Waste Management
+garbage dump,Waste Management
+overflow bin,Waste Management
+waste heap,Waste Management
+bin unclean,Waste Management
+skip bin full,Waste Management
+dump site dirty,Waste Management
+trash not removed,Waste Management
+public bin overflow,Waste Management
+plastic waste,Waste Management
+waste,Waste Management
+bin,Waste Management
+dump,Waste Management
+garbage,Waste Management
+trash,Waste Management
+dustbin,Waste Management
+waste disposal,Waste Management
+kachra jama ho gaya,Waste Management
+kooda badboo kar raha hai,Waste Management
+garbage collection late hai,Waste Management
+dustbin se smell aa rahi hai,Waste Management
+public dustbin overflow ho gaya,Waste Management
+kachra road pe pada hai,Waste Management
+unclean public bin,Waste Management
+dirty waste container,Waste Management
+waste truck nahi aaya,Waste Management
+garbage vehicle absent,Waste Management
+refuse not collected,Waste Management
+waste not cleared,Waste Management
+trash accumulation,Waste Management
+garbage bin broken,Waste Management
+bin ka lid missing,Waste Management
+garbage scattered,Waste Management
+kachra bikhar gaya,Waste Management
+kooda bin ke bahar,Waste Management
+rats in garbage,Waste Management
+flies in waste,Waste Management
+mosquito in trash,Waste Management
+waste attracting animals,Waste Management
+dogs in garbage,Waste Management
+stray dogs eating waste,Waste Management
+cats in garbage,Waste Management
+cow in garbage,Waste Management
+animals eating waste,Waste Management
+polythene littered,Waste Management
+plastic bags in garbage,Waste Management
+hazardous waste,Waste Management
+bio waste,Waste Management
+medical waste in trash,Waste Management
+sharps in waste,Waste Management
+broken glass in garbage,Waste Management
+needles in waste,Waste Management
+chemical waste,Waste Management
+paint cans in garbage,Waste Management
+oil cans in waste,Waste Management
+battery waste,Waste Management
+e waste,Waste Management
+electronic waste in bin,Waste Management
+tv in garbage,Waste Management
+fridge in waste,Waste Management
+washing machine in garbage,Waste Management
+tyres in waste,Waste Management
+rubber waste,Waste Management
+wood waste,Waste Management
+furniture in garbage,Waste Management
+sofa in waste,Waste Management
+bed in garbage,Waste Management
+mattress in waste,Waste Management
+pillow in garbage,Waste Management
+construction waste,Waste Management
+cement bags in garbage,Waste Management
+sand pile waste,Waste Management
+bricks in waste,Waste Management
+tiles in garbage,Waste Management
+marble waste,Waste Management
+stone in garbage,Waste Management
+soil pile waste,Waste Management
+garden waste,Waste Management
+grass clippings in bin,Waste Management
+leaves in garbage,Waste Management
+tree branches in waste,Waste Management
+pruned branches in garbage,Waste Management
+flowers in waste,Waste Management
+dead plants in garbage,Waste Management
+compostable waste,Waste Management
+wet waste,Waste Management
+dry waste not separated,Waste Management
+mixed waste in bin,Waste Management
+unsegregated garbage,Waste Management
+organic waste in dry bin,Waste Management
+recyclable waste in wrong bin,Waste Management
+paper in wet waste,Waste Management
+cardboard in wet waste,Waste Management
+cloth waste,Waste Management
+old clothes in garbage,Waste Management
+shoes in waste,Waste Management
+bags in garbage,Waste Management
+toys in waste,Waste Management
+broken toys in garbage,Waste Management
+broken utensils in waste,Waste Management
+steel waste,Waste Management
+iron scrap in garbage,Waste Management
+cans in waste,Waste Management
+tins in garbage,Waste Management
+aluminium waste,Waste Management
+metal waste in bin,Waste Management
+glass waste in wrong bin,Waste Management
+bottle waste,Waste Management
+beer bottles in garbage,Waste Management
+wine bottles in waste,Waste Management
+soft drink bottles in garbage,Waste Management
+plastic bottles in waste,Waste Management
+milk packets in garbage,Waste Management
+tetra packs in waste,Waste Management
+juice boxes in garbage,Waste Management
+packaging waste,Waste Management
+food packaging in garbage,Waste Management
+chips packets in waste,Waste Management
+biscuit wrappers in garbage,Waste Management
+snack packets in waste,Waste Management
+pizza box in garbage,Waste Management
+burger wrapper in waste,Waste Management
+paper cups in garbage,Waste Management
+plastic cups in waste,Waste Management
+bottled water waste,Waste Management
+disposable plates in garbage,Waste Management
+styrofoam waste,Waste Management
+thermocol in garbage,Waste Management
+waste burnt smell,Waste Management
+garbage burning,Waste Management
+smoke from waste,Waste Management
+waste fire,Waste Management
+clogged drain,Drainage
+nali jam hai,Drainage
+water logging,Drainage
+sewer blocked,Drainage
+drain choke,Drainage
+flooding road,Drainage
+sewage overflow,Drainage
+drain smell,Drainage
+water flood,Drainage
+blocked drain,Drainage
+manhole overflow,Drainage
+drain water flow back,Drainage
+drainage issue,Drainage
+nali,Drainage
+gutter,Drainage
+sewer,Drainage
+drain,Drainage
+paani jama,Drainage
+drain blocked,Drainage
+open drain,Drainage
+paani road pe khada hai,Drainage
+gali mein paani jam gaya,Drainage
+nali se smell aa rahi hai,Drainage
+drain se badbu aa rahi hai,Drainage
+gutter mein block hai,Drainage
+drain water overflow,Drainage
+gali mein gutter khula hai,Drainage
+manhole cover missing,Drainage
+drainage water on road,Drainage
+nali se machhar paida ho rahe hain,Drainage
+stagnant drain water,Drainage
+gutter choke,Drainage
+drain ka paani nahi ja raha,Drainage
+paani nali se wapas aa raha hai,Drainage
+road pe paani ka talab,Drainage
+drainage smell,Drainage
+dirty drain water,Drainage
+black water in drain,Drainage
+sewer line choke,Drainage
+drain ka cover toot gaya,Drainage
+drainage system fail,Drainage
+drain repair needed,Drainage
+nali safai nahi hui,Drainage
+gutter safai pending,Drainage
+drain mein kachra jam gaya,Drainage
+kachra nali block kar raha hai,Drainage
+plastic in drain,Drainage
+paani nali se bahar aa raha,Drainage
+nali mein keede lag gaye,Drainage
+worms in drain,Drainage
+mosquitoes in drain,Drainage
+insects in drainage water,Drainage
+rodents in drain,Drainage
+rats coming from drain,Drainage
+nali mein dead animal,Drainage
+gutter mein murda jaanwar,Drainage
+drain mein oil gir gaya,Drainage
+chemical waste in drain,Drainage
+toxic smell from drain,Drainage
+acid in drain,Drainage
+dirty sewer water,Drainage
+foul smell from gutter,Drainage
+sludge in drain,Drainage
+thick waste in gutter,Drainage
+black sludge in drain,Drainage
+waste water overflow,Drainage
+toilet drain blocked,Drainage
+bathroom drain choke,Drainage
+kitchen drain block,Drainage
+sink drain jam,Drainage
+washbasin drain blocked,Drainage
+pipeline drainage issue,Drainage
+underground sewer choke,Drainage
+drainage water leaking,Drainage
+sewer water entering home,Drainage
+toilet water overflow,Drainage
+flush water coming up,Drainage
+bathroom flooding,Drainage
+gali mein paani ghus gaya,Drainage
+drain near park blocked,Drainage
+gutter near market overflow,Drainage
+drainage in colony blocked,Drainage
+residential drain choke,Drainage
+commercial drain blocked,Drainage
+industrial drainage problem,Drainage
+factory waste in drain,Drainage
+oil waste in drainage,Drainage
+food waste in drain,Drainage
+restaurant waste blocking drain,Drainage
+canteen water in drain,Drainage
+school drain blocked,Drainage
+hospital drain choke,Drainage
+public toilet drain blocked,Drainage
+slum area drainage blocked,Drainage
+village drain blocked,Drainage
+rural nali jam,Drainage
+urban drain overflow,Drainage
+monsoon water logging,Drainage
+heavy rain paani jam,Drainage
+rainwater not draining,Drainage
+storm water drain blocked,Drainage
+rain drain overflow,Drainage
+rainwater drain choke,Drainage
+nala overflow,Drainage
+nullah block,Drainage
+big drain blocked,Drainage
+small drain block,Drainage
+side drain blocked,Drainage
+main drain jam,Drainage
+water drain to nala blocked,Drainage
+link drain jam,Drainage
+cross drain block,Drainage
+open drain hazard,Drainage
+open gutter smell,Drainage
+drain without cover,Drainage
+kids playing near open drain,Drainage
+animals falling in drain,Drainage
+road damage due to drain,Drainage
+erosion due to drainage,Drainage
+collapsed drain wall,Drainage
+broken drain slab,Drainage
+drain ka pathar tut gaya,Drainage
+gutter cover toot gaya,Drainage
+tree fallen,Tree/Landscape
+ped gir gaya,Tree/Landscape
+branch fallen,Tree/Landscape
+tree block road,Tree/Landscape
+tree roots damage,Tree/Landscape
+garden unclean,Tree/Landscape
+fallen branch,Tree/Landscape
+overgrown tree,Tree/Landscape
+tree blocking light,Tree/Landscape
+tree blocking signal,Tree/Landscape
+tree pruning needed,Tree/Landscape
+tree uprooted,Tree/Landscape
+ped,Tree/Landscape
+branch,Tree/Landscape
+tree,Tree/Landscape
+park,Tree/Landscape
+garden,Tree/Landscape
+landscape,Tree/Landscape
+tree hazard,Tree/Landscape
+tree block,Tree/Landscape
+mosquito breeding,Public Health
+machhar paida ho rahe,Public Health
+hospital waste,Public Health
+clinic waste,Public Health
+health hazard,Public Health
+rotten garbage,Public Health
+medical waste,Public Health
+dirty clinic,Public Health
+unhygienic area,Public Health
+machhar,Public Health
+dengue,Public Health
+malaria,Public Health
+hospital,Public Health
+health,Public Health
+clinic,Public Health
+disease,Public Health
+infection,Public Health
+public health issue,Public Health
+vector problem,Public Health
+mosquito issue,Public Health
+ped raste me gir gaya,Tree/Landscape
+tree fallen on car,Tree/Landscape
+branch broken in storm,Tree/Landscape
+tree uprooted in rain,Tree/Landscape
+heavy branch fallen,Tree/Landscape
+tree leaning dangerously,Tree/Landscape
+old tree about to fall,Tree/Landscape
+dry branch may fall,Tree/Landscape
+tree damaged by wind,Tree/Landscape
+branch blocking footpath,Tree/Landscape
+tree roots damaging road,Tree/Landscape
+roots entering drain,Tree/Landscape
+tree damaging pipeline,Tree/Landscape
+roots damaging building,Tree/Landscape
+tree growing in wall,Tree/Landscape
+tree damaging electric wire,Tree/Landscape
+tree touching high tension line,Tree/Landscape
+branch on electric pole,Tree/Landscape
+tree caught fire,Tree/Landscape
+tree pest infection,Tree/Landscape
+tree leaves causing blockage,Tree/Landscape
+fallen leaves clogging drain,Tree/Landscape
+dry leaves all over road,Tree/Landscape
+garden full of weeds,Tree/Landscape
+public park dirty,Tree/Landscape
+grass overgrown,Tree/Landscape
+shrub blocking road,Tree/Landscape
+bush blocking light,Tree/Landscape
+bush blocking entrance,Tree/Landscape
+plant overgrowth,Tree/Landscape
+hedge blocking view,Tree/Landscape
+fallen coconut tree,Tree/Landscape
+fallen palm tree,Tree/Landscape
+banana tree fallen,Tree/Landscape
+neem tree fallen,Tree/Landscape
+peepal tree fallen,Tree/Landscape
+mango tree fallen,Tree/Landscape
+big tree across road,Tree/Landscape
+tree trunk in middle of road,Tree/Landscape
+wood pieces on road,Tree/Landscape
+timber from fallen tree,Tree/Landscape
+tree debris on footpath,Tree/Landscape
+branches blocking cycle track,Tree/Landscape
+branches blocking car parking,Tree/Landscape
+tree blocking bus stop,Tree/Landscape
+tree blocking shop entrance,Tree/Landscape
+tree blocking hospital gate,Tree/Landscape
+ped ke neeche kachra,Tree/Landscape
+tree roots breaking pavement,Tree/Landscape
+tree roots lifting tiles,Tree/Landscape
+roots damaging footpath,Tree/Landscape
+roots damaging park path,Tree/Landscape
+tree trunk hollow,Tree/Landscape
+tree termite problem,Tree/Landscape
+tree fungus infection,Tree/Landscape
+tree leaves falling too much,Tree/Landscape
+leaf litter problem,Tree/Landscape
+tree sap dripping on vehicles,Tree/Landscape
+sticky sap from tree,Tree/Landscape
+tree damaging boundary wall,Tree/Landscape
+tree outside house blocking view,Tree/Landscape
+tree near signal blocking visibility,Tree/Landscape
+tree at corner blocking turn,Tree/Landscape
+tree covering CCTV camera,Tree/Landscape
+tree covering streetlight,Tree/Landscape
+tree covering traffic light,Tree/Landscape
+tree over house roof,Tree/Landscape
+branch hitting house roof,Tree/Landscape
+branch scraping windows,Tree/Landscape
+tree hanging over electric wires,Tree/Landscape
+tree hanging over balcony,Tree/Landscape
+tree hanging over parking,Tree/Landscape
+fallen branch on roof,Tree/Landscape
+branch on tin shed,Tree/Landscape
+tree debris after storm,Tree/Landscape
+tree debris after rain,Tree/Landscape
+tree debris after cyclone,Tree/Landscape
+park fountain blocked by leaves,Tree/Landscape
+garden bench broken due to tree,Tree/Landscape
+tree damaging playground,Tree/Landscape
+roots damaging swing area,Tree/Landscape
+tree in school playground blocking space,Tree/Landscape
+tree in hospital premises blocking entry,Tree/Landscape
+tree in colony park overgrown,Tree/Landscape
+tree in footpath planter dead,Tree/Landscape
+tree cut but stump left,Tree/Landscape
+tree stump hazard,Tree/Landscape
+tree branches hitting moving vehicles,Tree/Landscape
+tree branches obstructing buses,Tree/Landscape
+tree near railway track hazard,Tree/Landscape
+tree fallen on railway line,Tree/Landscape
+tree near airport hazard,Tree/Landscape
+tree damaging boundary fencing,Tree/Landscape
+wild plant overgrowth in park,Tree/Landscape
+tree with hanging wires,Tree/Landscape
+tree with broken swing,Tree/Landscape
+tree with illegal hoarding,Tree/Landscape
+tree painted partially,Tree/Landscape
+tree damaging underground cable,Tree/Landscape
+roots entering septic tank,Tree/Landscape
+roots damaging water pipe,Tree/Landscape
+roots breaking cement floor,Tree/Landscape
+tree damaging drainage,Tree/Landscape
+fallen branch blocking drainage,Tree/Landscape
+tree growing in drain,Tree/Landscape
+tree blocking fire exit,Tree/Landscape
+tree blocking emergency path,Tree/Landscape
+ped ke neeche paani jama,Tree/Landscape
+tree with hanging honeybee hive,Tree/Landscape
+tree with snake,Tree/Landscape
+tree with bird nest blocking work,Tree/Landscape
+tree roots breaking underground gas pipe,Tree/Landscape
+refund not given,Consumer Affairs
+paise wapas nahi mile,Consumer Affairs
+billing issue,Consumer Affairs
+price fraud,Consumer Affairs
+wrong bill,Consumer Affairs
+bill dispute,Consumer Affairs
+consumer fraud,Consumer Affairs
+rent not returned,Consumer Affairs
+overcharge,Consumer Affairs
+bill,Consumer Affairs
+paise,Consumer Affairs
+refund,Consumer Affairs
+payment,Consumer Affairs
+fraud,Consumer Affairs
+bill galat,Consumer Affairs
+wrong billing,Consumer Affairs
+amount extra,Consumer Affairs
+double charge,Consumer Affairs
+money issue,Consumer Affairs
+invoice wrong,Consumer Affairs
+stagnant water breeding mosquitoes,Public Health
+paani jama ho gaya machhar paida,Public Health
+dirty water tank,Public Health
+overhead tank open,Public Health
+tank cover missing,Public Health
+ganda paani in tank,Public Health
+well water dirty,Public Health
+sewer water near home,Public Health
+drain water outside house,Public Health
+drain water smell,Public Health
+garbage near water source,Public Health
+mosquitoes in park,Public Health
+mosquitoes in colony,Public Health
+mosquitoes in office,Public Health
+mosquitoes in school,Public Health
+mosquitoes in hospital,Public Health
+flies in area,Public Health
+makkhi bahut hai,Public Health
+flies near garbage,Public Health
+flies in kitchen,Public Health
+flies in canteen,Public Health
+rats in colony,Public Health
+rats in garbage,Public Health
+rats in school,Public Health
+rats in hospital,Public Health
+rat problem,Public Health
+rodent infestation,Public Health
+cockroach problem,Public Health
+cockroach in drain,Public Health
+cockroach in kitchen,Public Health
+cockroach in hospital,Public Health
+bed bugs in shelter,Public Health
+lice infestation,Public Health
+tick infestation,Public Health
+dirty toilets,Public Health
+public toilet unclean,Public Health
+toilet smell,Public Health
+urinal smell,Public Health
+urinal blocked,Public Health
+toilet not working,Public Health
+urinal overflow,Public Health
+handwash missing,Public Health
+soap missing,Public Health
+toilet water supply issue,Public Health
+public toilet lights off,Public Health
+toilet door broken,Public Health
+toilet without flush,Public Health
+urinal without flush,Public Health
+toilet seat broken,Public Health
+no dustbin in toilet,Public Health
+garbage in toilet,Public Health
+used masks thrown in public place,Public Health
+PPE kit waste in open,Public Health
+gloves thrown in street,Public Health
+biohazard waste open,Public Health
+hospital bio waste in open,Public Health
+clinic throwing waste,Public Health
+dirty hospital floor,Public Health
+blood stains in clinic,Public Health
+blood waste in open,Public Health
+sharps in open,Public Health
+needle waste,Public Health
+syringe waste,Public Health
+expired medicines thrown,Public Health
+medicine strips on road,Public Health
+uncovered food stall,Public Health
+food vendor hygiene issue,Public Health
+hawker selling stale food,Public Health
+street food unhygienic,Public Health
+dirty utensils,Public Health
+washing utensils in drain water,Public Health
+open meat shop,Public Health
+flies on meat,Public Health
+flies on sweets,Public Health
+flies on fruits,Public Health
+selling rotten fruits,Public Health
+selling expired snacks,Public Health
+school canteen dirty,Public Health
+canteen hygiene fail,Public Health
+canteen water dirty,Public Health
+canteen food stale,Public Health
+public water cooler dirty,Public Health
+water cooler without cover,Public Health
+water cooler smell,Public Health
+public health officer absent,Public Health
+health inspection pending,Public Health
+dirty swimming pool,Public Health
+pool water green,Public Health
+pool water dirty smell,Public Health
+pool water mosquito breeding,Public Health
+open defecation,Public Health
+people urinating in open,Public Health
+people defecating near drain,Public Health
+animal waste in street,Public Health
+cow dung on road,Public Health
+dog feces in park,Public Health
+animal carcass on road,Public Health
+dead animal smell,Public Health
+dead bird in park,Public Health
+dead rat smell,Public Health
+open burning of waste,Public Health
+burning plastic smell,Public Health
+air pollution complaint,Public Health
+smoke from garbage burning,Public Health
+factory smoke in area,Public Health
+industrial waste smell,Public Health
+chemical smell in colony,Public Health
+spray fogging needed,Public Health
+no mosquito fogging,Public Health
+fogging delay,Public Health
+no pest control,Public Health
+pest control delay,Public Health
+spraying insecticide needed,Public Health
+public awareness campaign needed,Public Health
+lack of health awareness,Public Health
+poor sanitation awareness,Public Health
+health camp needed,Public Health
+medical camp delay,Public Health
+free health checkup needed,Public Health
+hospital not admitting patients,Public Health
+clinic refusing treatment,Public Health
+hospital hygiene poor,Public Health
+nursing home hygiene poor,Public Health
+clinic unhygienic,Public Health
+pharmacy selling expired medicine,Public Health
+chemist selling without prescription,Public Health
+chemist unhygienic shop,Public Health
+illegal clinic running,Public Health
+quack doctor complaint,Public Health
+fake medicine sale,Public Health
+contaminated water complaint,Public Health
+water testing needed,Public Health
+milk adulteration,Public Health
+food adulteration,Public Health
+food safety violation,Public Health
+improper garbage disposal,Public Health
+drains not cleaned,Public Health
+water stagnation,Public Health
+mosquito menace,Public Health
+fly menace,Public Health
+rodent menace,Public Health
+vermin problem,Public Health
+pest problem,Public Health
+malaria outbreak,Public Health
+dengue outbreak,Public Health
+cholera cases,Public Health
+typhoid cases,Public Health
+flu outbreak,Public Health
+viral fever cases,Public Health
+unknown fever spread,Public Health
+epidemic alert,Public Health
+health emergency,Public Health
+tenant dispute,Rent/Building
+building unsafe,Rent/Building
+house cracks,Rent/Building
+unsafe building,Rent/Building
+illegal construction,Rent/Building
+building hazard,Rent/Building
+makaan kharab hai,Rent/Building
+makaan,Rent/Building
+ghar,Rent/Building
+building,Rent/Building
+house,Rent/Building
+rent,Rent/Building
+construction illegal,Rent/Building
+flat unsafe,Rent/Building
+apartment crack,Rent/Building
+building damage,Rent/Building
+foundation weak,Rent/Building
+wall crack,Rent/Building
+roof leak,Rent/Building
+property unsafe,Rent/Building
+wrong amount charged,Consumer Affairs
+duplicate billing,Consumer Affairs
+fake charges,Consumer Affairs
+hidden charges,Consumer Affairs
+extra service charge,Consumer Affairs
+wrong service charge,Consumer Affairs
+overpriced bill,Consumer Affairs
+price mismatch,Consumer Affairs
+price higher than promised,Consumer Affairs
+incorrect amount deducted,Consumer Affairs
+bank deducted extra money,Consumer Affairs
+wrong debit,Consumer Affairs
+wrong credit card charge,Consumer Affairs
+credit card fraud,Consumer Affairs
+debit card fraud,Consumer Affairs
+payment deducted but not confirmed,Consumer Affairs
+payment failed but money deducted,Consumer Affairs
+transaction failed but charged,Consumer Affairs
+online payment fraud,Consumer Affairs
+UPI fraud,Consumer Affairs
+wallet fraud,Consumer Affairs
+wallet deduction without reason,Consumer Affairs
+unauthorized deduction,Consumer Affairs
+auto debit without permission,Consumer Affairs
+EMI deducted wrongly,Consumer Affairs
+loan EMI fraud,Consumer Affairs
+loan overcharged,Consumer Affairs
+interest rate fraud,Consumer Affairs
+loan statement wrong,Consumer Affairs
+bank statement wrong,Consumer Affairs
+bank charged extra,Consumer Affairs
+ATM money not dispensed,Consumer Affairs
+ATM cash not received,Consumer Affairs
+ATM deducted but no cash,Consumer Affairs
+ATM transaction fail,Consumer Affairs
+fake product received,Consumer Affairs
+different product delivered,Consumer Affairs
+wrong color product,Consumer Affairs
+wrong size delivered,Consumer Affairs
+product defective,Consumer Affairs
+product damaged,Consumer Affairs
+damaged item received,Consumer Affairs
+used item received,Consumer Affairs
+product fake,Consumer Affairs
+duplicate product delivered,Consumer Affairs
+counterfeit product,Consumer Affairs
+low quality product,Consumer Affairs
+product not working,Consumer Affairs
+electronics defective,Consumer Affairs
+mobile not working,Consumer Affairs
+appliance defective,Consumer Affairs
+machine defective,Consumer Affairs
+machine stopped working,Consumer Affairs
+repair not done,Consumer Affairs
+service not provided,Consumer Affairs
+service delay,Consumer Affairs
+late delivery,Consumer Affairs
+delivery not done,Consumer Affairs
+order cancelled without reason,Consumer Affairs
+order delayed,Consumer Affairs
+order not shipped,Consumer Affairs
+order stuck,Consumer Affairs
+tracking not updated,Consumer Affairs
+tracking wrong,Consumer Affairs
+customer care not responding,Consumer Affairs
+no response from support,Consumer Affairs
+complaint ignored,Consumer Affairs
+complaint closed without solution,Consumer Affairs
+wrong complaint resolution,Consumer Affairs
+poor service,Consumer Affairs
+service quality low,Consumer Affairs
+bad behavior of staff,Consumer Affairs
+rude customer service,Consumer Affairs
+misleading advertisement,Consumer Affairs
+false claim in ad,Consumer Affairs
+offer not honored,Consumer Affairs
+discount not applied,Consumer Affairs
+cashback not received,Consumer Affairs
+voucher not working,Consumer Affairs
+coupon code invalid,Consumer Affairs
+loyalty points missing,Consumer Affairs
+membership benefits not given,Consumer Affairs
+membership cancelled without notice,Consumer Affairs
+fake job offer,Consumer Affairs
+job scam,Consumer Affairs
+fake recruitment,Consumer Affairs
+recruitment fraud,Consumer Affairs
+travel scam,Consumer Affairs
+tour package fraud,Consumer Affairs
+fake hotel booking,Consumer Affairs
+hotel overcharged,Consumer Affairs
+hotel denied booking,Consumer Affairs
+cab overcharged,Consumer Affairs
+cab cancelled without refund,Consumer Affairs
+flight overcharged,Consumer Affairs
+airline denied boarding,Consumer Affairs
+luggage lost,Consumer Affairs
+luggage damaged,Consumer Affairs
+parcel lost,Consumer Affairs
+parcel damaged,Consumer Affairs
+courier delay,Consumer Affairs
+courier not delivered,Consumer Affairs
+wrong courier delivered,Consumer Affairs
+misdelivery,Consumer Affairs
+wrong address delivery,Consumer Affairs
+subscription auto renewed,Consumer Affairs
+subscription cancelled but charged,Consumer Affairs
+app subscription fraud,Consumer Affairs
+OTT subscription charged twice,Consumer Affairs
+TV recharge failed,Consumer Affairs
+DTH recharge failed,Consumer Affairs
+mobile recharge failed,Consumer Affairs
+mobile recharge fraud,Consumer Affairs
+SIM overcharged,Consumer Affairs
+mobile bill wrong,Consumer Affairs
+internet bill wrong,Consumer Affairs
+broadband overcharged,Consumer Affairs
+data pack not activated,Consumer Affairs
+wrong data usage shown,Consumer Affairs
+electricity bill wrong,Consumer Affairs
+water bill wrong,Consumer Affairs
+gas bill wrong,Consumer Affairs
+meter reading wrong,Consumer Affairs
+meter faulty,Consumer Affairs
+fake meter reading,Consumer Affairs
+meter tampered,Consumer Affairs
+insurance fraud,Consumer Affairs
+insurance claim rejected,Consumer Affairs
+insurance delay,Consumer Affairs
+policy not issued,Consumer Affairs
+policy fake,Consumer Affairs
+policy benefits denied,Consumer Affairs
+refund delay,Consumer Affairs
+refund process not started,Consumer Affairs
+refund amount less,Consumer Affairs
+partial refund,Consumer Affairs
+refund to wrong account,Consumer Affairs
+refund not initiated,Consumer Affairs
+ecommerce refund delay,Consumer Affairs
+ecommerce refund not received,Consumer Affairs
+bank refund delay,Consumer Affairs
+wrong refund mode,Consumer Affairs
+refund cheque bounced,Consumer Affairs
+cheque bounce,Consumer Affairs
+cheque fraud,Consumer Affairs
+fraud call,Consumer Affairs
+fake lottery call,Consumer Affairs
+prize scam,Consumer Affairs
+survey scam,Consumer Affairs
+investment fraud,Consumer Affairs
+share market scam,Consumer Affairs
+crypto fraud,Consumer Affairs
+forex scam,Consumer Affairs
+pyramid scheme,Consumer Affairs
+MLM scam,Consumer Affairs
+chit fund fraud,Consumer Affairs
+loan app harassment,Consumer Affairs
+loan recovery harassment,Consumer Affairs
+fake legal notice,Consumer Affairs
+threat call from company,Consumer Affairs
+personal data misuse,Consumer Affairs
+data leak,Consumer Affairs
+privacy breach,Consumer Affairs
+unauthorized account access,Consumer Affairs
+account hacked,Consumer Affairs
+fake social media profile,Consumer Affairs
+impersonation fraud,Consumer Affairs
+identity theft,Consumer Affairs
+OTP fraud,Consumer Affairs
+SIM swap fraud,Consumer Affairs
+KYC fraud,Consumer Affairs
+fire hydrant blocked,Fire Safety
+fire extinguisher missing,Fire Safety
+fire alarm broken,Fire Safety
+fire escape blocked,Fire Safety
+smoke in building,Fire Safety
+fire hazard,Fire Safety
+hydrant band hai,Fire Safety
+aag,Fire Safety
+smoke,Fire Safety
+fire,Fire Safety
+alarm,Fire Safety
+hydrant,Fire Safety
+flame,Fire Safety
+burning smell,Fire Safety
+heat issue,Fire Safety
+fire exit blocked,Fire Safety
+fire drill fail,Fire Safety
+emergency fire,Fire Safety
+flames,Fire Safety
+fire problem,Fire Safety
+tenant not paying rent,Rent/Building
+tenant harassment,Rent/Building
+tenant not vacating,Rent/Building
+tenant refused to leave,Rent/Building
+tenant damaging property,Rent/Building
+unauthorized tenant,Rent/Building
+illegal tenant,Rent/Building
+tenant overstay,Rent/Building
+tenant not following rules,Rent/Building
+tenant misusing property,Rent/Building
+tenant disturbing neighbours,Rent/Building
+tenant not paying maintenance,Rent/Building
+tenant refusing to pay bills,Rent/Building
+tenant creating nuisance,Rent/Building
+landlord harassment,Rent/Building
+landlord not returning deposit,Rent/Building
+landlord overcharging rent,Rent/Building
+landlord not doing repairs,Rent/Building
+landlord entering without permission,Rent/Building
+landlord threat,Rent/Building
+landlord not providing water,Rent/Building
+landlord cutting electricity,Rent/Building
+landlord increasing rent unfairly,Rent/Building
+landlord changing lock,Rent/Building
+landlord refusing agreement,Rent/Building
+rent agreement dispute,Rent/Building
+rent hike without notice,Rent/Building
+rent increase dispute,Rent/Building
+no rent receipt given,Rent/Building
+fake rent receipt,Rent/Building
+rent fraud,Rent/Building
+double rent charged,Rent/Building
+maintenance issue in building,Rent/Building
+lift not working,Rent/Building
+elevator breakdown,Rent/Building
+lift stuck,Rent/Building
+lift unsafe,Rent/Building
+lift accident,Rent/Building
+lift service delay,Rent/Building
+staircase damaged,Rent/Building
+stairs broken,Rent/Building
+stairs unsafe,Rent/Building
+corridor lights not working,Rent/Building
+building gate broken,Rent/Building
+main door damaged,Rent/Building
+security guard absent,Rent/Building
+no security in building,Rent/Building
+watchman missing,Rent/Building
+security issue,Rent/Building
+fire exit blocked,Rent/Building
+emergency exit locked,Rent/Building
+parking dispute,Rent/Building
+parking space taken,Rent/Building
+no parking for tenants,Rent/Building
+illegal parking in building,Rent/Building
+parking slot encroached,Rent/Building
+common area misuse,Rent/Building
+common hall locked,Rent/Building
+common space dispute,Rent/Building
+gym equipment broken,Rent/Building
+clubhouse closed,Rent/Building
+swimming pool dirty,Rent/Building
+pool closed without reason,Rent/Building
+water leak in apartment,Rent/Building
+pipe burst in flat,Rent/Building
+ceiling leak,Rent/Building
+roof water seepage,Rent/Building
+water damage to walls,Rent/Building
+mold in flat,Rent/Building
+damp walls,Rent/Building
+paint peeling,Rent/Building
+broken window,Rent/Building
+window lock broken,Rent/Building
+door broken,Rent/Building
+door lock faulty,Rent/Building
+door handle broken,Rent/Building
+tiles broken,Rent/Building
+floor damaged,Rent/Building
+marble crack,Rent/Building
+wood flooring damaged,Rent/Building
+false ceiling damage,Rent/Building
+kitchen slab crack,Rent/Building
+sink leakage,Rent/Building
+toilet leak,Rent/Building
+toilet flush not working,Rent/Building
+bathroom tiles broken,Rent/Building
+bathroom seepage,Rent/Building
+bathtub cracked,Rent/Building
+shower not working,Rent/Building
+geyser not working,Rent/Building
+plumbing issue in flat,Rent/Building
+electrical fault in apartment,Rent/Building
+wiring exposed,Rent/Building
+switchboard spark,Rent/Building
+switch not working,Rent/Building
+fan not working,Rent/Building
+light not working,Rent/Building
+AC not cooling,Rent/Building
+AC water leak,Rent/Building
+heater faulty,Rent/Building
+intercom not working,Rent/Building
+doorbell not working,Rent/Building
+balcony railing broken,Rent/Building
+balcony unsafe,Rent/Building
+terrace leak,Rent/Building
+terrace unsafe,Rent/Building
+roof tiles broken,Rent/Building
+boundary wall broken,Rent/Building
+compound wall crack,Rent/Building
+gate lock broken,Rent/Building
+building paint peeling,Rent/Building
+building wall crack,Rent/Building
+building structure weak,Rent/Building
+structural damage,Rent/Building
+building needs renovation,Rent/Building
+illegal floor construction,Rent/Building
+extra floor without approval,Rent/Building
+building not approved,Rent/Building
+illegal extension,Rent/Building
+building not as per plan,Rent/Building
+building completion certificate missing,Rent/Building
+occupancy certificate missing,Rent/Building
+building unsafe for living,Rent/Building
+evacuation needed,Rent/Building
+building leaning,Rent/Building
+building collapse risk,Rent/Building
+cracks in pillar,Rent/Building
+pillar damaged,Rent/Building
+beam crack,Rent/Building
+beam damage,Rent/Building
+foundation sinking,Rent/Building
+foundation crack,Rent/Building
+basement flooding,Rent/Building
+basement leak,Rent/Building
+basement unsafe,Rent/Building
+storage room leak,Rent/Building
+store room damaged,Rent/Building
+shop in building unsafe,Rent/Building
+illegal shops in building,Rent/Building
+illegal godown in building,Rent/Building
+commercial activity in residential building,Rent/Building
+unauthorized office in building,Rent/Building
+noise in building,Rent/Building
+neighbour disturbance,Rent/Building
+illegal activities in building,Rent/Building
+gambling in building,Rent/Building
+drinking in common area,Rent/Building
+smoking in building,Rent/Building
+illegal hostel in building,Rent/Building
+PG safety issue,Rent/Building
+PG overcrowded,Rent/Building
+PG overcharging,Rent/Building
+PG unsafe,Rent/Building
+unauthorized PG,Rent/Building
+traffic jam,Traffic
+bahut traffic hai,Traffic
+signal broken,Traffic
+road block,Traffic
+signal light fail,Traffic
+traffic light not working,Traffic
+road jam,Traffic
+signal not working,Traffic
+traffic block,Traffic
+traffic,Traffic
+jam,Traffic
+road signal fail,Traffic
+intersection jam,Traffic
+traffic halt,Traffic
+traffic slow,Traffic
+vehicle stuck,Traffic
+signal delay,Traffic
+road congestion,Traffic
+traffic heavy,Traffic
+long queue,Traffic
+fire extinguisher expired,Fire Safety
+fire extinguisher not working,Fire Safety
+fire alarm not ringing,Fire Safety
+fire detector faulty,Fire Safety
+smoke detector not working,Fire Safety
+fire alarm false alert,Fire Safety
+fire alarm disconnected,Fire Safety
+fire escape door locked,Fire Safety
+emergency exit jammed,Fire Safety
+emergency door blocked,Fire Safety
+fire staircase blocked,Fire Safety
+fire escape path obstructed,Fire Safety
+emergency route unclear,Fire Safety
+fire exit sign missing,Fire Safety
+fire exit light off,Fire Safety
+fire extinguisher bracket broken,Fire Safety
+fire hose damaged,Fire Safety
+fire hose missing,Fire Safety
+fire hydrant leaking,Fire Safety
+hydrant not connected,Fire Safety
+hydrant not functional,Fire Safety
+sprinkler system not working,Fire Safety
+sprinkler pipe leak,Fire Safety
+sprinkler head broken,Fire Safety
+fire suppression system not working,Fire Safety
+no fire alarm installed,Fire Safety
+no fire safety system,Fire Safety
+fire system maintenance pending,Fire Safety
+fire inspection overdue,Fire Safety
+fire NOC expired,Fire Safety
+fire safety audit pending,Fire Safety
+fire escape door rusted,Fire Safety
+emergency door not opening,Fire Safety
+exit door stuck,Fire Safety
+emergency lock jammed,Fire Safety
+fire alarm panel error,Fire Safety
+fire control room unmanned,Fire Safety
+fire control system failure,Fire Safety
+heat detector faulty,Fire Safety
+heat alarm not working,Fire Safety
+burning smell in lift,Fire Safety
+burning smell in corridor,Fire Safety
+burning smell from wiring,Fire Safety
+electrical fire risk,Fire Safety
+short circuit fire,Fire Safety
+electric spark in meter room,Fire Safety
+electric spark in panel,Fire Safety
+electric spark in wiring,Fire Safety
+fan burning smell,Fire Safety
+AC burning smell,Fire Safety
+kitchen fire risk,Fire Safety
+gas stove fire,Fire Safety
+gas leak fire hazard,Fire Safety
+cylinder blast risk,Fire Safety
+candle fire hazard,Fire Safety
+matchstick fire hazard,Fire Safety
+lighter fire hazard,Fire Safety
+petrol storage fire risk,Fire Safety
+diesel leak fire risk,Fire Safety
+chemical storage fire hazard,Fire Safety
+paint storage fire hazard,Fire Safety
+flammable liquid storage,Fire Safety
+flammable gas storage,Fire Safety
+combustible material storage,Fire Safety
+wood storage fire risk,Fire Safety
+paper storage fire risk,Fire Safety
+cardboard storage fire risk,Fire Safety
+cloth storage fire risk,Fire Safety
+curtain fire risk,Fire Safety
+sofa fire hazard,Fire Safety
+mattress fire hazard,Fire Safety
+fire near transformer,Fire Safety
+fire near electric pole,Fire Safety
+fire near substation,Fire Safety
+fire near petrol pump,Fire Safety
+fire near gas station,Fire Safety
+fire near chemical plant,Fire Safety
+factory fire hazard,Fire Safety
+warehouse fire hazard,Fire Safety
+godown fire hazard,Fire Safety
+shop fire hazard,Fire Safety
+mall fire hazard,Fire Safety
+school fire hazard,Fire Safety
+hospital fire hazard,Fire Safety
+hotel fire hazard,Fire Safety
+restaurant fire hazard,Fire Safety
+office fire hazard,Fire Safety
+cinema fire hazard,Fire Safety
+auditorium fire hazard,Fire Safety
+stadium fire hazard,Fire Safety
+public gathering fire risk,Fire Safety
+festival fire risk,Fire Safety
+stage fire hazard,Fire Safety
+event fire hazard,Fire Safety
+firecrackers fire hazard,Fire Safety
+Diwali fire hazard,Fire Safety
+Holi fire hazard,Fire Safety
+New Year fire hazard,Fire Safety
+fire drill not conducted,Fire Safety
+fire training not given,Fire Safety
+fire safety staff absent,Fire Safety
+fire fighting team not available,Fire Safety
+fire truck delayed,Fire Safety
+fire engine not arriving,Fire Safety
+fire brigade late,Fire Safety
+fire water tank empty,Fire Safety
+fire pump not working,Fire Safety
+fire pump switch faulty,Fire Safety
+fire control valve stuck,Fire Safety
+fire damper not closing,Fire Safety
+smoke vent jammed,Fire Safety
+smoke exhaust fan not working,Fire Safety
+fire escape ladder missing,Fire Safety
+fire escape ladder broken,Fire Safety
+fire escape rope missing,Fire Safety
+fire blanket missing,Fire Safety
+fire bucket empty,Fire Safety
+fire bucket missing,Fire Safety
+fire sand bucket missing,Fire Safety
+fire sand bucket empty,Fire Safety
+fire extinguisher glass broken,Fire Safety
+fire extinguisher cabinet open,Fire Safety
+fire extinguisher stolen,Fire Safety
+fire extinguisher blocked,Fire Safety
+fire alarm battery low,Fire Safety
+fire alarm battery missing,Fire Safety
+fire panel battery dead,Fire Safety
+smoke detector battery low,Fire Safety
+smoke detector battery dead,Fire Safety
+heat detector battery low,Fire Safety
+emergency light not working,Fire Safety
+emergency torch missing,Fire Safety
+emergency kit missing,Fire Safety
+emergency kit incomplete,Fire Safety
+signal down,Traffic
+signal kaam nahi kar raha,Traffic
+traffic ka jam,Traffic
+signal red atka hua,Traffic
+traffic light blink ho rahi,Traffic
+traffic signal dead,Traffic
+road closed,Traffic
+bridge blocked,Traffic
+flyover jam,Traffic
+highway jam,Traffic
+expressway blocked,Traffic
+toll plaza jam,Traffic
+railway crossing jam,Traffic
+barrier down traffic,Traffic
+crossroad jam,Traffic
+roundabout jam,Traffic
+diversion pe jam,Traffic
+accident ke kaaran jam,Traffic
+road accident traffic,Traffic
+truck overturned traffic,Traffic
+bus breakdown traffic,Traffic
+car breakdown jam,Traffic
+construction se jam,Traffic
+road repair jam,Traffic
+drain work jam,Traffic
+pothole se traffic slow,Traffic
+heavy rain traffic,Traffic
+flooded road jam,Traffic
+snow road jam,Traffic
+fog traffic slow,Traffic
+mist road block,Traffic
+police checkpost jam,Traffic
+RTO check se jam,Traffic
+VIP movement se jam,Traffic
+minister visit jam,Traffic
+political rally jam,Traffic
+protest rally jam,Traffic
+morcha ke kaaran traffic,Traffic
+strike rally jam,Traffic
+marriage procession jam,Traffic
+baarat jam,Traffic
+festival traffic,Traffic
+Diwali market jam,Traffic
+Eid bazaar traffic,Traffic
+Christmas rush traffic,Traffic
+New Year jam,Traffic
+Ganpati visarjan jam,Traffic
+Navratri garba traffic,Traffic
+Durga puja pandal jam,Traffic
+Baisakhi mela jam,Traffic
+Kumbh mela traffic,Traffic
+fairground traffic,Traffic
+sports event jam,Traffic
+stadium match traffic,Traffic
+cricket match jam,Traffic
+football match traffic,Traffic
+concert traffic,Traffic
+movie premiere jam,Traffic
+shooting location traffic,Traffic
+film shoot road block,Traffic
+bike rally traffic,Traffic
+car rally traffic,Traffic
+cycle race traffic,Traffic
+marathon traffic,Traffic
+pedestrian crossing jam,Traffic
+jaywalking se traffic,Traffic
+animal crossing jam,Traffic
+cow road block,Traffic
+buffalo road block,Traffic
+dog road block,Traffic
+monkey road jam,Traffic
+camel road block,Traffic
+elephant road jam,Traffic
+bullock cart road block,Traffic
+tractor road jam,Traffic
+tempo road jam,Traffic
+rickshaw jam,Traffic
+auto rickshaw block,Traffic
+bus stand jam,Traffic
+taxi stand jam,Traffic
+parking se road block,Traffic
+double parking jam,Traffic
+wrong parking se jam,Traffic
+no parking zone me gaadi,Traffic
+parked truck road block,Traffic
+parked bus road block,Traffic
+parked tempo road block,Traffic
+delivery van road block,Traffic
+loading unloading se jam,Traffic
+market area traffic,Traffic
+bazaar road jam,Traffic
+mall traffic,Traffic
+shopping complex jam,Traffic
+restaurant area traffic,Traffic
+street food jam,Traffic
+hawker zone traffic,Traffic
+vendor road block,Traffic
+weekly market jam,Traffic
+sabzi mandi traffic,Traffic
+wholesale market jam,Traffic
+industrial area jam,Traffic
+factory shift change traffic,Traffic
+office hours jam,Traffic
+school time jam,Traffic
+college time jam,Traffic
+exam centre traffic,Traffic
+hospital road jam,Traffic
+ambulance stuck traffic,Traffic
+fire truck stuck jam,Traffic
+police van stuck traffic,Traffic
+VIP convoy road block,Traffic
+governor visit jam,Traffic
+prime minister visit traffic,Traffic
+president visit traffic,Traffic
+chief minister visit jam,Traffic
+MLA visit jam,Traffic
+MP visit traffic,Traffic
+film star visit jam,Traffic
+celebrity visit traffic,Traffic
+politician visit traffic,Traffic
+religious leader visit jam,Traffic
+roadside accident crowd,Traffic
+spectator crowd jam,Traffic
+road show jam,Traffic
+bike stunt jam,Traffic
+street racing jam,Traffic
+illegal racing jam,Traffic
+drag race traffic,Traffic
+donkey cart road jam,Traffic
+horse carriage traffic,Traffic
+tanga road block,Traffic
+metro construction jam,Traffic
+flyover construction jam,Traffic
+bridge repair traffic,Traffic
+road widening jam,Traffic
+pavement work jam,Traffic
+pipeline repair jam,Traffic
+cable laying traffic,Traffic
+manhole repair jam,Traffic
+sewer repair traffic,Traffic
+water pipe repair jam,Traffic
+gas pipeline repair jam,Traffic
+electric work road block,Traffic
+pole installation jam,Traffic
+tree cutting road jam,Traffic
+tree fall traffic block,Traffic
+fallen pole road jam,Traffic
+fallen wire road block,Traffic
+open manhole traffic,Traffic
+dikkat ho raha h raaasta pr bhot,Road Maintenance
+ligt anahi aa rahi h,Electricity
+ghar m pani aa rha h road se,Road Maintenance
+pani nahi aa raha ghar pr,Water Supply
+aaj bijli nahi aayi 2 ghante se,Electricity
+there is pothole in front of stationary shop,Road Maintenance
+raaasta pr dikkat h,Road Maintenance
+raaasta pr hai,Road Maintenance
+dikkat ho raha h raaasta pr bhot jaada yar,Road Maintenance
+paani ka  issue hai,Water Supply
+paani kam hai,Water Supply
+bijli nahi aa rahi hai,Electricity
+selling more than mrp raju sweet shop,Consumer Affairs
+there is issue in the main switch board,Electricity
+paani bhar gaya hai naali mai,Drainage
+pothole issue,Road Maintenance
+mera ghaaar paisa jaada maang raha,Rent/Building
+paani nahi aa raaha,Water Supply
+Bijli Nahi aa rahi,Electricity
+paani nahi aa  raha,Water Supply
+There is some issue in gutter off the road,Road Maintenance
+paani ki dikkat,Water Supply
+paani ni aa raha,Water Supply
+paani ki dikkat hai,Water Supply
+Electricity problem,Electricity
+light chole geche,Electricity
+current kete geche,Electricity
+bijli nei,Electricity
+amader ekhane current nei,Electricity
+line kete geche,Electricity
+transformer e agun legeche,Electricity
+wire chire geche,Electricity
+load shedding hocche khub,Electricity
+light blink korche bar bar,Electricity
+meter e line asche na,Electricity
+tar chire rastaye pore ache,Electricity
+bijli chole geche,Electricity
+jol asche na kol e,Water Supply
+kol e jol nei,Water Supply
+joler pipe leak korche,Water Supply
+pipe phete jol berocche,Water Supply
+nongra jol asche tap e,Water Supply
+jol er line e leakage ache,Water Supply
+khabar jol nei amader ekhane,Water Supply
+jol er pipe line bhenge geche,Water Supply
+tanki te jol nei,Water Supply
+joler supply bondho,Water Supply
+nongra hoye ache charidik,Sanitation
+aborjana porishkar korar lok nei,Sanitation
+toilet khub nongra,Sanitation
+gondho berocche nardama theke,Sanitation
+nongra aborjana jome ache,Sanitation
+dustbin porishkar kora dorkar,Sanitation
+porishkar porichonnotar অভাব,Sanitation
+goli nongra hoye ache,Sanitation
+rasta kharap khub,Road Maintenance
+rastaye khub gorto hoyeche,Road Maintenance
+rasta bhenge geche puro,Road Maintenance
+gorto hoye ache pitch rastaye,Road Maintenance
+rasta thik kora dorkar,Road Maintenance
+rastaye chola jacche na gorto jonno,Road Maintenance
+broken road repair chai,Road Maintenance
+rasta repair kora hok,Road Maintenance
+street light jolche na,Public Lighting
+post er light bondho,Public Lighting
+rastaye andhar hoye ache light chara,Public Lighting
+street light repair kora dorkar,Public Lighting
+bulb kharup street light er,Public Lighting
+rastar light jolche na ratre,Public Lighting
+gas leak hocche smell asche,Gas Leaks
+gaser gondho berocche cylinder theke,Gas Leaks
+gas pipeline leak korche,Gas Leaks
+cylinder theke gas leak korche mone hocche,Gas Leaks
+loud speaker er awaj khub besi,Noise
+jore dj box bajano hocche,Noise
+mic er joralo awaj,Noise
+noise pollution hocche ratre,Noise
+sound box khub jore bajche,Noise
+kachra phelche rastaye shobai,Waste Management
+kachrar gari aseni koyekdin,Waste Management
+dustbin e aborjana vorte,Waste Management
+waste management khub kharap,Waste Management
+nardama bondho hoye geche,Drainage
+drain er jol rastaye jome geche,Drainage
+drain jam hoye geche puro,Drainage
+nongra jol overflow hocche drain theke,Drainage
+drain clean kora dorkar,Drainage
+traffic jam khub besi ekhane,Traffic
+rasta jam hoye ache gaari cholche na,Traffic
+traffic signal kaj korche na,Traffic
+signal light bondho hoye ache,Traffic
+current nei,Electricity
+ekhane current asche na,Electricity
+kal rat theke load shedding,Electricity
+barite current nei,Electricity
+transformer blast koreche,Electricity
+meter kharap hoye geche,Electricity
+current er line kete geche,Electricity
+tar chire poreche,Electricity
+voltage khub low,Electricity
+voltage up down korche,Electricity
+load shedding bar bar hocche,Electricity
+amar meter theke spark korche,Electricity
+biddut bibhag theke keu asheni,Electricity
+current na thakay khub koste achi,Electricity
+line e problem,Electricity
+barir samne electric tar chireche,Electricity
+meter e reading vul,Electricity
+current bill besi asche,Electricity
+line e current nei,Electricity
+amar current line thik koro,Electricity
+khutir tar chire geche,Electricity
+current er pole beke geche,Electricity
+current er baksho khola,Electricity
+switch board theke dhoa berocche,Electricity
+main switch nosto,Electricity
+current saradin nei,Electricity
+electric meter badlate hobe,Electricity
+biddut nei,Electricity
+lok aseni line thik korte,Electricity
+current er office e call dhorche na,Electricity
+low voltage e fan ghurche na,Electricity
+current gelo abar,Electricity
+tar theke agun berocche,Electricity
+electricity cutoff,Electricity
+meter e light jolche na,Electricity
+fuse ure geche,Electricity
+current asbe kokhon,Electricity
+electric pole e spark,Electricity
+shok legeche current er tare,Electricity
+biddut bibhrat,Electricity
+current nei 3 ghonta dhore,Electricity
+line chalu korun,Electricity
+amader elakay current nei,Electricity
+biddut chole geche,Electricity
+current ta thik korun,Electricity
+load shedding kobe theke bondho hobe,Electricity
+amar meter bondho,Electricity
+transformer theke dhoya asche,Electricity
+current connection kete diyechen keno,Electricity
+line thik korte lok pathan,Electricity
+jol asche na,Water Supply
+khabar jol nei,Water Supply
+nongra jol asche kol theke,Water Supply
+jol er line bhenge geche,Water Supply
+jole gondho,Water Supply
+jol khub kom asche,Water Supply
+pipe fete jol berocche,Water Supply
+jol aseni saradin,Water Supply
+jol er meter kharap,Water Supply
+jole poka,Water Supply
+rasta diye jol bose geche,Water Supply
+kol theke jol porche na,Water Supply
+joler pressure nei,Water Supply
+supply er jol asche na,Water Supply
+amader ekhane jol nei,Water Supply
+kalker theke jol bondho,Water Supply
+jol pawa jacche na,Water Supply
+nongra jol asche khabar jol nei,Water Supply
+pipe leak koreche,Water Supply
+joler line jam,Water Supply
+jol theke kacha gondho asche,Water Supply
+jol thik moto asche na,Water Supply
+drink korar jol nei,Water Supply
+jol chai amader,Water Supply
+kolta bhenge geche jol porche,Water Supply
+tube well kharap,Water Supply
+pump nosto,Water Supply
+jol tulte parchi na,Water Supply
+rasta jole vese jacche,Water Supply
+kal theke joler obhab,Water Supply
+jole klorin besi,Water Supply
+jol keno asche na,Water Supply
+joler tank faitta geche,Water Supply
+amader joler line dewa hok,Water Supply
+jole kada asche,Water Supply
+jol sob fete berocche,Water Supply
+water supply kharap,Water Supply
+joler subidha nei,Water Supply
+tank theke jol over flow hocche,Water Supply
+municipality theke jol asche na,Water Supply
+amader jol din,Water Supply
+jol fute nikalche,Water Supply
+jole nongra vasa,Water Supply
+jol kal theke asbe ki na,Water Supply
+jol line repair chai,Water Supply
+jol er problem slove koro,Water Supply
+jol porche rasta diye,Water Supply
+jol saradin pawa jacche na,Water Supply
+bathroom e jol nei,Water Supply
+rasta bhenge geche puro gorto hoyeche,Road Maintenance
+rasta te khub kada,Road Maintenance
+rasta te gorto,Road Maintenance
+rasta kharap amader,Road Maintenance
+rastay boro gorto hoyeche,Road Maintenance
+rasta sarai koro,Road Maintenance
+pich uthe geche rastar,Road Maintenance
+rasta theke dhulo urche,Road Maintenance
+rastay jol jome geche,Road Maintenance
+rasta die hata jai na,Road Maintenance
+rasta thik nei ekhane,Road Maintenance
+khub kharap rasta,Road Maintenance
+rasta repair kora dorkar,Road Maintenance
+gorto rasta theke accident hocche,Road Maintenance
+rastar obostha kharap,Road Maintenance
+mati theke rasta khule geche,Road Maintenance
+rasta theke eit berocche,Road Maintenance
+rasta vanga,Road Maintenance
+amader rasta bhal na,Road Maintenance
+rasta theke pich sore geche,Road Maintenance
+brishti holei rasta nosto,Road Maintenance
+notun rasta chai amader,Road Maintenance
+rastar moddhe gorto thik korun,Road Maintenance
+ei rasta diye gari chole na,Road Maintenance
+bhanga rasta thik korte hobe,Road Maintenance
+rasta vangar jonno gari fese geche,Road Maintenance
+rasta kobe thik hobe,Road Maintenance
+rasta te eto gorto keno,Road Maintenance
+kacha rasta,Road Maintenance
+rastay jhakuni khub,Road Maintenance
+rastar hal kharap,Road Maintenance
+bhanga chora rasta,Road Maintenance
+road maintenance er kaj hocche na,Road Maintenance
+rasta thik korar jonno lok pathan,Road Maintenance
+rastay pathor choriye ache,Road Maintenance
+rastar opor khub kosto hoy gari chalaate,Road Maintenance
+khana khondo rastay,Road Maintenance
+rastay boro fota,Road Maintenance
+peech theke rasta chire geche,Road Maintenance
+rastar kaaj e koti koti taka churi,Road Maintenance
+amader rasta theke jol sorao,Road Maintenance
+rasta pitch korben kobe,Road Maintenance
+rasta repair chai,Road Maintenance
+rastar theke bhenge gorto baniyeche,Road Maintenance
+rasta theke sob dhulo asche,Road Maintenance
+rasta thik korun ekhuni,Road Maintenance
+rastay chalate giye bose porchi,Road Maintenance
+amader rasta bhanga theke accident hochhe,Road Maintenance
+rasta soman nei,Road Maintenance
+rasta paka koro,Road Maintenance
+rastar kono unnoyon nei,Road Maintenance
+drain theke bad gondho,Sanitation
+rasta e nongra theke rog choracche,Sanitation
+drain jam hoye geche,Sanitation
+paribesh nongra hoye ache,Sanitation
+public toilet e baje gondho,Sanitation
+cleaning hocche na rastar,Sanitation
+toilet clean koro,Sanitation
+nongra poribesh,Sanitation
+sanitation thik nai ekhane,Sanitation
+sulabh souchalay poriskar na,Sanitation
+nongra drain theke mosa hoche,Sanitation
+mosha r machi bhorti,Sanitation
+drain theke gondho asche,Sanitation
+drain overflow hocche,Sanitation
+rasta theke moyla sorao,Sanitation
+bosti elakay nongra beshi,Sanitation
+manush joto toto nongra feleche,Sanitation
+drain e pa fese jacche,Sanitation
+drain block,Sanitation
+gandagi charidike,Sanitation
+poriskar porichonno nei ekhane,Sanitation
+health issue hobe nongra theke,Sanitation
+kono sanitizer dewa hoyni,Sanitation
+bajar er kache souchalay nongra,Sanitation
+public toilet bondho ache,Sanitation
+poriskar jhi nei koto din,Sanitation
+elaka theke durgondho chotacche,Sanitation
+sanitation worker asena,Sanitation
+drain theke jol rastay asche,Sanitation
+paray lokjon joto toto toilet kore,Sanitation
+sanitary line bhenge geche,Sanitation
+bathroom er line fete geche,Sanitation
+drain jom,Sanitation
+drain pore rasta voyaboho obostha,Sanitation
+rasta gulo eto nongra,Sanitation
+municipality theke clean kore na,Sanitation
+amader ward theke cleaning kora hok,Sanitation
+machi ar moshar upodrob,Sanitation
+gondho thaka jaina,Sanitation
+safai karmi kobe asbe,Sanitation
+khub durgondho amader elakay,Sanitation
+drainage clean,Sanitation
+toilet er theke jol rastay asche,Sanitation
+cleanliness dorkar ekhane,Sanitation
+nongra water line e giyeche,Sanitation
+drain clear korar dorkar,Sanitation
+sanitation problem khub,Sanitation
+boka machi udche nongra te,Sanitation
+nongra clear koro ekhoni,Sanitation
+rastar alo jolche na,Public Lighting
+street light nosto,Public Lighting
+alo nei rastay,Public Lighting
+andhokar rastay bhoy kore,Public Lighting
+pole er light kharap,Public Lighting
+lamp post e light nei,Public Lighting
+rasta khub ondhokar,Public Lighting
+street light off ache koto din,Public Lighting
+alo bondho,Public Lighting
+light blink korche,Public Lighting
+alo fete geche,Public Lighting
+amader paray street light chole na,Public Lighting
+light kobe theke asbe,Public Lighting
+lamp post bhenge geche,Public Lighting
+rastay alo na thakay problem hocche,Public Lighting
+light er switch kharap,Public Lighting
+light lagate hobe rastay,Public Lighting
+alo aseni paray,Public Lighting
+lamp post on hoyni kal theke,Public Lighting
+ondhokar rasta bhenge poreche,Public Lighting
+amader ekhane public light nei,Public Lighting
+ekti alo o kaj korche na,Public Lighting
+light jolche na keno,Public Lighting
+public lighting khrp,Public Lighting
+rastay bulb lagate hobe,Public Lighting
+street bulb fute geche,Public Lighting
+rasta alo din,Public Lighting
+chor asbe ondhokare,Public Lighting
+accident hote pare ondhokare,Public Lighting
+street light jole nibhe jacche,Public Lighting
+kalker theke light golmaal,Public Lighting
+light fuse,Public Lighting
+rastay light chole jacche,Public Lighting
+tube light jala aseni kew,Public Lighting
+lamp post e churi hoyeche light,Public Lighting
+amader elakay alo dorkar,Public Lighting
+light e fault ache,Public Lighting
+alor subidha nai ekhane,Public Lighting
+lighting khub low,Public Lighting
+pole e current asche light jalchena,Public Lighting
+amader rasta light e dhaka chai,Public Lighting
+street light e jhikimiki korche,Public Lighting
+biddut ache light nei,Public Lighting
+light change korun lamp post er,Public Lighting
+alo dorkar amader rastay,Public Lighting
+street light ekdom jalena,Public Lighting
+rastar alor hal kharap,Public Lighting
+ondhokar rastay matha ghurche,Public Lighting
+alo diye sahayyo korun,Public Lighting
+light thik korte asun,Public Lighting
+gas er line fete geche,Gas Leaks
+gas er gondho asche khub,Gas Leaks
+line theke gas berocche,Gas Leaks
+gas leak hocche,Gas Leaks
+pipeline fete gas leak,Gas Leaks
+gas er paip e chhed hoyeche,Gas Leaks
+rasta diye gas er gondho,Gas Leaks
+khub baje gas er srot,Gas Leaks
+gas choriye poreche elakay,Gas Leaks
+gas leak theke bhoy lagche,Gas Leaks
+amader barir kache gas line leak,Gas Leaks
+gas pipe vanga,Gas Leaks
+taratari lok pathan gas leak hoche,Gas Leaks
+gas theke nishash nite koshto hoche,Gas Leaks
+gas berole agun lagbe,Gas Leaks
+gas leaking from pipe,Gas Leaks
+line theke gondho asche,Gas Leaks
+kiser gas er gondho eta,Gas Leaks
+gas er tubo bhenge geche,Gas Leaks
+gas line repair chai,Gas Leaks
+pipe faitta gas beroucche,Gas Leaks
+gas leaking from street,Gas Leaks
+kitchen gas line e leak ekhane na,Gas Leaks
+rastar nicher gas pipe theke gondho,Gas Leaks
+gas cylinder line leak,Gas Leaks
+gas theke chokh jolche,Gas Leaks
+danger gas leak,Gas Leaks
+bepok gas leak hocche ekhane,Gas Leaks
+gas fete geche,Gas Leaks
+leak theke sondhoho hocche gas,Gas Leaks
+gas line theke sabdho asche,Gas Leaks
+pipe fete baje gas berocche,Gas Leaks
+kono gas leak hocche bhoyongkor,Gas Leaks
+amader matha betha korche gas e,Gas Leaks
+gas pawa jacche rasta e,Gas Leaks
+emergency gas leak ekhane,Gas Leaks
+gas pipeline theke dhoya urche,Gas Leaks
+gas leak er problem ta dekhun,Gas Leaks
+gas theke agun berye ashte pare,Gas Leaks
+bhayonok gas er bas,Gas Leaks
+rasta khurche ar gas leak hocche,Gas Leaks
+gas pawa jacche pipe theke,Gas Leaks
+gandh asche gas line fete,Gas Leaks
+gas line bhenge gas berole ki korbo,Gas Leaks
+gas asche kothay theke,Gas Leaks
+rasta e pipe leak gas,Gas Leaks
+ekhuni asun gas line feteche,Gas Leaks
+gas lekage atkao,Gas Leaks
+gondho thakte parchina gas er jonno,Gas Leaks
+gas line check korun ekhoni,Gas Leaks
+khub joore awaj hocche,Noise
+mike bajche jore,Noise
+box bajacche raat bhor,Noise
+eto awaj theke matha dhoreche,Noise
+noise pollution khub hoche,Noise
+loudspeaker e khub sabdo,Noise
+construction er baje awaj,Noise
+raat e ghumate parchi na awajer jonne,Noise
+karkhana theke eto sobdo asche,Noise
+sobdo dushon bondho koro,Noise
+dj bajche onobroto,Noise
+bosiye kirtan hocche jore,Noise
+amader ekhane awaje kan fete jacche,Noise
+gari theke eto horn bajacche,Noise
+machine er sobdo,Noise
+raat 12tar por o mike bajche,Noise
+generator er baje baje sabdo,Noise
+shabdo theke asustha lagche,Noise
+awaje chhatra chhatrider porasona hochena,Noise
+kothay theke eto awaj asche,Noise
+loud sound system bajche,Noise
+bason baje awaj hocche,Noise
+club theke baje awaj asche,Noise
+raat e party korche loud music e,Noise
+boma fatchhe jore awaj,Noise
+sound pollution hocche amader paray,Noise
+parar chele ra jore gaan chaliyeche,Noise
+awaj er theke thaka pachhina,Noise
+shabdo niontron koron,Noise
+amader choto bacha awaje vasa jacchina,Noise
+kol karkhanar sobdo,Noise
+awaj thik kore bandho korun,Noise
+music player khub jore bajche,Noise
+pujor mike eto jore keno,Noise
+horn er shabde matha fete jacche,Noise
+lokjon chitkar korche rasta theke,Noise
+loud noise complaint korchi,Noise
+baje sound hocche kach theke,Noise
+generator chole noise dushon,Noise
+sound koman please,Noise
+music bajate bondho bolun,Noise
+raat er belay eto chitkar,Noise
+paray khub jore sobdo hoche,Noise
+hospital er kache awaj hocche,Noise
+kaner porda fete jacche mike e,Noise
+awaj hoche bondho kor,Noise
+sabdo koman ekhuni,Noise
+box bajano bondho kora hok,Noise
+noise hoche construction theke,Noise
+awajer dushone pran otho,Noise
+rasta theke moyla tulche na,Waste Management
+moyla e jome pahar hoyeche,Waste Management
+koto din dhore moyla pori ache,Waste Management
+moylar gari aseni,Waste Management
+nongra charidike,Waste Management
+dustbin theke moyla upche porche,Waste Management
+kichu moyla sorao ekhane theke,Waste Management
+vat theke baje gondho asche,Waste Management
+rastar upar moyla fele rekheche,Waste Management
+moylar stup hoye geche,Waste Management
+keu moyla clean korte asche na,Waste Management
+parar rastay joto toto janjal,Waste Management
+janjal bhorti rasta,Waste Management
+garbage aseni dite,Waste Management
+vat theke machi urchche,Waste Management
+garbage truck asheni amader paray,Waste Management
+moyla theke gondho asche,Waste Management
+gari theke moyla nite asheni,Waste Management
+moyla jome jol block hocche,Waste Management
+khub nongra kore rekheche rasta ta,Waste Management
+municipal corporation moyla tuleni,Waste Management
+waste jome geche dustbin er baire,Waste Management
+baje gondho moyla vat theke,Waste Management
+lok e rastar majkhane moyla felse,Waste Management
+poriskar kora hochena,Waste Management
+dustbin er dhakka khola ar nongra bhorti,Waste Management
+paray moylar dhibi,Waste Management
+waste management sothik na,Waste Management
+cleaning hobe kobe,Waste Management
+moylay vat bondho,Waste Management
+janjal tola hok,Waste Management
+kachara poriskar korar lok asheni,Waste Management
+amader moyla tule nin,Waste Management
+waste disposal theek hoche na,Waste Management
+moyla soriye felun,Waste Management
+nongra fela bondho korun,Waste Management
+dustbin fete jacche moylate,Waste Management
+moylar gari rasta e atke ache,Waste Management
+nongra fela mana koro,Waste Management
+vater nongra theke rog,Waste Management
+moyla sob rasta te,Waste Management
+cleaning aschena,Waste Management
+kachra theke dur gondo,Waste Management
+moylar sthup ke asbe poriskar korte,Waste Management
+waste material rastay pore,Waste Management
+dustbin clean korte hobe ekhoni,Waste Management
+rasta ghat nongra theke vora,Waste Management
+porishkar korun kachra,Waste Management
+waste management er number bondho,Waste Management
+moyla clear korar lok kothay,Waste Management
+drain theke jol vese jacche,Drainage
+jol jome geche rastay,Drainage
+drainage system ektu o bhalo na,Drainage
+brishti te rasta jol vora,Drainage
+jol er nikashi nei,Drainage
+drain jam ache,Drainage
+jole dooba rasta,Drainage
+drain theke nongra jol rastay,Drainage
+pipe block hocche drain er,Drainage
+jal bodhdho hoyeche,Drainage
+barite jol dhuke jacche drain theke,Drainage
+drain theke over flow,Drainage
+jol theke baje gondho,Drainage
+jol jomar karone gari fese geche,Drainage
+bristi holei jal jol,Drainage
+drainer dhakna nei,Drainage
+drain bhenge geche amader,Drainage
+bhenge geche jol nishkashan,Drainage
+rastay hate jol,Drainage
+drain clear hochena,Drainage
+jal jam thake amader ekhane,Drainage
+rasta flooded hoyeche,Drainage
+drain theke eto gondho asche,Drainage
+joler theke lok er asha jawa bondho,Drainage
+drain er bhetor kachara jom,Drainage
+jol nikashor bosta bhalo kore,Drainage
+amader barir asha pash a jol,Drainage
+kobe theke drain block,Drainage
+drain cleaning dorkar,Drainage
+jol soriye nite kothay,Drainage
+drain theke boka hobe,Drainage
+jolo baddhata,Drainage
+drain line fete nongra berouche,Drainage
+bristir jol jome ache,Drainage
+drain theke jal saralo kothay,Drainage
+drain bhorti jol jome,Drainage
+khola drain dangerous,Drainage
+jol sarini,Drainage
+drain of parar rastay block,Drainage
+drain theke thela kachra rastay,Drainage
+jal jamaat,Drainage
+drainage theke problem,Drainage
+pipe jome jol block,Drainage
+kalker theke drain overflowing,Drainage
+janjal theke drain vora,Drainage
+jol sorao rasta theke,Drainage
+rasta nodi hoye geche,Drainage
+kobe jol sorbe rasta theke,Drainage
+gortote jol vorche,Drainage
+drainer obostha kharab,Drainage
+boro gachhe rasta atke geche,Tree/Landscape
+gach bhenge poreche rastay,Tree/Landscape
+dal bhenge tar e poreche,Tree/Landscape
+gacher dal electric line e,Tree/Landscape
+amader ekhane park ta poriskar nei,Tree/Landscape
+gacher dal e line chireche,Tree/Landscape
+park theke sob gach kete feleche,Tree/Landscape
+rasta theke gach porishkar korun,Tree/Landscape
+tufan e gach poreche,Tree/Landscape
+gacher kaste hobe rasta block,Tree/Landscape
+mata theke gacher dal theke vipod,Tree/Landscape
+park er theke ghas gulo khub boro,Tree/Landscape
+jhar theke gach uplo,Tree/Landscape
+rastar majhkhane gach,Tree/Landscape
+gach ta katar dorkar,Tree/Landscape
+rasta block gacher jonne,Tree/Landscape
+gacher gurti ke asbe sora,Tree/Landscape
+rasta clear koro gach tule,Tree/Landscape
+park e gach gulo moche jacche,Tree/Landscape
+rasta e gach jharur moto vange,Tree/Landscape
+landscape er obostha khub kharap,Tree/Landscape
+janjal sorao park theke,Tree/Landscape
+gach pali theke baje gondho,Tree/Landscape
+gach chintai hoche ekhane,Tree/Landscape
+tree fell down,Tree/Landscape
+amader math theke kachra sorao,Tree/Landscape
+garden theke lok ashena poriskar korte,Tree/Landscape
+park bongho gach pore thakay,Tree/Landscape
+rastay gacher pata fese gari accident,Tree/Landscape
+dal theke current er tar nemeche,Tree/Landscape
+gacher boro pata rastay,Tree/Landscape
+jhar vange gach theke danger,Tree/Landscape
+gacher pichon e chor thake,Tree/Landscape
+park clean na,Tree/Landscape
+amader elakay bagan jangle vora,Tree/Landscape
+grass besi boro hoche ekhane,Tree/Landscape
+gach kata hoche oboidho bhabe,Tree/Landscape
+poribesh noshto korche gach kete,Tree/Landscape
+gacher kando bhange fese,Tree/Landscape
+dal katar jonno call koresi,Tree/Landscape
+boro boro gach theke jhor,Tree/Landscape
+gacher bose lok ke osubidha,Tree/Landscape
+tree cutting hocche onumoti chhara,Tree/Landscape
+plant kete felche,Tree/Landscape
+park e bacha gulo jabe kibhabe,Tree/Landscape
+gach pore rasta bondho,Tree/Landscape
+dal ke theke sorao,Tree/Landscape
+landscape sothik vabe toiri nai,Tree/Landscape
+gach theke accident,Tree/Landscape
+rastay gacher dal chire poreche,Tree/Landscape
+elakay dengue hocche,Public Health
+moshar uppodrob theke jol choracche,Public Health
+jome thaka jole mosha,Public Health
+khub asustho lok ekhane rog chorache,Public Health
+swastho kendre daktar aseni,Public Health
+haspatale osudh nei,Public Health
+roga theke manus mara jacche,Public Health
+dengue patient barche parar bhitor,Public Health
+kono fogg maren nai amader paray,Public Health
+malaria theke danger,Public Health
+machi mosha theke rokha koron,Public Health
+doctor nei swastho kende,Public Health
+swastho bebostha bhenge poreche,Public Health
+corona ba onno rog asche amader,Public Health
+moshok nidhon kormosuchi theke nei ekhane,Public Health
+haspatale baje poriseba,Public Health
+rogir obostha kharap korche narsa,Public Health
+mosha marar tel da ni keu,Public Health
+public clinic theke bondho,Public Health
+amader paray sobaika dengue hoche,Public Health
+chikitsa theke pichiye achi amra,Public Health
+daktar theke sahayya aschena,Public Health
+amader aspashe swastho bibhag nei,Public Health
+dengue moshak bhorti,Public Health
+medicine nei hospital e,Public Health
+pukur jole nongra theke rog,Public Health
+swastho shibir kora hok amader ekhane,Public Health
+kukur theke bite korche manuske,Public Health
+rog bhugche manush treatment nei,Public Health
+jwar e manus fese jacche,Public Health
+bleaching powder chorano hok,Public Health
+swastho kormi aseni vaccination korte,Public Health
+fever e vugche shishura,Public Health
+clinic theke vul treatment hoche,Public Health
+moshari dorkar ekhane beshi,Public Health
+paribesh swastho theke kharap,Public Health
+swastho bidhi manchena ekhane,Public Health
+cholera choriye poreche elakay,Public Health
+amader health er hal kharap,Public Health
+dengue case eto barche,Public Health
+rog jeno theke sikhha nite paro,Public Health
+machi boka hoche kachra theke roge,Public Health
+asustho ke theke dekhbe,Public Health
+daktarkhana theke eto dure,Public Health
+treatment e osudh pai na,Public Health
+public health er eto durdosha,Public Health
+rog jibanu charale kikore hobe,Public Health
+sastho bebostha eto baje,Public Health
+machir karone swastho theke somossa,Public Health
+dengu test centre khub dure,Public Health
+dokan dar extra taka nichhe,Consumer Affairs
+bhejal jinish bechche ekhane,Consumer Affairs
+mrp er beshi dam nichhe,Consumer Affairs
+kintu vul bill diyeche,Consumer Affairs
+online kinlam ekti jinish pailam na,Consumer Affairs
+dam beshi niye amar theke thokiyeche,Consumer Affairs
+kharap jinish diyeche amake dokan,Consumer Affairs
+expry date theke periye geche,Consumer Affairs
+dokane theke thokiye,Consumer Affairs
+bhejal khabar bechche hotel e,Consumer Affairs
+bill deini amar theke cash theke nise,Consumer Affairs
+oojon kom diyeche,Consumer Affairs
+weight thik na,Consumer Affairs
+dokan dari cheat korse,Consumer Affairs
+bhejal misti theke roga hobe,Consumer Affairs
+company amar product pherot nicchena,Consumer Affairs
+customer theke kharap bebohar,Consumer Affairs
+warranty theke claim korchi dicchena,Consumer Affairs
+poca jinish diche,Consumer Affairs
+kalo bajari hocche kachhe,Consumer Affairs
+hotel e theke khabar baje,Consumer Affairs
+product nosto tao palte dilona,Consumer Affairs
+consumer forum e complaint korbo,Consumer Affairs
+mrp er theke dami,Consumer Affairs
+dokan amar theke thela theli korche,Consumer Affairs
+fake product diyeche amake,Consumer Affairs
+brand er nam kore dublicate diche,Consumer Affairs
+thok baaj bebsahi ekhane,Consumer Affairs
+online e faki dicche,Consumer Affairs
+bhejal theke osudh nosto,Consumer Affairs
+price theke eto difrence keno,Consumer Affairs
+jinis return nichhena,Consumer Affairs
+guarantee theke thaklew free repair kortechena,Consumer Affairs
+boka banayece dokan wala,Consumer Affairs
+consumer rights e asche eta,Consumer Affairs
+beshi dam nieche chaler,Consumer Affairs
+osudh er dokan thaka beshi rate,Consumer Affairs
+karon bhalo diche na support,Consumer Affairs
+dokandar ojon theke churi korche,Consumer Affairs
+quality ekdom kharap,Consumer Affairs
+kom jinish dicche dam thik,Consumer Affairs
+chitingbaj lok ekhane,Consumer Affairs
+vul procher dichhe amake,Consumer Affairs
+amake fake id theke thokiyeche,Consumer Affairs
+customer support kaj theke korena,Consumer Affairs
+amake vul jinish delivery theke hoyeche,Consumer Affairs
+kachhe dam kosiye beshi nise,Consumer Affairs
+baje purno theke ami ki korbo,Consumer Affairs
+quality kontrol nai jiniser,Consumer Affairs
+kono bill day nai amake,Consumer Affairs
+bari bhenge porbe emon obostha,Rent/Building
+building theke plasster porche,Rent/Building
+illegal construction hoche ekhane,Rent/Building
+bari valo theke theke na theke crack,Rent/Building
+vara bari theke amake biddhonto korche,Rent/Building
+building er chhad fete jol pore,Rent/Building
+onumoti chara building toiri hocche,Rent/Building
+purono bari vange asche,Rent/Building
+amader barir chade theke thela porche,Rent/Building
+barite flat theke dhoya asche,Rent/Building
+building theke boro fota,Rent/Building
+flat er obostha theke nongra,Rent/Building
+rent besi nise rasta theke kachha,Rent/Building
+building jhunki purno,Rent/Building
+illegal bari baniyeche amader theke ekhane,Rent/Building
+bhara bari walar eto atyachar,Rent/Building
+building block,Rent/Building
+kono safety nei ei barite,Rent/Building
+barir plaster theke chire jacche,Rent/Building
+kori bhenge poreche chat theke,Rent/Building
+amader building khub e durbol,Rent/Building
+barwala theke thela dichhe,Rent/Building
+rent flat e eto asubidha,Rent/Building
+bipojjonok bari eta kobe theke bhangbe,Rent/Building
+bara walar churi,Rent/Building
+chader theke jal chuiye pore,Rent/Building
+bari onno theke onadhikar dhukechhe,Rent/Building
+construction er problem,Rent/Building
+mati chire theke building bose jacche,Rent/Building
+amader dariate bhenge,Rent/Building
+bhejal eit theke bari thekeche,Rent/Building
+illegal extension bari te,Rent/Building
+flat e theke eto koshto,Rent/Building
+rent owner theke amake bar korete chay,Rent/Building
+bari kachra theke asustho,Rent/Building
+building plan theke thela diche,Rent/Building
+rent agrement nai ami ki theke korbo,Rent/Building
+flat theke kharap smell,Rent/Building
+purono bari theke jol chue pore,Rent/Building
+bhara theke evict korche bina karone,Rent/Building
+landlord eto pareshan korche,Rent/Building
+bari toiri korche kintu jol jome ache,Rent/Building
+notun flat theke bhenge porche,Rent/Building
+barite kono theke jal nei theke alo nei,Rent/Building
+bariwala deposit ferot dicche na,Rent/Building
+illegal floor toiri theke,Rent/Building
+building jhule poreche,Rent/Building
+flat pawa jacchena,Rent/Building
+tenant ke disturb theke korche,Rent/Building
+bari jeno bhenge jacche ekhuni,Rent/Building
+agun legeche barite,Fire Safety
+fire engine theke aseni,Fire Safety
+office theke baje dhoya asche,Fire Safety
+karkhanay agun dhukechhe,Fire Safety
+fire extinguisher nosto ekhane,Fire Safety
+cylinder blast theke agun,Fire Safety
+shop e theke theke dhoya beroucche,Fire Safety
+fire alarm bajche na,Fire Safety
+agun lagle ekhane bepanok,Fire Safety
+fire safety bhalo theke nei,Fire Safety
+godown theke agun chotache,Fire Safety
+taratari dambol theke pathan,Fire Safety
+agun choriye porche ekhane,Fire Safety
+bari theke dhoya theke urche,Fire Safety
+fire dapart theke lok ashena keno,Fire Safety
+amader kache agun er gari aschena,Fire Safety
+fire exit bondho,Fire Safety
+boma fete theke agun,Fire Safety
+fire brigade e phone lagchena,Fire Safety
+kachra te agun theke dhoya,Fire Safety
+building fire safety rules maneni,Fire Safety
+agun lege manush fese theke geche,Fire Safety
+current theke theke shok lege agun,Fire Safety
+fire system kaj korchena theke ekhane,Fire Safety
+godown e gas cylinder theke agun,Fire Safety
+agni nirbapon babostha theke kharap,Fire Safety
+fire hydrant bhanga theke,Fire Safety
+ekhane theke agun er theke thela asche,Fire Safety
+hotel e fire exhuast theke nai,Fire Safety
+kachate fire danger theke royeche,Fire Safety
+jangle theke agun lagbe theke,Fire Safety
+fire truck atke theke kachra,Fire Safety
+agun niva teh theke thela,Fire Safety
+theke fire accident theke bacha jabe ki,Fire Safety
+hospital e theke fire door bondho,Fire Safety
+mall e theke dhoya theke nasta,Fire Safety
+fire lcence nai ei dukan theke,Fire Safety
+kothay fire brigade,Fire Safety
+bostite theke agun theke thela legeche,Fire Safety
+joldih korun theke theke thela agun,Fire Safety
+fire control hochena ekhane theke,Fire Safety
+bhaynak agun asche theke chhat theke,Fire Safety
+agun atkano theke jachhena,Fire Safety
+fire extinguser khali theke asbe,Fire Safety
+building theke agun theke beroule kikore theke vhagbo,Fire Safety
+bajar e agun theke thela dhukechhe,Fire Safety
+tahole theke fire truck aseni keno,Fire Safety
+jalte theke agun chotai,Fire Safety
+barir mardthe agun lege theke thela purno,Fire Safety
+fire theke emergency dorkar,Fire Safety
+traffic theke khub theke jam,Traffic
+rasta theke eto block,Traffic
+jam e theke fese theke achi 3 ghonta,Traffic
+traffic police aseni theke ekhane,Traffic
+signal nosto ekhane theke kono theke light nai,Traffic
+traffic jam eto theke matha korap,Traffic
+rastay theke theke jam hobe theke ekhuni,Traffic
+wrong route theke theke gari theke chaliyeche,Traffic
+traffic light kharap theke,Traffic
+eto vhir rasta te theke kono bebosta nai,Traffic
+rasta clear koro theke eto theke traffic keno,Traffic
+bus stand theke theke jam e purno,Traffic
+heavy vhir rastay,Traffic
+traffic sargeant theke nei ekhane,Traffic
+manus hata theke parchena rastay,Traffic
+bike theke helmet nai ekhane,Traffic
+auto gulo rasta jam theke thela kore,Traffic
+rasta theke atke theke jabe,Traffic
+signal of theke theke thela ekhane,Traffic
+traffic rules theke theke keu manena,Traffic
+crossing e accident theke thela hocche,Traffic
+signal jeno theke theke purno baje,Traffic
+amader rastay eto theke jam keno,Traffic
+traffic police kaj theke korche na,Traffic
+rash driving theke bhoy korche,Traffic
+beparoa theke bus theke cholchhe,Traffic
+rasta theke block by theke kachra,Traffic
+highway te theke jam theke thela fese,Traffic
+bike wara theke speed e ekhane,Traffic
+red light theke purno nai theke periche,Traffic
+traffic bebosta theke thela kharap,Traffic
+rasta crossing e jam theke,Traffic
+accident theke traffic rasta block,Traffic
+eto byastota theke thakte parchena rasta,Traffic
+bikel belay theke traffic,Traffic
+traffic sign board theke nei theke nai,Traffic
+parking theke thela theke illegal hoche,Traffic
+no entry te dhuke theke jam,Traffic
+traffic janjot e atke,Traffic
+signal na theke thela eto gari theke asche,Traffic
+over speed theke thela ekhane,Traffic
+pedestrian crossing nai ekhane theke,Traffic
+rasta e theke bus dariye theke jam,Traffic
+bridge e theke block hocche,Traffic
+kono niontron nai theke traffic e,Traffic
+driver ra law theke manchena theke ekhane,Traffic
+jam theke chhutkara kobe pabo,Traffic
+traffic jam clear theke koron ekhoni,Traffic
+signal thik thak theke thela jolena,Traffic
+gari theke thela kore theke jam e fese ache,Traffic
+current chole geche,Electricity
+load shedding,Electricity
+rastar alo bhanga,Electricity
+light blink korche,Electricity
+power chole geche,Electricity
+light fuse hoye geche,Electricity
+bulb fete geche,Electricity
+tar chire geche,Electricity
+wire kete geche,Electricity
+light jhikmik korche,Electricity
+current asche na,Electricity
+biddut bondho hoye geche,Electricity
+tar jhulche,Electricity
+tar loose ache,Electricity
+transformer theke awaj asche,Electricity
+transformer theke dhoa berocche,Electricity
+electric pole pore geche,Electricity
+alo asche ar jacche,Electricity
+phase kete geche,Electricity
+single phase asche,Electricity
+3 phase nei,Electricity
+electric spark hocche,Electricity
+pole theke spark asche,Electricity
+meter kaj korche na,Electricity
+meter bondho ache,Electricity
+electric meter bhanga,Electricity
+fuse box bhanga,Electricity
+rastar alo jolche na,Electricity
+street light kharap,Electricity
+tube light blink korche,Electricity
+voltage khub kom,Electricity
+voltage khub beshi,Electricity
+current theke shock lagche,Electricity
+tar matite pore ache,Electricity
+wire theke chingari berocche,Electricity
+switch board gorom hocche,Electricity
+plug theke spark asche,Electricity
+socket bhanga,Electricity
+apartment e current nei,Electricity
+ghare alo nei,Electricity
+office e power cut,Electricity
+dokane current bondho,Electricity
+bajare current nei,Electricity
+karkhanay biddut nei,Electricity
+schoole current chole geche,Electricity
+haspatale current bondho,Electricity
+generator start hocche na,Electricity
+UPS kaj korche na,Electricity
+inverter charge hocche na,Electricity
+MCB trip koreche,Electricity
+main switch bondho,Electricity
+main line kete geche,Electricity
+electric bill beshi asche,Electricity
+meter reading vul,Electricity
+koler jol nongra,Water Supply
+jol nei,Water Supply
+water cut hoyeche,Water Supply
+kol shukhno,Water Supply
+joler pressure kom,Water Supply
+jol leak korche,Water Supply
+pipe leak hoye geche,Water Supply
+tank khali,Water Supply
+jole baje gondho,Water Supply
+kadajukto jol,Water Supply
+gondho jol,Water Supply
+joler obhab,Water Supply
+koler jol gola,Water Supply
+ghare jol asche na,Water Supply
+sokal theke jol nei,Water Supply
+tap theke jol porche na,Water Supply
+pipe theke jol porche,Water Supply
+jol theke fota fota porche,Water Supply
+joler tank faka,Water Supply
+jol furiye geche,Water Supply
+kalo jol asche,Water Supply
+jol unsafe,Water Supply
+jol khawar joggo noy,Water Supply
+kol bhanga,Water Supply
+koler handle bhenge geche,Water Supply
+pipe fete geche,Water Supply
+paani overflow hocche,Water Supply
+tank theke jol upche porche,Water Supply
+motor kaj korche na,Water Supply
+pump kharap,Water Supply
+motor theke awaj asche,Water Supply
+motor pora gondho,Water Supply
+joler meter kharap,Water Supply
+joler bill vul asche,Water Supply
+joler somoy bodle geche,Water Supply
+ratrer jol aseni,Water Supply
+sokaler joler supply bondho,Water Supply
+water tanker dorkar,Water Supply
+tanker deri te asheche,Water Supply
+pipe e hawa dhukeche,Water Supply
+joler flow thik nei,Water Supply
+high pressure e pipe feteche,Water Supply
+pipe e kachra jomeche,Water Supply
+joler taste kharap,Water Supply
+jole chlorine er gondho,Water Supply
+filter kaj korche na,Water Supply
+RO kharap hoye geche,Water Supply
+kacharar gari asheni,Sanitation
+moyla tola hoyni,Sanitation
+dustbin upche porche,Sanitation
+rasta nongra,Sanitation
+rastay moyla pore ache,Sanitation
+baje gondho asche moyla theke,Sanitation
+moylar stup,Sanitation
+kachra jome geche,Sanitation
+safaikormi asheni,Sanitation
+public dustbin bhorti,Sanitation
+drain poriskar noy,Sanitation
+kachra rastay chhorano,Sanitation
+rastay badbu,Sanitation
+dustbin er cover nei,Sanitation
+rastar pashe moyla fela hoyeche,Sanitation
+nongra charidike,Sanitation
+drain e moyla,Sanitation
+nalay kachra,Sanitation
+moylar jonno drain block,Sanitation
+garbage truck deri te esheche,Sanitation
+rasta jharu dewa hoyni,Sanitation
+bagane moyla,Sanitation
+park nongra,Sanitation
+schoole r pashe kachra,Sanitation
+haspataler baire moyla,Sanitation
+bajar nongra,Sanitation
+nongray mosha machi,Sanitation
+moylar jonno rog choracche,Sanitation
+khola moylar stup,Sanitation
+plastic er packet chhorano,Sanitation
+kagoz er tukro rastay,Sanitation
+rasta theke moyla soran,Sanitation
+dustbin dhuye din,Sanitation
+bhanga dustbin bodlan,Sanitation
+bheja ar shukno moyla eksathe,Sanitation
+moyla porano hocche,Sanitation
+porano moylar dhoa,Sanitation
+rasta jharu dewa dorkar,Sanitation
+pashur gu rastay,Sanitation
+mora pashur gondho,Sanitation
+sulabh souchalay nongra,Sanitation
+toilet clean kora dorkar,Sanitation
+toilet er flush bhanga,Sanitation
+rastay gorto,Road Maintenance
+bumpy rasta,Road Maintenance
+rasta bhenge geche,Road Maintenance
+rastay crack,Road Maintenance
+rastay boro bhanga,Road Maintenance
+rasta damage,Road Maintenance
+bridge e crack ache,Road Maintenance
+footpath bhenge geche,Road Maintenance
+rasta unsafe,Road Maintenance
+manhole er dhakna nei,Road Maintenance
+cycle track bhanga,Road Maintenance
+kharap rasta,Road Maintenance
+asphalt uthe geche,Road Maintenance
+uneven rasta,Road Maintenance
+pull bhenge jacche,Road Maintenance
+footpath er tile khule geche,Road Maintenance
+bipojjonok rasta,Road Maintenance
+khola manhole,Road Maintenance
+rastar majhkane gorto,Road Maintenance
+rasta patch kora dorkar,Road Maintenance
+rasta chawra kora dorkar,Road Maintenance
+lane marking nei,Road Maintenance
+speed breaker bhanga,Road Maintenance
+speed bump kharap,Road Maintenance
+road sign nei,Road Maintenance
+signboard pore geche,Road Maintenance
+rastay pathor pore ache,Road Maintenance
+rastay kada,Road Maintenance
+construction er jinish rastay,Road Maintenance
+kaj incomplete ache,Road Maintenance
+kajer jonno rasta block,Road Maintenance
+jol jome rasta kharap,Road Maintenance
+bristite rasta bhengeche,Road Maintenance
+rastay tel poreche slippery,Road Maintenance
+pitch uthe jacche,Road Maintenance
+cement rasta fata,Road Maintenance
+footpath e badha,Road Maintenance
+zebra crossing dekha jacche na,Road Maintenance
+signal er kache rasta bhanga,Road Maintenance
+highway kharap,Road Maintenance
+market er rasta bhanga,Road Maintenance
+rasta bose geche,Road Maintenance
+flyover er joint bhanga,Road Maintenance
+underpass e jol,Road Maintenance
+gach pore rasta atkeche,Road Maintenance
+traffic signal bondho,Public Lighting
+signal kaj korche na,Public Lighting
+street lamp bondho,Public Lighting
+lamp post bhanga,Public Lighting
+alo jhikmik korche,Public Lighting
+traffic light problem,Public Lighting
+alo jolche na,Public Lighting
+pole er alo bondho,Public Lighting
+signal blink korche na,Public Lighting
+signal light fuse,Public Lighting
+red light kaj korche na,Public Lighting
+green light asche na,Public Lighting
+pedestrian signal bondho,Public Lighting
+lamp post beke geche,Public Lighting
+lamp er tar kete geche,Public Lighting
+switch box bhanga,Public Lighting
+din dupure alo jolche,Public Lighting
+automatic sensor fail,Public Lighting
+lamp er kach bhanga,Public Lighting
+bulb change kora dorkar,Public Lighting
+LED street light bondho,Public Lighting
+park er alo fuse,Public Lighting
+timer display bondho,Public Lighting
+pole theke chingari asche,Public Lighting
+pole er tar beriye ache,Public Lighting
+alo khub dim,Public Lighting
+gas er gondho,Gas Leaks
+gas pipe fete geche,Gas Leaks
+barir kache gas leak,Gas Leaks
+kitchen e gas er gondho,Gas Leaks
+pipeline fata,Gas Leaks
+gas berocche,Gas Leaks
+cylinder theke gas asche,Gas Leaks
+gas connection loose,Gas Leaks
+stove theke gas leak,Gas Leaks
+regulator kharap,Gas Leaks
+gas er knob loose,Gas Leaks
+factory te gas leak,Gas Leaks
+boiler theke gas leak,Gas Leaks
+cylinder blast,Gas Leaks
+cylinder theke shish dewar awaj,Gas Leaks
+gas meter leak,Gas Leaks
+pipe e jhong dhoreche,Gas Leaks
+pipe er rong bodle geche,Gas Leaks
+bissakto gas leak,Gas Leaks
+gas sensor alarm bajche,Gas Leaks
+main valve theke leak,Gas Leaks
+gas er emergency stop fail,Gas Leaks
+pipe er welding fata,Gas Leaks
+khub jore awaj,Noise
+khub chitkar,Noise
+noisy elaka,Noise
+construction er awaj,Noise
+factory r awaj,Noise
+music khub jore,Noise
+high volume er awaj,Noise
+speaker er awaj,Noise
+generator er awaj,Noise
+gari horn dicche khub,Noise
+horn er shobdo,Noise
+drilling er awaj,Noise
+dj bajche,Noise
+porshir bari theke loud music,Noise
+party r awaj,Noise
+biyer band er awaj,Noise
+band baja bajche,Noise
+pujor loudspeaker,Noise
+mandirer loudspeaker,Noise
+masjider loudspeaker,Noise
+kirtan er awaj,Noise
+bazi fatar awaj,Noise
+patakar awaj,Noise
+political rally r shobdo,Noise
+shloganer awaj,Noise
+dj sound system loud,Noise
+bass khub beshi,Noise
+microphone theke awaj,Noise
+welding er awaj,Noise
+rasta katar awaj,Noise
+bulldozer er awaj,Noise
+truck er horn,Noise
+train er horn,Noise
+aeroplane er jore awaj,Noise
+bike er silencer er awaj,Noise
+lathe machine er awaj,Noise
+moylar gondho,Waste Management
+dustbin bhorti,Waste Management
+bin upche porche,Waste Management
+moylar stup,Waste Management
+moyla poriskar hoyni,Waste Management
+plastic er moyla,Waste Management
+kachra jome geche,Waste Management
+kooda badboo korche,Waste Management
+garbage collection deri,Waste Management
+dustbin theke gondho asche,Waste Management
+rasta theke moyla tola hoyni,Waste Management
+moylar truck asheni,Waste Management
+kachra bikhar geche,Waste Management
+moylate idur,Waste Management
+moylate machi,Waste Management
+moylate mosha,Waste Management
+kukur moyla khacche,Waste Management
+plastic bag jomeche,Waste Management
+medical waste rastay,Waste Management
+injdction er chuch rastay,Waste Management
+bhanga kach moylate,Waste Management
+electronic waste,Waste Management
+purono asbabpotro rastay,Waste Management
+cement er bosta moylay,Waste Management
+baganer moyla,Waste Management
+bheja ar shukno moyla eksathe,Waste Management
+moyla porano hocche,Waste Management
+dhoa asche moyla theke,Waste Management
+jol jomeche,Drainage
+sewer block,Drainage
+rastay bonnya,Drainage
+sewage overflow hocche,Drainage
+drain er gondho,Drainage
+drain er jol pichone asche,Drainage
+rasta e jol khariye ache,Drainage
+nalar gondho asche,Drainage
+drain theke badbu,Drainage
+gutter block,Drainage
+manhole er dhakna nei,Drainage
+nalay mosha dim parche,Drainage
+stagnant jol,Drainage
+drain er jol jacche na,Drainage
+rastay joler pukur,Drainage
+drain clear kora hoyni,Drainage
+drain e moyla jomeche,Drainage
+plastic theke nala jam,Drainage
+nalay poka makor,Drainage
+drain e mora pashu,Drainage
+chemical theke nalar jol kalo,Drainage
+toilet er drain block,Drainage
+barite sewer er jol dhukche,Drainage
+bristir jol jome geche,Drainage
+नाला overflow hocche,Drainage
+gach pore geche,Tree/Landscape
+dal bhenge poreche,Tree/Landscape
+gach rasta atkeche,Tree/Landscape
+gacher shikor rasta bhengeche,Tree/Landscape
+bagan nongra,Tree/Landscape
+bhanga dal,Tree/Landscape
+gach boro hoye alo atkeche,Tree/Landscape
+gach signal atkeche,Tree/Landscape
+gach kata dorkar,Tree/Landscape
+gach upre geche,Tree/Landscape
+garir opor gach poreche,Tree/Landscape
+jhore dal bhengeche,Tree/Landscape
+bipojjonok bhabe gach heleye ache,Tree/Landscape
+shukno dal porte pare,Tree/Landscape
+footpath e dal pore ache,Tree/Landscape
+shikor drain block korche,Tree/Landscape
+shikor building fata korche,Tree/Landscape
+gach electric tar chhucche,Tree/Landscape
+gacher pata jome drain block,Tree/Landscape
+park e khub jhongol,Tree/Landscape
+gacher guri rastay,Tree/Landscape
+mosha hocche,Public Health
+haspataler nongra,Public Health
+clinic er moyla,Public Health
+sasther khoti,Public Health
+pocha moyla,Public Health
+medical moyla,Public Health
+nongra clinic,Public Health
+nongra elaka,Public Health
+dengue barche,Public Health
+malaria hocche,Public Health
+tanker jol nongra,Public Health
+tanker dhakna nei,Public Health
+kuyoy nongra jol,Public Health
+drain er jole mosha,Public Health
+elakay idur,Public Health
+arshola barche,Public Health
+public toilet nongra,Public Health
+toilet e gondho,Public Health
+toilet e jol nei,Public Health
+vyabohar kora mask rastay,Public Health
+rastay rokter daag,Public Health
+rasta kinaray baje khabar,Public Health
+unhygienic street food,Public Health
+machhi bosa khabar,Public Health
+pocha fol bikkri hocche,Public Health
+swimming pool er jol nongra,Public Health
+rastay lok hishu korche,Public Health
+rastay pashur gu,Public Health
+mora kukur rastay,Public Health
+dhoya theke air pollution,Public Health
+moshak marar tel dewa hoyni,Public Health
+fogging hocche na,Public Health
+osudh nosto hoye geche,Public Health
+taka ferot paini,Consumer Affairs
+billing er somossa,Consumer Affairs
+dame thokiyeche,Consumer Affairs
+vul bill diyeche,Consumer Affairs
+bill niye jhamela,Consumer Affairs
+overcharge koreche,Consumer Affairs
+bill e vul,Consumer Affairs
+beshi charge koreche,Consumer Affairs
+double charge keteche,Consumer Affairs
+bank e beshi taka keteche,Consumer Affairs
+EMI vul keteche,Consumer Affairs
+ATM theke taka beroni,Consumer Affairs
+ATM e cash nei,Consumer Affairs
+fake product diyeche,Consumer Affairs
+vul jinis esheche,Consumer Affairs
+bhanga product diyeche,Consumer Affairs
+product kaj korche na,Consumer Affairs
+service valo noy,Consumer Affairs
+order cancel kore diyeche,Consumer Affairs
+customer care phone dhorche na,Consumer Affairs
+mitha biggapon,Consumer Affairs
+offer deyni,Consumer Affairs
+flight ticket cancel,Consumer Affairs
+varatia jhamela,Rent/Building
+bari bipojjonok,Rent/Building
+barite crack,Rent/Building
+beaini nirman,Rent/Building
+vanga bari,Rent/Building
+bari valo nei,Rent/Building
+vitti durbol,Rent/Building
+dewal fata,Rent/Building
+chhad chuinye jol porche,Rent/Building
+varatia vara dicche na,Rent/Building
+varatia bari chharche na,Rent/Building
+bariwala vara bariyeche beaini bhabe,Rent/Building
+bariwala repair korche na,Rent/Building
+lift kaj korche na,Rent/Building
+siri bhanga,Rent/Building
+security guard nei,Rent/Building
+parking niye jhamela,Rent/Building
+chhad theke jol porchhe,Rent/Building
+barite dhyam poreche,Rent/Building
+plaster khushe porche,Rent/Building
+bhanga janala,Rent/Building
+dorjar lock kharap,Rent/Building
+bathroom e leak,Rent/Building
+barite wiring kharap,Rent/Building
+beaini tola toiri,Rent/Building
+bari heleye poreche,Rent/Building
+pillar bhanga,Rent/Building
+PG te beshi vara nichhe,Rent/Building
+fire hydrant bondho,Fire Safety
+fire extinguisher nei,Fire Safety
+fire alarm bhanga,Fire Safety
+fire escape bondho,Fire Safety
+barite dhoa,Fire Safety
+agun lagar bhoy,Fire Safety
+agun legeche,Fire Safety
+fire alarm kaj korche na,Fire Safety
+smoke detector kharap,Fire Safety
+emergency dorja atke ache,Fire Safety
+fire exit e badha,Fire Safety
+sprinkler kaj korche na,Fire Safety
+fire NOC fail,Fire Safety
+lift theke pora gondho,Fire Safety
+meter ruume spark,Fire Safety
+kitchen e agun er bhoy,Fire Safety
+cylinder blast er bhoy,Fire Safety
+factory te agun er bhoy,Fire Safety
+fire brigade deri koreche,Fire Safety
+fire extinguisher expire kore geche,Fire Safety
+khub traffic,Traffic
+signal bhanga,Traffic
+rasta block,Traffic
+traffic light kaj korche na,Traffic
+rastay jam,Traffic
+jam e fese achi,Traffic
+signal red e atke ache,Traffic
+bridge block,Traffic
+flyover e jam,Traffic
+accident er jonne jam,Traffic
+rasta meramotir jonne jam,Traffic
+jol jome rasta jam,Traffic
+VIP movement er jonne jam,Traffic
+protest er jonne rasta block,Traffic
+biyer jonne jam,Traffic
+pujar jam,Traffic
+cricket match er vhir,Traffic
+rastay gari khrp jam,Traffic
+wrong parking er jonne jam,Traffic
+rasta katar jonno jam,Traffic
+rastay khub problem hocche,Road Maintenance
+alo asche na,Electricity
+rastar theke ghare jol asche,Road Maintenance
+aaj 2 ghonta dhore current nei,Electricity
+stationary dokaner samne rastay gorto,Road Maintenance
+rastay jhamela,Road Maintenance
+joler problem ache,Water Supply
+jol kom asche,Water Supply
+raju sweet shop mrp theke beshi nicche,Consumer Affairs
+main switch board e somossa,Electricity
+nalay jol bhorti hoye geche,Drainage
+gortor somossa,Road Maintenance
+amar bariwala beshi vara chaiche,Rent/Building
+rastar baire gutter e problem,Road Maintenance
+joler jhamela,Water Supply
+rasta khure rekheche ekhane te bristi te kada,Road Maintenance
+kol e jol asche na sokal,Water Supply
+jol ache na,Water Supply
+rastay jol asche ekhane,Drainage
+garbage not collected today,Sanitation
+no sweeper came this morning,Sanitation
+the street cleaner has not shown up,Sanitation
+sanitation worker absent,Sanitation
+road sweeping not done,Sanitation
+dustbin overflowing on main road,Sanitation
+garbage pile near school,Sanitation
+waste not picked up for 3 days,Sanitation
+open garbage near my house,Sanitation
+sanitation team missing,Sanitation
+public dustbin not cleaned,Sanitation
+foul smell from garbage heap,Sanitation
+trash scattered everywhere,Sanitation
+no garbage van came today,Sanitation
+street is full of litter,Sanitation
+garbage bin is broken,Sanitation
+waste dumped on footpath,Sanitation
+no cleaning in our area for 5 days,Sanitation
+the waste collector did not visit,Sanitation
+trash piling up outside market,Sanitation
+public toilet is very dirty,Sanitation
+toilet in park is not clean,Sanitation
+community toilet overflowing,Sanitation
+no soap or water in public toilet,Sanitation
+public bathroom stinking badly,Sanitation
+drain cleaner not working,Sanitation
+sweeper skipped our lane today,Sanitation
+dog waste on footpath not cleaned,Sanitation
+dead animal on road not removed,Sanitation
+carcass smell near road,Sanitation
+garbage truck not arriving on time,Sanitation
+waste piled since last week,Sanitation
+uncollected garbage attracting flies,Sanitation
+rodents due to uncollected waste,Sanitation
+rubbish heap near children park,Sanitation
+the sweeper did not come for a week,Sanitation
+litter bins full and overflowing,Sanitation
+nobody collecting garbage in colony,Sanitation
+no cleanliness drive in our area,Sanitation
+trash stinks near hospital entrance,Sanitation
+garbage left on road after festival,Sanitation
+waste collection is irregular,Sanitation
+waste bin has no lid,Sanitation
+cleaning staff not coming,Sanitation
+our locality has not been swept today,Sanitation
+safai nahi hui aaj,Sanitation
+dustbin bhar gaya hai,Sanitation
+nali ki safai nahi hui,Sanitation
+raste pe kachra pada hai,Sanitation
+mohalley mein safai nahi hui,Sanitation
+kachra uthane wala nahi aaya,Sanitation
+jhadu nahi laga aaj,Sanitation
+ganda paani raste par beh raha hai,Sanitation
+kachra phela hua hai poori gali mein,Sanitation
+dustbin ka dhakkan toot gaya,Sanitation
+sarkari toilet bahut ganda hai,Sanitation
+toilet mein paani nahi hai,Sanitation
+safai wala hafte bhar se nahi aaya,Sanitation
+badbu aa rahi hai kachrे se,Sanitation
+moraliy ke paas kachra pada hai,Sanitation
+shmashan ke paas kachra,Sanitation
+safai na hone se machhar ho rahe hain,Sanitation
+kachra jala rahe hain khuli jagah mein,Sanitation
+open mein kachra pheka ja raha hai,Sanitation
+mara hua janwar sadak par pada hai,Sanitation
+market mein safai nahi hoti,Sanitation
+dustbin bahut purana aur toot gaya hai,Sanitation
+safai vibhag ka number nahi lag raha,Sanitation
+safai hoyni aaj,Sanitation
+kachra gaari asheni,Sanitation
+safai karmi asheni,Sanitation
+dustbin bhorti hoye geche,Sanitation
+rasta jharu dewa hoyni aaj,Sanitation
+rastay kachra pore ache,Sanitation
+elakay safai hoyni,Sanitation
+kachra tola hoyni aaj,Sanitation
+jharu lagano hoyni,Sanitation
+kachra chhorie ache chharidike,Sanitation
+dustbin er dhakna nei,Sanitation
+sarkari toilet khub nongra,Sanitation
+toilet e jol nei,Sanitation
+safai kormi ek hapta asheni,Sanitation
+baje gondho asche kachra theke,Sanitation
+mora kukur rastay pore ache,Sanitation
+bajar er kachra tola hoyni,Sanitation
+moyla porano hocche khola jaya gaye,Sanitation
+kachra jalano theke dhoa,Sanitation
+mosha hocche safai na howar jonne,Sanitation
+water has not come since morning,Water Supply
+no water supply in our area today,Water Supply
+water pressure is very low,Water Supply
+tap is completely dry,Water Supply
+drinking water not available,Water Supply
+water supply has been cut,Water Supply
+dirty water coming from tap,Water Supply
+muddy water in pipeline,Water Supply
+water smells bad,Water Supply
+yellowish water from tap,Water Supply
+water pipe burst on road,Water Supply
+pipeline is leaking,Water Supply
+underground pipe broken,Water Supply
+water is wasting due to pipe leak,Water Supply
+water pump not working,Water Supply
+motor pump broken,Water Supply
+overhead tank is empty,Water Supply
+no water for 2 days,Water Supply
+water tanker not arrived,Water Supply
+water tanker delayed,Water Supply
+community water tap not working,Water Supply
+borewell not functioning,Water Supply
+handpump is broken,Water Supply
+water meter is faulty,Water Supply
+got wrong water bill,Water Supply
+excess billing for water,Water Supply
+water not safe for drinking,Water Supply
+RO plant not working in colony,Water Supply
+filter in water supply broken,Water Supply
+water supply irregular in our area,Water Supply
+getting water only for 30 minutes,Water Supply
+water supply time changed without notice,Water Supply
+the water supply connection is broken,Water Supply
+no water at night,Water Supply
+no morning water supply,Water Supply
+air in water pipeline making noise,Water Supply
+water tastes salty,Water Supply
+water tastes like chlorine,Water Supply
+black particles in water,Water Supply
+rust colored water from tap,Water Supply
+our tap is always trickling,Water Supply
+main water line damaged,Water Supply
+water leaking in road,Water Supply
+water wasting on road,Water Supply
+tanker water is dirty,Water Supply
+no water connection in new area,Water Supply
+new pipeline not connected yet,Water Supply
+paani ki supply band hai,Water Supply
+ganda paani aa raha hai,Water Supply
+paani mein mitti aa rahi hai,Water Supply
+pipe fata hua hai,Water Supply
+paani ki motor kharab hai,Water Supply
+tank khali hai paani ka,Water Supply
+paani tanker nahi aaya,Water Supply
+nal toot gaya hai,Water Supply
+paani ka pressure bahut kam hai,Water Supply
+2 din se paani nahi hai,Water Supply
+subah se paani nahi aaya,Water Supply
+paani mein kide hai,Water Supply
+yellow paani aa raha hai,Water Supply
+paani bahut kam aata hai,Water Supply
+paani ka connection kharab hai,Water Supply
+nali se paani beh raha hai,Water Supply
+pipeline mein leak hai,Water Supply
+paani ka bill galat aaya,Water Supply
+paani safe nahi peene layak nahi,Water Supply
+boring kharab ho gayi hai,Water Supply
+haath pump nahi chal raha,Water Supply
+paani ki supply sirf 30 minute milti hai,Water Supply
+jol asche na subah theke,Water Supply
+nal sukha hoye geche,Water Supply
+jol er supply bondho,Water Supply
+nongra jol asche,Water Supply
+jole mati asche,Water Supply
+jole gondho asche,Water Supply
+motor kharap hoye geche,Water Supply
+tank khali hoye geche,Water Supply
+tanker asheni,Water Supply
+nal bhanga,Water Supply
+jol er pressure khub kom,Water Supply
+2 din dhore jol nei,Water Supply
+subah theke jol asheni,Water Supply
+holo jol asche pipe theke,Water Supply
+jol khawar yogyo noy,Water Supply
+boring kaj korche na,Water Supply
+joler supply matro 30 minute,Water Supply
+mosquito menace in our area,Public Health
+dengue cases rising in locality,Public Health
+malaria spreading due to stagnant water,Public Health
+fogging not done in our area,Public Health
+no anti-mosquito spray this month,Public Health
+rats in our neighbourhood,Public Health
+cockroach infestation in colony,Public Health
+stray dogs biting people,Public Health
+stray dog bite reported,Public Health
+unhygienic food sold on street,Public Health
+expired food being sold,Public Health
+flies sitting on open food,Public Health
+food vendor not following hygiene,Public Health
+dirty water causing illness,Public Health
+contaminated water supply,Public Health
+open defecation on roadside,Public Health
+people urinating on public wall,Public Health
+rotting garbage causing disease,Public Health
+disease outbreak in our area,Public Health
+cholera fear in our locality,Public Health
+typhoid spreading in colony,Public Health
+dead rats on road,Public Health
+dead animals causing smell,Public Health
+medical waste dumped on road,Public Health
+used syringes found on street,Public Health
+hospital waste not disposed properly,Public Health
+open drains breeding mosquitoes,Public Health
+stagnant water near house causing mosquito,Public Health
+mosquito larvae in water tank,Public Health
+health hazard due to garbage,Public Health
+air pollution from burning garbage,Public Health
+smoke from factory affecting health,Public Health
+chemical smell from nearby factory,Public Health
+skin rashes due to water quality,Public Health
+children falling sick from dirty water,Public Health
+public toilet not sanitized,Public Health
+no handwashing facility at public toilet,Public Health
+unhygienic slaughterhouse nearby,Public Health
+rotting fish in market,Public Health
+stale food at restaurant near us,Public Health
+local clinic is in unhygienic state,Public Health
+no doctor at health centre,Public Health
+medicine stock empty at dispensary,Public Health
+health camp not organized this year,Public Health
+pest control not done in years,Public Health
+machhar bahut hain is ilake mein,Public Health
+dengue ka darr hai,Public Health
+gande paani se bimari ho rahi hai,Public Health
+kaafi bachchon ko bukhar hai,Public Health
+khole mein machharon ka dimak ho gaya,Public Health
+chuhe bhar gaye hain,Public Health
+sarak par mara hua janwar,Public Health
+khule mein shoch ho raha hai,Public Health
+fogging nahi hui is mahine,Public Health
+dadha paani mein machhar ho rahe hain,Public Health
+sarak par khula maas bik raha hai,Public Health
+galak khane wale nahi aate hospital,Public Health
+medical kachra sadak par pada hai,Public Health
+sui seringein sadak par mili,Public Health
+chemical gandh aa rahi hai factory se,Public Health
+prasad ka rasoi ganda hai mandir ke paas,Public Health
+gande paani se dast ho rahe hain,Public Health
+market mein machhi bhari hai,Public Health
+sada khana thele par bikta hai,Public Health
+jhuggi ke paas machhar bahut hai,Public Health
+kutta ne kaata bacche ko,Public Health
+awara kuttey hamare mohalle mein khatar,Public Health
+hamare ghar ke paas nali mein machhar,Public Health
+swasthya shivir nahi laga is saal,Public Health
+dawai khatam ho gayi dispensary mein,Public Health
+mosha khub beshi amader elakay,Public Health
+dengue r bhoy ache,Public Health
+nongra joler jonne rog hoye geche,Public Health
+bacchara rog bhogte ache,Public Health
+jome thaka joley mosha hocche,Public Health
+idur bhere geche,Public Health
+rastay mora janwar pore ache,Public Health
+khola jayaygay hisu korche lokjon,Public Health
+fogging hoyni is mas,Public Health
+medical kachra rastay,Public Health
+khola maas bikri hocche,Public Health
+rog choriye porche elakay,Public Health
+kharap jol theke dast hocche,Public Health
+mora kukur rastay pore ache,Public Health
+kukur kamreche ekta bacchake,Public Health
+chemical gondho asche factory theke,Public Health
+mosha dimer jonno nala block,Public Health
+swasthya kendra theke osudh ses,Public Health
+swasthya shivir lagano hoyni,Public Health
+haater kach te khola machha bikri,Public Health
+large waste dump in our locality,Waste Management
+no waste segregation being done,Waste Management
+wet and dry waste mixed by collector,Waste Management
+garbage truck does not come daily,Waste Management
+illegal dumping of waste near park,Waste Management
+construction debris on road,Waste Management
+builder dumped debris on street,Waste Management
+e-waste thrown near our colony,Waste Management
+old furniture dumped on street,Waste Management
+plastic waste clogging drain,Waste Management
+plastic bags scattered on road,Waste Management
+waste burning causing pollution,Waste Management
+smoke from burning garbage,Waste Management
+landfill site smell reaching us,Waste Management
+garbage dump near our homes,Waste Management
+waste pile attracting crows,Waste Management
+vultures sitting on waste dump,Waste Management
+waste management not done in slums,Waste Management
+community dustbin removed not replaced,Waste Management
+biomedical waste near dispensary,Waste Management
+hazardous waste found on road,Waste Management
+paint cans thrown illegally,Waste Management
+chemical waste in nala,Waste Management
+industrial waste being dumped here,Waste Management
+household waste collection stopped,Waste Management
+kachra uthane ka time fix nahi hai,Waste Management
+bheja aur sukha kachra ek saath jata hai,Waste Management
+construction malba sadak par hai,Waste Management
+purana furniture sadak par pada hai,Waste Management
+plastic kachra nali mein fase hua hai,Waste Management
+kachra jalaane se smoke aa rahi hai,Waste Management
+kachra gaadi hafte mein ek baar aati hai,Waste Management
+e-waste colony ke bahar pada hai,Waste Management
+chemical kachra nadi mein pheka ja raha,Waste Management
+factory waste ilake mein dump ho raha,Waste Management
+kachrein ka dhera park ke paas hai,Waste Management
+kachra nahi utha rahe kai dino se,Waste Management
+hospital ka kachra khule mein,Waste Management
+kachra container overflow ho gaya,Waste Management
+dustbin nahi rahi is area mein,Waste Management
+kachra tola hocche na protidin,Waste Management
+bheja shukno moyla ek sathe jacche,Waste Management
+construction er malba rastay,Waste Management
+purono asbab rastay fela ache,Waste Management
+plastic kachra nala bhorti korche,Waste Management
+kachra porano theke dhoa,Waste Management
+kachra gaari saptahe ekbar ashe,Waste Management
+e-waste chhorie ache elakay,Waste Management
+chemical moyla nalay fela hocche,Waste Management
+factory moyla dump hocche elakay,Waste Management
+dustbin nei amader area te,Waste Management
+hospital moyla khola jayaygay,Waste Management
+container overflow hocche,Waste Management
+water logged on road,Drainage
+drain blocked with garbage,Drainage
+sewer line choked,Drainage
+manhole overflowing on road,Drainage
+open manhole without cover,Drainage
+drain not cleaned in months,Drainage
+sewage water flowing on street,Drainage
+water accumulating in basement,Drainage
+sewer smell inside house,Drainage
+drain water entering homes,Drainage
+nala is overflowing,Drainage
+nala blocked by plastic bags,Drainage
+dead animals blocking drain,Drainage
+roots of tree blocking drain,Drainage
+flooding due to blocked drain,Drainage
+water not draining after rain,Drainage
+drainage system not working,Drainage
+drain cleaning not done,Drainage
+sewage back-flow in toilets,Drainage
+septic tank overflow,Drainage
+sewage mixing with drinking water,Drainage
+manhole cover missing dangerous,Drainage
+child fell in open manhole,Drainage
+stagnant water near building,Drainage
+nali jam ho gayi hai,Drainage
+manhole overflow ho raha hai,Drainage
+barish ka paani nahi nikal raha,Drainage
+sewer ka ganda paani sadak par,Drainage
+nali ki safai nahi hui kaafi dino se,Drainage
+gharon mein paani ghus gaya,Drainage
+nala plastic se band ho gaya,Drainage
+sewage toilet mein ulta aa raha hai,Drainage
+septic tank bhar gaya,Drainage
+manhole ka dhakna nahi hai,Drainage
+khuli nali se accident ka darr hai,Drainage
+sadak par barish ka paani jama hai,Drainage
+nali se badbu aa rahi hai,Drainage
+sewer line mein problem hai,Drainage
+colony mein paani bhar gaya,Drainage
+nala jam hoye geche,Drainage
+manhole overflow korche,Drainage
+bristir jol jacche na,Drainage
+sewer er nongra jol rastay,Drainage
+nala shafai hoyni,Drainage
+ghare jol dhuke geche,Drainage
+nala plastic e bhorti,Drainage
+sewage toilet e ultiye asche,Drainage
+septic tank bhorti hoye geche,Drainage
+manhole er dhakna nei bipojjonok,Drainage
+rastay jol jome ache,Drainage
+nala theke badbu asche,Drainage
+sewer e somossa ache,Drainage
+elakay jol bhorti hoye geche,Drainage
+big pothole on main road,Road Maintenance
+road has dangerous cracks,Road Maintenance
+road full of potholes after rain,Road Maintenance
+road surface broken completely,Road Maintenance
+tarmac coming off,Road Maintenance
+footpath is broken,Road Maintenance
+footpath tiles missing,Road Maintenance
+pavement blocked by parked vehicle,Road Maintenance
+road divider damaged,Road Maintenance
+road sign fallen down,Road Maintenance
+no road marking visible,Road Maintenance
+zebra crossing not visible,Road Maintenance
+road too narrow after construction,Road Maintenance
+bridge is in bad condition,Road Maintenance
+flyover surface broken,Road Maintenance
+underpass flooded,Road Maintenance
+road repair work incomplete,Road Maintenance
+newly built road broken again,Road Maintenance
+construction material left on road,Road Maintenance
+road barricade left unattended,Road Maintenance
+road not repaired after pipeline work,Road Maintenance
+dangerous hole in road,Road Maintenance
+vehicle got damaged due to pothole,Road Maintenance
+road slippery due to oil spill,Road Maintenance
+sadak par bahut bade gadde hain,Road Maintenance
+sadak buri tarah se toot gayi hai,Road Maintenance
+barish ke baad sadak bahut kharab ho gayi,Road Maintenance
+footpath bahut toot gaya hai,Road Maintenance
+sadak divider damage ho gaya,Road Maintenance
+speed breaker toot gaya,Road Maintenance
+sadak ka nishan mita gaya hai,Road Maintenance
+sadak par construction malba pada hai,Road Maintenance
+pul ki halat bahut kharab hai,Road Maintenance
+sadak repair kaam adhoora hai,Road Maintenance
+nali khodne ke baad sadak sahi nahi ki,Road Maintenance
+bhari gadi se sadak dhansi gayi,Road Maintenance
+sadak par dangerous gaddha hai,Road Maintenance
+meri gaadi ka tyre phoot gaya gadde se,Road Maintenance
+sadak saanp ki tarah ghumi hui hai,Road Maintenance
+raste boro gorto ache,Road Maintenance
+rasta khub kharap hoye geche,Road Maintenance
+bristir pore rasta bhengeche,Road Maintenance
+footpath bhengeche,Road Maintenance
+road divider bhanga,Road Maintenance
+speed breaker bhange geche,Road Maintenance
+rastar nishan dekha jaache na,Road Maintenance
+construction er malba rastay pore ache,Road Maintenance
+bridge er obostha kharap,Road Maintenance
+rasta meramot kaam adhurey ache,Road Maintenance
+nala khodar pore rasta thik hoyni,Road Maintenance
+bipojjonok gorto rastay,Road Maintenance
+gortor jonne garir tyre phete geche,Road Maintenance
+rasta e tel dhele slippery,Road Maintenance
+power cut since morning,Electricity
+electricity not restored yet,Electricity
+power outage for 6 hours,Electricity
+load shedding in our area,Electricity
+lights flickering in house,Electricity
+electric pole leaning dangerously,Electricity
+live wire on the ground,Electricity
+bare wire hanging from pole,Electricity
+transformer making loud noise,Electricity
+transformer smells burnt,Electricity
+electricity bill is very high,Electricity
+wrong meter reading on bill,Electricity
+meter not working,Electricity
+electric meter running fast,Electricity
+low voltage problem at home,Electricity
+high voltage damaging appliances,Electricity
+short circuit happened in house,Electricity
+electricity spark from switchboard,Electricity
+MCB keeps tripping,Electricity
+main fuse blown out,Electricity
+street light on during daytime,Electricity
+got electric shock from tap,Electricity
+underground cable damaged,Electricity
+single phase electricity supply only,Electricity
+three phase not available,Electricity
+bijli nahi hai subah se,Electricity
+bijli ab tak wapas nahi aayi,Electricity
+6 ghante se bijli cut hai,Electricity
+hamare ilake mein load shedding hai,Electricity
+ghar ki roshni jhilmila rahi hai,Electricity
+bijli ka khamba teda ho gaya hai,Electricity
+live taar sadak par hai,Electricity
+khula taar khamba se jhool raha hai,Electricity
+transformer se awaaz aa rahi hai,Electricity
+transformer se dhuan aa raha hai,Electricity
+bijli ka bill bahut jyada aaya,Electricity
+meter ki reading galat hai,Electricity
+ghar mein voltage bahut kam hai,Electricity
+voltage zyada hone se gadgetein kharab,Electricity
+short circuit ho gaya ghar mein,Electricity
+switch board se chingari nikal rahi hai,Electricity
+MCB baar baar trip kar raha hai,Electricity
+main fuse ud gaya,Electricity
+bijli ke taar se shock laga,Electricity
+underground cable kharab ho gayi,Electricity
+sirf single phase bijli aa rahi hai,Electricity
+teen phase bijli band hai,Electricity
+bijli vibhag ka koi jawab nahi,Electricity
+bijli meter tez chal raha hai,Electricity
+subah theke bijli nei,Electricity
+current abo tak phire asheni,Electricity
+6 ghonta dhore power cut,Electricity
+amader elakay load shedding,Electricity
+gharer alo jhikmik korche,Electricity
+bijli r khamb beke geche,Electricity
+jibonto taar matite pore ache,Electricity
+khola taar khamb theke jhulche,Electricity
+transformer theke dhoa asche,Electricity
+bijlir bill khub beshi,Electricity
+meter reading bhul,Electricity
+ghare voltage khub kom,Electricity
+beshi voltage er jonne jinishpatra kharap,Electricity
+short circuit hoeche ghare,Electricity
+switch board theke chingari,Electricity
+MCB bar bar trip korche,Electricity
+main fuse ure geche,Electricity
+bijlir tar theke shock legeche,Electricity
+underground cable kharap,Electricity
+single phase bijli asche shudhu,Electricity
+3 phase nei amader elakay,Electricity
+street light not working at night,Public Lighting
+lamp post is broken,Public Lighting
+multiple street lights not working,Public Lighting
+street light glowing in daytime,Public Lighting
+street light flickering,Public Lighting
+no light near park at night,Public Lighting
+road dark and dangerous at night,Public Lighting
+light pole leaning,Public Lighting
+bulb replacement needed on my street,Public Lighting
+traffic signal lights not working,Public Lighting
+light out near school at night,Public Lighting
+junction has no street lights,Public Lighting
+tube light on pole is fused,Public Lighting
+LED street light broken,Public Lighting
+no light at bus stop,Public Lighting
+dark lane causing safety issues,Public Lighting
+women feel unsafe due to no lighting,Public Lighting
+entire street without lights,Public Lighting
+signal lights blinking red continuously,Public Lighting
+signal at crossroads not working,Public Lighting
+raat ko street light nahi jalti,Public Lighting
+lamp post toot gaya hai,Public Lighting
+hamare mohalle mein andhera hai raat ko,Public Lighting
+street light din mein bhi jalti rahti hai,Public Lighting
+park ke paas koi light nahi hai,Public Lighting
+light ka khamba teda ho gaya,Public Lighting
+traffic signal raat ko band ho jata hai,Public Lighting
+sadak bilkul andheri hai raat ko,Public Lighting
+bus stop ke paas koi roshni nahi,Public Lighting
+signal baar baar blink kar raha hai,Public Lighting
+street light lag hi nahi hai yahan,Public Lighting
+LED bulb toot gaya hai khamba par,Public Lighting
+junction par koi bhi light nahi,Public Lighting
+school ke bahar raat ko andhera,Public Lighting
+mahilaon ko raat ko darr lagta hai andhere se,Public Lighting
+ratre street light jolche na,Public Lighting
+amader elakay ratre andhaar,Public Lighting
+street light dine o jole ache,Public Lighting
+park er pashe kono alo nei ratre,Public Lighting
+light er khamb beke geche,Public Lighting
+traffic signal ratre bondho hoye jay,Public Lighting
+rasta ratre khub andhaar,Public Lighting
+bus stop er kache kono alo nei,Public Lighting
+signal bar bar blink korche,Public Lighting
+street light nei ekhane,Public Lighting
+LED bulb bhenge geche khambe,Public Lighting
+crossing e kono alo nei,Public Lighting
+school er samne ratre andhaar,Public Lighting
+mahilara ratre nirapad bodh korchen na,Public Lighting
+rastay jol jome geche ekhane,Drainage
+WATER IS NOT COMMING IN MY HOUSE,Water Supply
+water is not comming in my house,Water Supply
+Water supply issue,Water Supply
+Water supply is not working in my area,Water Supply
+PANI NAYI AA RAHA HAI,Water Supply
+ELECTRICITY IN MY LOCALITY IS NOT COMMING,Electricity
+"The drainage system in this area is blocked and poorly maintained, causing water to accumulate on the roads and near houses whenever it rains. This stagnant water has become a breeding ground for mosquitoes and other insects, which poses a health risk to the community. Additionally, the waterlogging is causing inconvenience to pedestrians and vehicles, damaging the roads and creating an unsafe environment",Drainage
+"Ei elakar Nordoma system bondho ebong temonbhabe rokhanabekkhon kora hoyni, jar karone borshar shomoy rastay ebong barir kachakachi pani jome jay. Ei sthir pani mosha ebong onnyanno pokamakorer jonno projonon khetre hoye utheche, ja community-r jonno shastho jhuki srishti korche. Tachara, pani jome thakar karone pothchari ebong janbahoner osubidha hochhe, rastar khotigrasto hochhe ebong eta ekta onirapod poribesh toiri korche.",Water Supply
+"এই এলাকার নর্দমা সিস্টেম বন্ধ এবং তেমনভাবে রক্ষণাবেক্ষণ করা হয়নি, যার কারণে বর্ষার সময় রাস্তায় এবং বাড়ির কাছাকাছি পানি জমে যায়। এই স্থির পানি মশা এবং অন্যান্য পোকামাকড়ের জন্য প্রজনন ক্ষেত্র হয়ে উঠেছে, যা কমিউনিটির জন্য স্বাস্থ্য ঝুঁকি সৃষ্টি করছে। তাছাড়া, পানি জমে থাকার কারণে পথচারী এবং যানবাহনের অসুবিধা হচ্ছে, রাস্তা ক্ষতিগ্রস্ত হচ্ছে এবং এটা একটি অনিরাপদ পরিবেশ তৈরি করছে।",Water Supply
+urgent repair needed for multiple deep potholes and severe surface damage on amadanga highway,Road Maintenance
+"THE EMERGENCY EXIT DOORS IN OUR BUILDING ARE CURENTLY BLOCKED BY STACKED CARDBOARD BOXES, CREATING A SEVERE FIRE HAZARD",Fire Safety
+PANI NAHI AA RAHA HAI MERE GHAR PE,Water Supply
+"I purchased a refrigerator from khosla Electronics on 15 August 2026, but it stopped cooling within 10 days, and the seller has refused to repair or replace it despite repeated requests",Consumer Affairs
+LIVE_E2E_20260908_DO_NOT_DELETE water supply verification,Water Supply

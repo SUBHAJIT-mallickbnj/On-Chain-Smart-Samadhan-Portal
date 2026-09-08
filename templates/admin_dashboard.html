@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard â€“ Smart Samadhan Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --ap: #1e3a5f;
+            --as: #2d6a4f;
+        }
+        body { background: #f0f4f8; font-family: 'Segoe UI', sans-serif; }
+
+        /* â”€â”€ Topbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .topbar {
+            position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 1030;
+            background: linear-gradient(135deg, var(--ap), var(--as));
+            display: flex; align-items: center; padding: 0 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,.25);
+        }
+        .topbar .brand { color: #fff; font-weight: 700; font-size: 1.1rem; flex: 1; }
+        .topbar .admin-info { color: rgba(255,255,255,.9); font-size: .85rem; display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+        .topbar .dept-pill { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); color: #fff; padding: .2rem .7rem; border-radius: 20px; font-size: .78rem; font-weight: 600; }
+        .topbar .btn-topbar { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); color: #fff; padding: .3rem .8rem; border-radius: 6px; font-size: .8rem; cursor: pointer; transition: background .2s; }
+        .topbar .btn-topbar:hover { background: rgba(255,255,255,.25); }
+        .topbar .btn-logout { background: rgba(220,53,69,.7); border: none; color: #fff; padding: .3rem .8rem; border-radius: 6px; font-size: .8rem; cursor: pointer; text-decoration: none; }
+        .topbar .btn-logout:hover { background: #dc3545; color: #fff; }
+
+        /* â”€â”€ Main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .main-wrap { margin-top: 60px; padding: 1.5rem; }
+
+        /* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .stats-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: .85rem; margin-bottom: 1.4rem; }
+        @media(max-width:1100px){ .stats-grid { grid-template-columns: repeat(3,1fr); } }
+        @media(max-width:600px)  { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+        .stat-box { border-radius: 14px; padding: 1rem; color: #fff; box-shadow: 0 3px 12px rgba(0,0,0,.12); cursor: pointer; transition: transform .18s; text-decoration: none; display: block; }
+        .stat-box:hover { transform: translateY(-3px); color: #fff; }
+        .stat-box .num { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+        .stat-box .lbl { font-size: .75rem; opacity: .9; margin-top: .15rem; }
+        .s-total    { background: linear-gradient(135deg,#667eea,#764ba2); }
+        .s-active   { background: linear-gradient(135deg,#f59e0b,#d97706); }
+        .s-disc     { background: linear-gradient(135deg,#ef4444,#dc2626); }
+        .s-authsol  { background: linear-gradient(135deg,#10b981,#059669); }
+        .s-dispute  { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+        .s-resolved { background: linear-gradient(135deg,#6b7280,#4b5563); }
+
+        /* â”€â”€ Filter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .filter-card { background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 1rem 1.3rem; margin-bottom: 1.1rem; }
+        .filter-card .form-control, .filter-card .form-select { font-size: .83rem; border-radius: 8px; }
+        .btn-apply { background: var(--ap); color: #fff; border: none; border-radius: 8px; font-size: .83rem; }
+        .btn-apply:hover { background: #163059; color: #fff; }
+
+        /* â”€â”€ Complaint card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .ccard { background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.07); margin-bottom: .9rem; overflow: hidden; transition: box-shadow .2s; }
+        .ccard:hover { box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+        .ccard-head { padding: .8rem 1.1rem; border-bottom: 1px solid #f1f5f9; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; background: #fafcff; }
+        .ccard-body { padding: .9rem 1.1rem; }
+        .ref-code { background: #eff6ff; color: #1d4ed8; font-family: monospace; font-weight: 700; padding: .18rem .5rem; border-radius: 6px; font-size: .88rem; }
+        .dept-tag { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: .15rem .55rem; border-radius: 20px; font-size: .73rem; font-weight: 600; }
+        .date-tag { color: #6b7280; font-size: .78rem; }
+        .sbadge { padding: .25rem .7rem; border-radius: 20px; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+        .sb-active   { background:#fef3c7; color:#92400e; }
+        .sb-disc     { background:#fee2e2; color:#991b1b; }
+        .sb-authsol  { background:#d1fae5; color:#065f46; }
+        .sb-dispute  { background:#dbeafe; color:#1e40af; }
+        .sb-perm     { background:#e5e7eb; color:#374151; }
+        .sb-resolved { background:#d1fae5; color:#065f46; }
+
+        /* â”€â”€ Action buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .btn-act { font-size: .78rem; font-weight: 600; padding: .35rem .85rem; border-radius: 8px; border: none; cursor: pointer; transition: opacity .2s; }
+        .btn-act:hover { opacity: .85; }
+        .btn-discard    { background: #ef4444; color: #fff; }
+        .btn-auth-solve { background: #10b981; color: #fff; }
+
+        /* â”€â”€ Detail grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+        @media(max-width:768px){ .detail-grid { grid-template-columns: 1fr; } }
+        .detail-label { font-size: .72rem; color: #64748b; text-transform: uppercase; letter-spacing: .04em; font-weight: 600; margin-bottom: .05rem; }
+        .detail-val   { font-size: .85rem; color: #1e293b; }
+        .complaint-text-box { background: #f8fafc; border-left: 3px solid #6366f1; border-radius: 0 8px 8px 0; padding: .6rem .9rem; font-size: .85rem; color: #1e293b; margin-top: .45rem; }
+        .reason-box { background: #fff7ed; border-left: 3px solid #f97316; border-radius: 0 8px 8px 0; padding: .55rem .9rem; font-size: .82rem; margin-top: .45rem; }
+        .solved-box { background: #f0fdf4; border-left: 3px solid #10b981; border-radius: 0 8px 8px 0; padding: .55rem .9rem; font-size: .82rem; margin-top: .45rem; }
+
+        /* â”€â”€ Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+        .timeline { position: relative; padding-left: 1.4rem; margin-top: .6rem; }
+        .timeline::before { content:''; position:absolute; left:.4rem; top:0; bottom:0; width:2px; background:#e2e8f0; }
+        .tl-item { position: relative; padding-bottom: .65rem; }
+        .tl-item:last-child { padding-bottom: 0; }
+        .tl-dot { position:absolute; left:-1.1rem; top:.28rem; width:9px; height:9px; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 2px #cbd5e1; }
+        .tl-dot.dot-submit   { background:#6366f1; }
+        .tl-dot.dot-disc     { background:#ef4444; }
+        .tl-dot.dot-authsol  { background:#10b981; }
+        .tl-dot.dot-dispute  { background:#3b82f6; }
+        .tl-dot.dot-perm     { background:#6b7280; }
+        .tl-dot.dot-default  { background:#94a3b8; }
+        .tl-action { font-weight: 600; font-size: .78rem; color: #1e293b; }
+        .tl-meta   { font-size: .71rem; color: #6b7280; }
+        .tl-note   { font-size: .76rem; color: #374151; background: #f8fafc; border-left: 3px solid #cbd5e1; padding: .2rem .55rem; border-radius: 0 4px 4px 0; margin-top: .15rem; }
+
+        .toggle-detail { background: none; border: none; color: #3b82f6; font-size: .8rem; padding: 0; cursor: pointer; }
+        .empty-state { text-align: center; padding: 3rem 1rem; color: #94a3b8; }
+        .empty-state i { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+    <div class="brand"><i class="fas fa-user-shield me-2"></i>Super Admin Panel</div>
+    <div class="admin-info">
+        <span><i class="fas fa-user me-1"></i><strong id="displayNameSpan">{{ admin_display }}</strong></span>
+        <span class="dept-pill"><i class="fas fa-building me-1"></i>{{ admin_dept }}</span>
+        <button class="btn-topbar" onclick="showEditDisplayName()"><i class="fas fa-pen me-1"></i>Edit Name</button>
+        <button class="btn-topbar" data-bs-toggle="modal" data-bs-target="#createAdminModal"><i class="fas fa-user-plus me-1"></i>Create Admin</button>
+        <a href="{{ url_for('admin_logout') }}" class="btn-logout"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+    </div>
+</div>
+
+<div class="main-wrap">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+        <a href="{{ url_for('admin_dashboard', status='all', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-total">
+            <div class="num">{{ stats.total }}</div><div class="lbl"><i class="fas fa-list me-1"></i>Total</div>
+        </a>
+        <a href="{{ url_for('admin_dashboard', status='active', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-active">
+            <div class="num">{{ stats.active }}</div><div class="lbl"><i class="fas fa-clock me-1"></i>Active</div>
+        </a>
+        <a href="{{ url_for('admin_dashboard', status='discarded', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-disc">
+            <div class="num">{{ stats.discarded }}</div><div class="lbl"><i class="fas fa-ban me-1"></i>Discarded</div>
+        </a>
+        <a href="{{ url_for('admin_dashboard', status='authority_solved', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-authsol">
+            <div class="num">{{ stats.authority_solved }}</div><div class="lbl"><i class="fas fa-check-circle me-1"></i>Solved by Auth.</div>
+        </a>
+        <a href="{{ url_for('admin_dashboard', status='dispute', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-dispute">
+            <div class="num">{{ stats.dispute }}</div><div class="lbl"><i class="fas fa-gavel me-1"></i>Disputed</div>
+        </a>
+        <a href="{{ url_for('admin_dashboard', status='resolved', dept_filter=dept_filter, search_ref=search_ref, date_from=date_from, date_to=date_to, state_filter=state_filter) }}" class="stat-box s-resolved">
+            <div class="num">{{ stats.resolved }}</div><div class="lbl"><i class="fas fa-check-double me-1"></i>Closed</div>
+        </a>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-card">
+        <form method="GET" action="{{ url_for('admin_dashboard') }}">
+            <div class="row g-2 align-items-end">
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">Reference No.</label>
+                    <input type="text" class="form-control form-control-sm" name="search_ref"
+                           value="{{ search_ref }}" placeholder="ABC12345" style="text-transform:uppercase;">
+                </div>
+                {% if admin_dept == 'All' %}
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">Department</label>
+                    <select class="form-select form-select-sm" name="dept_filter">
+                        <option value="all" {% if dept_filter=='all' %}selected{% endif %}>All</option>
+                        {% for d in available_departments %}
+                        <option value="{{ d }}" {% if dept_filter==d %}selected{% endif %}>{{ d }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">Status</label>
+                    <select class="form-select form-select-sm" name="status">
+                        <option value="all"              {% if status_filter=='all' %}selected{% endif %}>All</option>
+                        <option value="active"           {% if status_filter=='active' %}selected{% endif %}>Active</option>
+                        <option value="discarded"        {% if status_filter=='discarded' %}selected{% endif %}>Discarded</option>
+                        <option value="authority_solved" {% if status_filter=='authority_solved' %}selected{% endif %}>Solved by Authority</option>
+                        <option value="dispute"          {% if status_filter=='dispute' %}selected{% endif %}>Dispute Active</option>
+                        <option value="resolved"         {% if status_filter=='resolved' %}selected{% endif %}>Resolved/Closed</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">State</label>
+                    <!-- Custom Dropdown Container -->
+                    <div class="dropdown w-100" id="customStateDropdownContainer">
+                        <input type="hidden" name="state_filter" id="selectedStateInput" value="{{ state_filter or 'all' }}">
+                        <button type="button"
+                            class="form-control form-control-sm text-start d-flex align-items-center justify-content-between dropdown-toggle"
+                            id="customStateButton" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="background-color: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 0.25rem 0.5rem; font-size: 0.83rem;">
+                            <span id="selectedStateText" class="{% if not state_filter or state_filter == 'all' %}text-muted{% endif %}">
+                                {% if state_filter and state_filter != 'all' %}{{ state_filter }}{% else %}All States{% endif %}
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="customStateButton"
+                            style="min-width: 100%; width: max-content; max-width: 140%; max-height: 250px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 0.25rem 0; scrollbar-width: thin; white-space: normal;">
+                            <li><a class="dropdown-item py-1 px-2 {% if not state_filter or state_filter == 'all' %}active{% endif %}" href="#" data-value="all">All States</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Andaman and Nicobar Islands' %}active{% endif %}" href="#" data-value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Andhra Pradesh' %}active{% endif %}" href="#" data-value="Andhra Pradesh">Andhra Pradesh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Arunachal Pradesh' %}active{% endif %}" href="#" data-value="Arunachal Pradesh">Arunachal Pradesh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Assam' %}active{% endif %}" href="#" data-value="Assam">Assam</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Bihar' %}active{% endif %}" href="#" data-value="Bihar">Bihar</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Chandigarh' %}active{% endif %}" href="#" data-value="Chandigarh">Chandigarh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Chhattisgarh' %}active{% endif %}" href="#" data-value="Chhattisgarh">Chhattisgarh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Delhi' %}active{% endif %}" href="#" data-value="Delhi">Delhi</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Goa' %}active{% endif %}" href="#" data-value="Goa">Goa</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Gujarat' %}active{% endif %}" href="#" data-value="Gujarat">Gujarat</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Haryana' %}active{% endif %}" href="#" data-value="Haryana">Haryana</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Himachal Pradesh' %}active{% endif %}" href="#" data-value="Himachal Pradesh">Himachal Pradesh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Jammu and Kashmir' %}active{% endif %}" href="#" data-value="Jammu and Kashmir">Jammu and Kashmir</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Jharkhand' %}active{% endif %}" href="#" data-value="Jharkhand">Jharkhand</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Karnataka' %}active{% endif %}" href="#" data-value="Karnataka">Karnataka</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Kerala' %}active{% endif %}" href="#" data-value="Kerala">Kerala</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Ladakh' %}active{% endif %}" href="#" data-value="Ladakh">Ladakh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Lakshadweep' %}active{% endif %}" href="#" data-value="Lakshadweep">Lakshadweep</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Madhya Pradesh' %}active{% endif %}" href="#" data-value="Madhya Pradesh">Madhya Pradesh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Maharashtra' %}active{% endif %}" href="#" data-value="Maharashtra">Maharashtra</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Manipur' %}active{% endif %}" href="#" data-value="Manipur">Manipur</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Meghalaya' %}active{% endif %}" href="#" data-value="Meghalaya">Meghalaya</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Mizoram' %}active{% endif %}" href="#" data-value="Mizoram">Mizoram</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Nagaland' %}active{% endif %}" href="#" data-value="Nagaland">Nagaland</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Odisha' %}active{% endif %}" href="#" data-value="Odisha">Odisha</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Puducherry' %}active{% endif %}" href="#" data-value="Puducherry">Puducherry</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Punjab' %}active{% endif %}" href="#" data-value="Punjab">Punjab</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Rajasthan' %}active{% endif %}" href="#" data-value="Rajasthan">Rajasthan</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Sikkim' %}active{% endif %}" href="#" data-value="Sikkim">Sikkim</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Tamil Nadu' %}active{% endif %}" href="#" data-value="Tamil Nadu">Tamil Nadu</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Telangana' %}active{% endif %}" href="#" data-value="Telangana">Telangana</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Tripura' %}active{% endif %}" href="#" data-value="Tripura">Tripura</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Uttar Pradesh' %}active{% endif %}" href="#" data-value="Uttar Pradesh">Uttar Pradesh</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'Uttarakhand' %}active{% endif %}" href="#" data-value="Uttarakhand">Uttarakhand</a></li>
+                            <li><a class="dropdown-item py-1 px-2 {% if state_filter == 'West Bengal' %}active{% endif %}" href="#" data-value="West Bengal">West Bengal</a></li>
+                        </ul>
+                    </div>
+                    <style>
+                        #customStateDropdownContainer .dropdown-item {
+                            transition: background-color 0.2s ease, color 0.2s ease;
+                            font-size: 0.85rem;
+                        }
+                        #customStateDropdownContainer .dropdown-item:hover {
+                            background-color: #f1f5f9;
+                            color: var(--primary-color);
+                        }
+                        #customStateDropdownContainer .dropdown-item.active,
+                        #customStateDropdownContainer .dropdown-item:active {
+                            background-color: var(--primary-color);
+                            color: #fff;
+                        }
+                    </style>
+                </div>
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">Date From</label>
+                    <input type="date" class="form-control form-control-sm" name="date_from" value="{{ date_from }}">
+                </div>
+                <div class="col-6 col-md-2">
+                    <label class="form-label small fw-semibold mb-1">Date To</label>
+                    <input type="date" class="form-control form-control-sm" name="date_to" value="{{ date_to }}">
+                </div>
+                <div class="col-12 col-md-auto d-flex gap-2">
+                    <button type="submit" class="btn btn-apply btn-sm"><i class="fas fa-search me-1"></i>Apply</button>
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary btn-sm"><i class="fas fa-times me-1"></i>Clear</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+        <span class="text-muted small">
+            Showing <strong>{{ complaints|length }}</strong> complaint{% if complaints|length != 1 %}s{% endif %}
+        </span>
+    </div>
+
+    <!-- Cards -->
+    {% if complaints %}
+    {% for c in complaints %}
+    {% set status = c.get('Status', '') %}
+    {% set can_act = status in ['Submitted', 'Processing'] %}
+
+    <div class="ccard">
+        <div class="ccard-head">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+                <span class="ref-code">{{ c['Reference No'] }}</span>
+                <span class="dept-tag"><i class="fas fa-building me-1"></i>{{ c.get('Department','N/A') }}</span>
+                <span class="date-tag"><i class="fas fa-calendar me-1"></i>{{ c.get('Date','') }}</span>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+                {% if status in ['Submitted','Processing'] and c.get('Dispute Raised') != 'Yes' %}
+                    <span class="sbadge sb-active"><i class="fas fa-clock me-1"></i>{{ status }}</span>
+                {% elif status == 'Discarded by Authority' %}
+                    <span class="sbadge sb-disc"><i class="fas fa-ban me-1"></i>Discarded by Authority</span>
+                {% elif status == 'Marked as Solved by Authority' %}
+                    <span class="sbadge sb-authsol"><i class="fas fa-check-circle me-1"></i>Solved by Authority</span>
+                {% elif status == 'Permanently Closed' %}
+                    <span class="sbadge sb-perm"><i class="fas fa-lock me-1"></i>Permanently Closed</span>
+                {% elif status in ['Solved','Resolved','Closed'] %}
+                    <span class="sbadge sb-resolved"><i class="fas fa-check me-1"></i>{{ status }}</span>
+                {% else %}
+                    <span class="sbadge sb-perm">{{ status }}</span>
+                {% endif %}
+                {% if c.get('Dispute Raised') == 'Yes' and status == 'Processing' %}
+                    <span class="sbadge sb-dispute"><i class="fas fa-gavel me-1"></i>Dispute Active</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="ccard-body">
+            <div class="row g-3">
+                <div class="col-lg-7">
+                    <div class="detail-grid mb-2">
+                        <div><div class="detail-label">Complainant</div><div class="detail-val">{{ c.get('Name','N/A') }}</div></div>
+                        <div><div class="detail-label">Phone</div><div class="detail-val">{{ c.get('Phone','N/A') }}</div></div>
+                        <div><div class="detail-label">Email</div><div class="detail-val">{{ c.get('Email','N/A') }}</div></div>
+                        <div><div class="detail-label">Location</div><div class="detail-val small">{{ c.get('Address','') }}{% if c.get('City') %}, {{ c['City'] }}{% endif %}{% if c.get('State') %}, {{ c['State'] }}{% endif %}</div></div>
+                    </div>
+                    <div class="complaint-text-box">
+                        <strong class="small text-muted">COMPLAINT:</strong><br>{{ c.get('Complaint','N/A') }}
+                    </div>
+
+                    <!-- View Uploaded Media - right after complaint text -->
+                    {% set _admin_media = c.get('Media URLs', '') | string | trim %}
+                    {% if _admin_media and _admin_media not in ['', 'nan', 'None'] %}
+                    <button class="btn btn-outline-info btn-sm mt-2"
+                            onclick="openMediaGallery('{{ _admin_media }}')">
+                        <i class="fas fa-photo-video me-1"></i>View Uploaded Media
+                        <span class="badge bg-info ms-1" style="font-size:.7rem;">
+                            {{ _admin_media.split('|') | length }}
+                        </span>
+                    </button>
+                    {% endif %}
+
+                    {% if c.get('Discard Reason') %}
+                    <div class="reason-box">
+                        <strong><i class="fas fa-ban me-1 text-danger"></i>Complaint Discarded by Authority</strong><br>
+                        <strong>Reason:</strong> {{ c.get('Discard Reason','') }}<br>
+                        <span class="text-muted" style="font-size:.74rem;">â€” {{ c.get('Discarded By','') }} &bull; {{ c.get('Discarded At','') }}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if c.get('Authority Solved Note') %}
+                    <div class="solved-box">
+                        <strong><i class="fas fa-check-circle me-1 text-success"></i>Marked as Solved by Authority</strong><br>
+                        <strong>Resolution:</strong> {{ c.get('Authority Solved Note','') }}<br>
+                        <span class="text-muted" style="font-size:.74rem;">â€” {{ c.get('Authority Solved By','') }} &bull; {{ c.get('Authority Solved At','') }}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if can_act %}
+                    <div class="d-flex gap-2 flex-wrap mt-3">
+                        <button class="btn-act btn-discard discard-btn" data-ref="{{ c['Reference No'] }}">
+                            <i class="fas fa-ban me-1"></i>Discard Complaint
+                        </button>
+                        <button class="btn-act btn-auth-solve auth-solve-btn" data-ref="{{ c['Reference No'] }}">
+                            <i class="fas fa-check-circle me-1"></i>Mark as Solved by Authority
+                        </button>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="mb-3">
+                        <div class="detail-label mb-1">Blockchain</div>
+                        {% if c.get('Transaction Hash') and c['Transaction Hash'] != 'N/A' %}
+                        <p class="small text-success mb-1"><i class="fas fa-check-circle me-1"></i>Verified on chain</p>
+                        <a href="{{ network_info.explorer_url }}/tx/0x{{ c['Transaction Hash'] }}" target="_blank"
+                           class="btn btn-outline-primary btn-sm" style="font-size:.73rem;">
+                            <i class="fas fa-external-link-alt me-1"></i>View Tx
+                        </a>
+                        {% else %}
+                        <span class="small text-muted">No tx hash</span>
+                        {% endif %}
+                        <div class="mt-1">
+                            <span class="detail-label">Wallet: </span>
+                            <code style="font-size:.7rem;">
+                                {% set wa = c.get('Wallet Address','') %}
+                                {% if wa %}{{ wa[:10] }}...{{ wa[-6:] }}{% else %}N/A{% endif %}
+                            </code>
+                        </div>
+                    </div>
+
+                    {% set timeline = c.get('_activity', []) %}
+                    {% if timeline %}
+                    <div class="detail-label mb-1">Activity Timeline</div>
+                    <div class="timeline">
+                        {% for ev in timeline %}
+                        {% set al = ev.action | lower %}
+                        {% set dot = 'dot-disc' if 'discard' in al else ('dot-authsol' if 'solved by authority' in al else ('dot-dispute' if 'dispute' in al else ('dot-perm' if 'permanently' in al else ('dot-submit' if 'submit' in al else 'dot-default')))) %}
+                        <div class="tl-item">
+                            <span class="tl-dot {{ dot }}"></span>
+                            <div class="tl-action">{{ ev.action }}</div>
+                            <div class="tl-meta">{{ ev.by }} &bull; {{ ev.at }}</div>
+                            {% if ev.note %}<div class="tl-note">{{ ev.note }}</div>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="small text-muted">No activity history yet.</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="empty-state">
+        <i class="fas fa-inbox"></i>
+        <h5>No complaints match the current filter.</h5>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary btn-sm mt-2">Clear filters</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Media Gallery Modal -->
+<div class="modal fade" id="mediaGalleryModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-photo-video me-2"></i>Uploaded Evidence</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-3" id="mediaGalleryBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Discard Modal -->
+<div class="modal fade" id="discardModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#ef4444;color:#fff;">
+                <h5 class="modal-title"><i class="fas fa-ban me-2"></i>Discard Complaint</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Discarding <strong id="discardRefDisplay"></strong>. Status will change to <em>"Discarded by Authority"</em>.</p>
+                <label class="form-label fw-semibold">Reason <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="discardReason" rows="4" placeholder="Provide a clear reason visible to the complainantâ€¦"></textarea>
+                <div id="discardError" class="alert alert-danger d-none mt-2"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDiscardBtn">
+                    <span class="spinner-border spinner-border-sm d-none" id="discardSpinner"></span>
+                    Confirm Discard
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mark Solved by Authority Modal -->
+<div class="modal fade" id="authSolveModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#10b981;color:#fff;">
+                <h5 class="modal-title"><i class="fas fa-check-circle me-2"></i>Mark as Solved by Authority</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Marking <strong id="authSolveRefDisplay"></strong> as resolved. The complainant has <strong>48 hours</strong> to raise a dispute.</p>
+                <label class="form-label fw-semibold">Resolution Note <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="authSolveNote" rows="4" placeholder="Describe what action was taken to resolve the issueâ€¦"></textarea>
+                <div id="authSolveError" class="alert alert-danger d-none mt-2"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="confirmAuthSolveBtn">
+                    <span class="spinner-border spinner-border-sm d-none" id="authSolveSpinner"></span>
+                    Confirm Solved
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Admin Modal -->
+<div class="modal fade" id="createAdminModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background:linear-gradient(135deg,var(--ap),var(--as));color:#fff;">
+                <h5 class="modal-title"><i class="fas fa-user-plus me-2"></i>Create New Super Admin</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Display Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="newAdminDisplayName" placeholder="e.g. Water Supply Administrator">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Admin ID <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="newAdminId" placeholder="e.g. water_admin01">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Password <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="newAdminPassword" placeholder="Min. 8 characters">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Department <span class="text-danger">*</span></label>
+                    <select class="form-select" id="newAdminDept">
+                        <option value="">â€” Select Department â€”</option>
+                        {% for d in available_departments %}
+                        <option value="{{ d }}">{{ d }}</option>
+                        {% endfor %}
+                        <option value="All">All Departments (Super Access)</option>
+                    </select>
+                </div>
+                <div id="createAdminError"   class="alert alert-danger  d-none"></div>
+                <div id="createAdminSuccess" class="alert alert-success d-none"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="confirmCreateAdminBtn">
+                    <span class="spinner-border spinner-border-sm d-none" id="createAdminSpinner"></span>
+                    Create Admin
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Display Name Modal -->
+<div class="modal fade" id="editNameModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header"><h6 class="modal-title">Edit Display Name</h6><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="newDisplayName" placeholder="Your display name" value="{{ admin_display }}">
+                <div id="editNameError"   class="alert alert-danger  d-none mt-2"></div>
+                <div id="editNameSuccess" class="alert alert-success d-none mt-2"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-sm" id="saveDisplayNameBtn">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ── Shared media gallery (same as base.html) ──────────────
+function openMediaGallery(urlString) {
+    const body = document.getElementById('mediaGalleryBody');
+    body.innerHTML = '';
+    if (!urlString || !urlString.trim()) {
+        body.innerHTML = '<p class="text-muted text-center py-4">No media attached.</p>';
+    } else {
+        const urls = urlString.split('|').map(u=>u.trim()).filter(Boolean);
+        const row = document.createElement('div'); row.className='row g-3';
+        urls.forEach((url,i)=>{
+            const isVideo=/\.(mp4|mov|avi|webm|mkv)(\?|$)/i.test(url)||url.includes('/video/');
+            const col=document.createElement('div'); col.className=urls.length===1?'col-12':'col-md-6';
+            col.innerHTML=isVideo
+                ?`<div class="ratio ratio-16x9 rounded overflow-hidden bg-dark"><video controls class="w-100 h-100" style="object-fit:contain;"><source src="${url}"></video></div><p class="small text-muted mt-1 text-center">Video ${i+1}</p>`
+                :`<a href="${url}" target="_blank"><img src="${url}" class="w-100 rounded" style="max-height:340px;object-fit:contain;background:#f8f9fa;" alt="Evidence ${i+1}"></a><p class="small text-muted mt-1 text-center">Photo ${i+1}</p>`;
+            row.appendChild(col);
+        });
+        body.appendChild(row);
+    }
+    new bootstrap.Modal(document.getElementById('mediaGalleryModal')).show();
+}
+
+// Discard
+let _discardRef = '';
+document.querySelectorAll('.discard-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        _discardRef = this.dataset.ref;
+        document.getElementById('discardRefDisplay').textContent = _discardRef;
+        document.getElementById('discardReason').value = '';
+        document.getElementById('discardError').classList.add('d-none');
+        new bootstrap.Modal(document.getElementById('discardModal')).show();
+    });
+});
+document.getElementById('confirmDiscardBtn').addEventListener('click', function() {
+    const reason = document.getElementById('discardReason').value.trim();
+    const errEl  = document.getElementById('discardError');
+    if (!reason) { errEl.textContent='Reason is required.'; errEl.classList.remove('d-none'); return; }
+    const sp = document.getElementById('discardSpinner'); sp.classList.remove('d-none'); this.disabled=true;
+    fetch('/admin/discard_complaint',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref_no:_discardRef,reason})})
+    .then(r=>r.json()).then(d=>{sp.classList.add('d-none');this.disabled=false;
+        if(d.success){bootstrap.Modal.getInstance(document.getElementById('discardModal')).hide();location.reload();}
+        else{errEl.textContent=d.message;errEl.classList.remove('d-none');}
+    }).catch(()=>{sp.classList.add('d-none');this.disabled=false;errEl.textContent='Network error.';errEl.classList.remove('d-none');});
+});
+
+// Mark Solved by Authority
+let _authSolveRef = '';
+document.querySelectorAll('.auth-solve-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        _authSolveRef = this.dataset.ref;
+        document.getElementById('authSolveRefDisplay').textContent = _authSolveRef;
+        document.getElementById('authSolveNote').value = '';
+        document.getElementById('authSolveError').classList.add('d-none');
+        new bootstrap.Modal(document.getElementById('authSolveModal')).show();
+    });
+});
+document.getElementById('confirmAuthSolveBtn').addEventListener('click', function() {
+    const note  = document.getElementById('authSolveNote').value.trim();
+    const errEl = document.getElementById('authSolveError');
+    if (!note) { errEl.textContent='Note is required.'; errEl.classList.remove('d-none'); return; }
+    const sp = document.getElementById('authSolveSpinner'); sp.classList.remove('d-none'); this.disabled=true;
+    fetch('/admin/mark_solved_authority',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref_no:_authSolveRef,note})})
+    .then(r=>r.json()).then(d=>{sp.classList.add('d-none');this.disabled=false;
+        if(d.success){bootstrap.Modal.getInstance(document.getElementById('authSolveModal')).hide();location.reload();}
+        else{errEl.textContent=d.message;errEl.classList.remove('d-none');}
+    }).catch(()=>{sp.classList.add('d-none');this.disabled=false;errEl.textContent='Network error.';errEl.classList.remove('d-none');});
+});
+
+// Create Admin
+document.getElementById('confirmCreateAdminBtn').addEventListener('click', function() {
+    const display=document.getElementById('newAdminDisplayName').value.trim();
+    const adminId=document.getElementById('newAdminId').value.trim();
+    const password=document.getElementById('newAdminPassword').value.trim();
+    const dept=document.getElementById('newAdminDept').value;
+    const errEl=document.getElementById('createAdminError');
+    const sucEl=document.getElementById('createAdminSuccess');
+    errEl.classList.add('d-none'); sucEl.classList.add('d-none');
+    if(!display||!adminId||!password||!dept){errEl.textContent='All fields are required.';errEl.classList.remove('d-none');return;}
+    const sp=document.getElementById('createAdminSpinner');sp.classList.remove('d-none');this.disabled=true;
+    fetch('/admin/create_admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({admin_id:adminId,password,department:dept,display_name:display})})
+    .then(r=>r.json()).then(d=>{sp.classList.add('d-none');this.disabled=false;
+        if(d.success){sucEl.textContent=d.message;sucEl.classList.remove('d-none');
+            document.getElementById('newAdminDisplayName').value='';
+            document.getElementById('newAdminId').value='';
+            document.getElementById('newAdminPassword').value='';
+            document.getElementById('newAdminDept').value='';
+        }else{errEl.textContent=d.message;errEl.classList.remove('d-none');}
+    }).catch(()=>{sp.classList.add('d-none');this.disabled=false;errEl.textContent='Network error.';errEl.classList.remove('d-none');});
+});
+
+// Edit Display Name
+function showEditDisplayName(){
+    document.getElementById('editNameError').classList.add('d-none');
+    document.getElementById('editNameSuccess').classList.add('d-none');
+    new bootstrap.Modal(document.getElementById('editNameModal')).show();
+}
+document.getElementById('saveDisplayNameBtn').addEventListener('click',function(){
+    const name=document.getElementById('newDisplayName').value.trim();
+    const errEl=document.getElementById('editNameError');
+    const sucEl=document.getElementById('editNameSuccess');
+    if(!name){errEl.textContent='Name cannot be empty.';errEl.classList.remove('d-none');return;}
+    fetch('/admin/update_display_name',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({display_name:name})})
+    .then(r=>r.json()).then(d=>{
+        if(d.success){document.getElementById('displayNameSpan').textContent=name;sucEl.textContent='Updated!';sucEl.classList.remove('d-none');}
+        else{errEl.textContent=d.message;errEl.classList.remove('d-none');}
+    });
+});
+
+// Custom Dropdown Selection Handling
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownItems = document.querySelectorAll('#customStateDropdownContainer .dropdown-item');
+    const inputVal = document.getElementById('selectedStateInput');
+    const buttonText = document.getElementById('selectedStateText');
+
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const val = this.getAttribute('data-value');
+            const text = this.textContent;
+
+            // Remove active class from all items and set it on the selected one
+            dropdownItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update inputs and label
+            inputVal.value = val;
+            buttonText.textContent = text;
+
+            if (val === 'all') {
+                buttonText.classList.add('text-muted');
+            } else {
+                buttonText.classList.remove('text-muted');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

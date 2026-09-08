@@ -1,0 +1,531 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>📍 Track Complaint</h2>
+            <p class="text-muted">Enter a complaint reference number to track its status — no login required.</p>
+            
+            <form method="POST" action="{{ url_for('track_complaint') }}" class="mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" name="ref_no" required 
+                           placeholder="Enter 8-character reference number (e.g., ABC12345)" 
+                           pattern="[A-Z0-9]{8}" maxlength="8" style="text-transform: uppercase;"
+                           value="{{ ref_no_prefill if ref_no_prefill else '' }}">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        🔍 Track Complaint
+                    </button>
+                </div>
+                <small class="form-text text-muted">
+                    Reference numbers are 8 characters long and contain letters and numbers only.
+                </small>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h6>🔗 Blockchain Verification</h6>
+                    <p class="small text-muted">
+                        All complaints are recorded on the blockchain to ensure authenticity and prevent tampering.
+                        Anyone with a valid reference number can track a complaint.
+                    </p>
+                    {% if wallet_address %}
+                    <div class="mt-2">
+                        <strong>Connected Wallet:</strong><br>
+                        <small class="font-monospace">{{ wallet_address[:10] }}...{{ wallet_address[-8:] }}</small>
+                    </div>
+                    {% else %}
+                    <div class="mt-2 text-muted small">
+                        <i class="fas fa-info-circle me-1"></i>
+                        <a href="{{ url_for('login') }}">Connect wallet</a> to file complaints or raise disputes.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if result %}
+        {% if result == "not_found" %}
+            <div class="alert alert-danger fade-in">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-exclamation-triangle fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5 class="alert-heading mb-1">❌ Complaint Not Found</h5>
+                        <p class="mb-0">No complaint found for this reference number. Please check and try again.</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <!-- Display Results -->
+            <div class="row">
+                <!-- Blockchain Verification Card -->
+                {% if blockchain_data %}
+                <div class="col-12 mb-3">
+                    <div class="card border-success fade-in">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-link me-2"></i>⛓️ Blockchain Verification
+                                <span class="badge bg-light text-success ms-2">Verified</span>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <strong>Status:</strong><br>
+                                    <span class="badge bg-info fs-6">{{ blockchain_data.status }}</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Department:</strong><br>
+                                    <span class="text-primary">{{ blockchain_data.department }}</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Submitted:</strong><br>
+                                    <span class="text-muted">{{ blockchain_data.formatted_date }}</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Owner:</strong><br>
+                                    <small class="font-monospace text-success">{{ blockchain_data.user[:10] }}...{{ blockchain_data.user[-8:] }}</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong>Complaint Hash (Blockchain Proof):</strong><br>
+                                    <small class="blockchain-hash">{{ blockchain_data.complaint_hash }}</small>
+                                </div>
+                            </div>
+                            
+                            {% if network_info %}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Network:</strong><br>
+                                    <span class="badge bg-info">{{ network_info.network_name }}</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong>Contract:</strong><br>
+                                    <small class="font-monospace">{{ network_info.contract_address[:20] }}...</small>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    {% if network_info.explorer_url %}
+                                    <a href="{{ network_info.explorer_url }}/address/{{ network_info.contract_address }}" 
+                                       target="_blank" class="btn btn-outline-secondary btn-sm me-2">
+                                        📄 View Contract on {{ network_info.network_name.split()[0] }} Explorer
+                                    </a>
+                                    {% endif %}
+                                    <small class="text-muted">All transactions for this complaint are recorded on {{ network_info.network_name }}</small>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Detailed Information Card -->
+                {% if result != "blockchain_only" and result != "not_found" and result != "not_authorized" %}
+                <div class="col-12 mb-3">
+                    <div class="card border-info fade-in">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-file-alt me-2"></i>📋 Complaint Details
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <h6 class="text-info">Personal Information</h6>
+                                    <p class="mb-1"><strong>Reference No:</strong> <code>{{ result["Reference No"] }}</code></p>
+                                    <p class="mb-1"><strong>Name:</strong> {{ result["Name"] }}</p>
+                                    <p class="mb-1"><strong>Email:</strong> <a href="mailto:{{ result['Email'] }}">{{ result["Email"] }}</a></p>
+                                    <p class="mb-1"><strong>Phone:</strong> <a href="tel:{{ result['Phone'] }}">{{ result["Phone"] }}</a></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-info">Location & Department</h6>
+                                    <p class="mb-1"><strong>City:</strong> {{ result["City"] }}</p>
+                                    <p class="mb-1"><strong>State:</strong> {{ result["State"] }}</p>
+                                    <p class="mb-1"><strong>Department:</strong> <span class="badge bg-secondary">{{ result["Department"] }}</span></p>
+                                    <p class="mb-1"><strong>Date Submitted:</strong> {{ result["Date"] }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-info">Complaint Description</h6>
+                                <div class="p-3 bg-light rounded border-start border-info border-4">
+                                    <p class="mb-0 text-dark">{{ result["Complaint"] }}</p>
+                                </div>
+                            </div>
+
+                            <!-- View Uploaded Media - right after complaint description -->
+                            {% set _track_media = result.get("Media URLs", "") | string | trim %}
+                            {% if _track_media and _track_media not in ["", "nan", "None"] %}
+                            <div class="mb-3">
+                                <button class="btn btn-outline-info"
+                                        onclick="openMediaGallery('{{ _track_media }}')">
+                                    <i class="fas fa-photo-video me-2"></i>View Uploaded Media
+                                    <span class="badge bg-info ms-2">
+                                        {{ _track_media.split('|') | length }} file{{ 's' if _track_media.split('|') | length > 1 else '' }}
+                                    </span>
+                                </button>
+                            </div>
+                            {% endif %}
+                            {% if result.get("Transaction Hash") and result["Transaction Hash"] != "N/A" %}
+                            <div class="mt-3 p-3 bg-success bg-opacity-10 rounded border-start border-success border-3">
+                                <h6 class="text-success">� Proof of Complaint</h6>
+                                <p class="mb-2"><strong>Transaction Hash:</strong></p>
+                                <div class="mb-3">
+                                    <code class="d-block text-break p-2 bg-white rounded border">0x{{ result["Transaction Hash"] }}</code>
+                                </div>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    {% if network_info and network_info.explorer_url %}
+                                    <a href="{{ network_info.explorer_url }}/tx/0x{{ result['Transaction Hash'] }}" 
+                                       target="_blank" class="btn btn-primary btn-sm">
+                                        🔍 View on {{ network_info.network_name.split()[0] }} Explorer
+                                    </a>
+                                    {% else %}
+                                    <a href="https://etherscan.io/tx/0x{{ result['Transaction Hash'] }}" 
+                                       target="_blank" class="btn btn-primary btn-sm">
+                                        🔍 View on Etherscan
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-outline-secondary btn-sm copy-transaction-btn" 
+                                            data-hash="0x{{ result['Transaction Hash'] }}">
+                                        📋 Copy Hash
+                                    </button>
+                                    {% if network_info and network_info.contract_address %}
+                                    <a href="{{ network_info.explorer_url }}/address/{{ network_info.contract_address }}" 
+                                       target="_blank" class="btn btn-outline-info btn-sm">
+                                        � View Contract
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                {% if network_info %}
+                                <div class="mt-3 pt-2 border-top">
+                                    <small class="text-muted">
+                                        <strong>Network:</strong> {{ network_info.network_name }} | 
+                                        <strong>Chain ID:</strong> {{ network_info.chain_id }}
+                                    </small>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            {% if result.get("Solve Hash") and result["Solve Hash"] != "" and result["Solve Hash"] != "N/A" and result["Solve Hash"] is not none and result["Solve Hash"] == result["Solve Hash"] %}
+                            <div class="mt-3 p-3 bg-warning bg-opacity-10 rounded border-start border-warning border-3">
+                                <h6 class="text-warning">✅ Proof of Solution</h6>
+                                <p class="mb-2"><strong>Solve Hash:</strong></p>
+                                <div class="mb-3">
+                                    {% set solve_hash_str = result["Solve Hash"]|string %}
+                                    <code class="d-block text-break p-2 bg-white rounded border">{% if solve_hash_str.startswith('0x') %}{{ solve_hash_str }}{% else %}0x{{ solve_hash_str }}{% endif %}</code>
+                                </div>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    {% if network_info and network_info.explorer_url %}
+                                    <a href="{{ network_info.explorer_url }}/tx/{% if solve_hash_str.startswith('0x') %}{{ solve_hash_str }}{% else %}0x{{ solve_hash_str }}{% endif %}" 
+                                       target="_blank" class="btn btn-warning btn-sm">
+                                        🔍 View Solution on {{ network_info.network_name.split()[0] }} Explorer
+                                    </a>
+                                    {% else %}
+                                    <a href="https://etherscan.io/tx/{% if solve_hash_str.startswith('0x') %}{{ solve_hash_str }}{% else %}0x{{ solve_hash_str }}{% endif %}" 
+                                       target="_blank" class="btn btn-warning btn-sm">
+                                        🔍 View Solution on Etherscan
+                                    </a>
+                                    {% endif %}
+                                    <button class="btn btn-outline-secondary btn-sm copy-solve-btn" 
+                                            data-hash="{% if solve_hash_str.startswith('0x') %}{{ solve_hash_str }}{% else %}0x{{ solve_hash_str }}{% endif %}">
+                                        📋 Copy Solve Hash
+                                    </button>
+                                </div>
+                                {% if network_info %}
+                                <div class="mt-3 pt-2 border-top">
+                                    <small class="text-muted">
+                                        <strong>Status:</strong> This complaint has been officially resolved and verified on the blockchain.
+                                    </small>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            
+                            {% set _status = result.get("Status", "") %}
+                            {% set _has_solve_hash = result.get("Solve Hash") and result["Solve Hash"] != "" and result["Solve Hash"] != "N/A" %}
+                            {% set _acted_by_authority = result.get("Discard Reason") or result.get("Authority Solved Note") or _status == "Permanently Closed" or _status in ["Solved", "Resolved", "Closed"] %}
+                            {% if result.get("Transaction Hash") and result["Transaction Hash"] != "N/A" and not _has_solve_hash and not _acted_by_authority %}
+                            <div class="mt-3 p-3 bg-info bg-opacity-10 rounded border-start border-info border-3">
+                                <h6 class="text-info">⏳ Case Status</h6>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <i class="fas fa-clock fa-2x text-info"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1"><strong>This case is currently in process and waiting for the solution.</strong></p>
+                                        <small class="text-muted">
+                                            Once your complaint is resolved by the concerned department, 
+                                            the proof of solution will be recorded on the blockchain and displayed here.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% elif result.get("Transaction Hash") and result["Transaction Hash"] != "N/A" and not _has_solve_hash and result.get("Authority Solved Note") %}
+                            <div class="mt-3 p-3 bg-success bg-opacity-10 rounded border-start border-success border-3">
+                                <h6 class="text-success"><i class="fas fa-check-circle me-1"></i>Case Marked as Solved by Authority</h6>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <i class="fas fa-check-double fa-2x text-success"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1"><strong>This complaint has been marked as resolved by the concerned authority.</strong></p>
+                                        <small class="text-muted">
+                                            If you believe the issue is not resolved, you can raise a dispute within 48 hours of this action.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% elif result.get("Transaction Hash") and result["Transaction Hash"] != "N/A" and not _has_solve_hash and result.get("Discard Reason") %}
+                            <div class="mt-3 p-3 bg-danger bg-opacity-10 rounded border-start border-danger border-3">
+                                <h6 class="text-danger"><i class="fas fa-ban me-1"></i>Case Discarded by Authority</h6>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1"><strong>This complaint has been discarded by the concerned authority.</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+
+
+                            <!-- Discard info on track page -->
+                            {% if result.get("Discard Reason") %}
+                            <div class="mt-3 p-3 rounded border-start border-danger border-3" style="background:#fff5f5;">
+                                <h6 class="text-danger"><i class="fas fa-ban me-1"></i>Discarded by Authority</h6>
+                                <p class="mb-1"><strong>Reason:</strong> {{ result.get("Discard Reason","") }}</p>
+                                <small class="text-muted">{{ result.get("Discarded By","") }} &bull; {{ result.get("Discarded At","") }}</small>
+                                {% if result.get("Dispute Raised") == "Yes" %}
+                                <div class="mt-2 pt-2 border-top">
+                                    <span class="badge bg-info"><i class="fas fa-gavel me-1"></i>Dispute Raised &amp; Reopened</span>
+                                    <span class="small ms-1 text-muted">{{ result.get("Dispute Raised At","") }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            {% if result.get("Authority Solved Note") %}
+                            <div class="mt-3 p-3 rounded border-start border-success border-3" style="background:#f0fdf4;">
+                                <h6 class="text-success"><i class="fas fa-check-circle me-1"></i>Marked as Solved by Authority</h6>
+                                <p class="mb-1"><strong>Resolution:</strong> {{ result.get("Authority Solved Note","") }}</p>
+                                <small class="text-muted">{{ result.get("Authority Solved By","") }} &bull; {{ result.get("Authority Solved At","") }}</small>
+                                {% if result.get("Dispute Raised") == "Yes" %}
+                                <div class="mt-2 pt-2 border-top">
+                                    <span class="badge bg-info"><i class="fas fa-gavel me-1"></i>Dispute Raised &amp; Reopened</span>
+                                    <span class="small ms-1 text-muted">{{ result.get("Dispute Raised At","") }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            {% if result.get("Status") == "Permanently Closed" %}
+                            <div class="mt-3 p-3 rounded border-start border-secondary border-3" style="background:#f8f9fa;">
+                                <h6 class="text-secondary"><i class="fas fa-lock me-1"></i>Permanently Closed</h6>
+                                <p class="mb-0 small">This complaint was discarded/resolved by the authority and the 48-hour dispute window has passed.</p>
+                            </div>
+                            {% endif %}
+
+                            <!-- Activity Timeline on track page -->
+                            {% if activity %}
+                            <div class="mt-3 p-3 bg-light rounded">
+                                <h6 class="text-secondary"><i class="fas fa-history me-1"></i>Complaint History</h6>
+                                <div style="border-left:2px solid #dee2e6; padding-left:1rem; margin-top:.5rem;">
+                                    {% for ev in activity %}
+                                    {% set al = ev.action | lower %}
+                                    {% if 'discard' in al %}{% set evcolor='danger' %}
+                                    {% elif 'solved by authority' in al %}{% set evcolor='success' %}
+                                    {% elif 'dispute' in al %}{% set evcolor='info' %}
+                                    {% elif 'permanently' in al %}{% set evcolor='secondary' %}
+                                    {% else %}{% set evcolor='primary' %}{% endif %}
+                                    <div class="mb-2">
+                                        <span class="badge bg-{{ evcolor }} me-1" style="font-size:.7rem;">{{ ev.action }}</span>
+                                        <span class="text-muted small">{{ ev.at }}</span><br>
+                                        <span class="small text-secondary">{{ ev.by }}</span>
+                                        {% if ev.note %}<div class="small text-dark ps-2" style="border-left:2px solid #ced4da;">{{ ev.note }}</div>{% endif %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            {% if result.get("Blockchain Status") == "Legacy" %}
+                            <div class="mt-3 p-3 bg-warning bg-opacity-10 rounded border-start border-warning border-3">
+                                <h6 class="text-warning">📜 Legacy Record</h6>
+                                <p class="mb-0"><small class="text-muted">This complaint was submitted before blockchain integration was enabled.</small></p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% elif result == "blockchain_only" %}
+                <div class="col-12 mb-3">
+                    <div class="card border-warning fade-in">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">
+                                <i class="fas fa-info-circle me-2"></i>⚠️ Limited Information Available
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-warning">
+                                <strong>Note:</strong> This complaint was found on the blockchain but detailed information is not available in the local database.
+                            </p>
+                            <p class="mb-0">The complaint has been verified on the blockchain and belongs to your wallet address.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="text-center mt-4">
+                {% if wallet_address %}
+                <a href="{{ url_for('home') }}" class="btn btn-primary me-2">
+                    <i class="fas fa-plus me-1"></i>🆕 Raise New Complaint
+                </a>
+                <a href="{{ url_for('view_history') }}" class="btn btn-secondary me-2">
+                    <i class="fas fa-history me-1"></i>📜 My Complaints
+                </a>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="btn btn-primary me-2">
+                    <i class="fas fa-wallet me-1"></i>Connect Wallet to File a Complaint
+                </a>
+                {% endif %}
+                <button onclick="window.print()" class="btn btn-outline-info">
+                    <i class="fas fa-print me-1"></i>🖨️ Print Details
+                </button>
+            </div>
+        {% endif %}
+    {% else %}
+        <!-- Help Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">💡 How to Track</h6>
+                    </div>
+                    <div class="card-body">
+                        <ol class="small">
+                            <li>Enter your 8-character reference number</li>
+                            <li>The system will verify your complaint on the blockchain</li>
+                            <li>View detailed status and information</li>
+                            <li>Check proof of complaint on blockchain</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">🔒 Privacy & Security</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="small">
+                            <li>Tracking is publicly accessible with a valid reference ID</li>
+                            <li>Sensitive data is hashed on the blockchain</li>
+                            <li>Immutable complaint records</li>
+                            <li>Transparent verification process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.blockchain-hash {
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+    color: #495057;
+}
+
+.wallet-address {
+    background-color: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+@media print {
+    .btn, .navbar, .card-header { display: none !important; }
+    .card { border: 1px solid #000 !important; box-shadow: none !important; }
+}
+</style>
+
+<script>
+function copyTransactionHash(hash, button) {
+    // Copy transaction hash to clipboard
+    navigator.clipboard.writeText(hash).then(function() {
+        // Show success message
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copied!';
+        button.classList.add('btn-success');
+        button.classList.remove('btn-outline-secondary');
+        
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-secondary');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy text: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = hash;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copied!';
+        setTimeout(function() {
+            button.innerHTML = originalText;
+        }, 2000);
+    });
+}
+
+// Add event listeners when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners to copy transaction hash buttons
+    document.querySelectorAll('.copy-transaction-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const hash = this.getAttribute('data-hash');
+            copyTransactionHash(hash, this);
+        });
+    });
+    
+    // Add event listeners to copy solve hash buttons
+    document.querySelectorAll('.copy-solve-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const hash = this.getAttribute('data-hash');
+            copyTransactionHash(hash, this);
+        });
+    });
+});
+</script>
+{% endblock %}

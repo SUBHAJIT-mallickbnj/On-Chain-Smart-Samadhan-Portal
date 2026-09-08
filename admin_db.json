@@ -1,0 +1,12 @@
+{
+  "admins": [
+    {
+      "admin_id": "superadmin",
+      "password_hash": "scrypt:32768:8:1$CzwElRUbBS9WRO3j$3bbc153eea863c38c9246274f3f7aeb4699b9a5b49ecd921cf83734881a48d4a16f789ade5a0845dfab39aa9cebe02b57f82ef60d2413f67daf8539e986ea79b",
+      "department": "All",
+      "created_at": "2026-07-04 02:17:13",
+      "created_by": "system",
+      "display_name": "superadmin"
+    }
+  ]
+}

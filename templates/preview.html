@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="text-center mb-4">
+            <h1 class="page-title display-5">
+                <i class="fas fa-eye me-3"></i>Preview Your Complaint
+            </h1>
+            <p class="lead text-muted">Please review your complaint details before submitting to the blockchain</p>
+        </div>
+
+        <div class="row">
+            <!-- Customer Details -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-user-circle me-2"></i>Personal Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-user text-primary me-2"></i>
+                                    <strong class="me-2">Name:</strong>
+                                    <span>{{ name }}</span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-phone text-primary me-2"></i>
+                                    <strong class="me-2">Phone:</strong>
+                                    <span>{{ phone }}</span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-envelope text-primary me-2"></i>
+                                    <strong class="me-2">Email:</strong>
+                                    <span>{{ email }}</span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fas fa-map-marker-alt text-primary me-2 mt-1"></i>
+                                    <div>
+                                        <strong>Address:</strong><br>
+                                        <span class="text-muted">{{ address }}<br>{{ city }}, {{ state }} {{ zip }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complaint Details -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-comment-alt me-2"></i>Complaint Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="p-3 rounded" style="background-color: #f8f9fa; border-left: 4px solid var(--primary-color);">
+                            <p class="mb-0">{{ complaint }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Department Classification -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-robot me-2"></i>AI Department Classification
+                    <span class="badge bg-success ms-2">
+                        <i class="fas fa-check me-1"></i>Automated
+                    </span>
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="me-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 50px; height: 50px; background: var(--gradient-bg);">
+                                    <i class="fas fa-building text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Department: <span id="dept_name" class="text-primary">{{ dept_info['Department'] }}</span></h6>
+                                <p class="mb-1"><i class="fas fa-phone text-muted me-1"></i> <span id="dept_phone">{{ dept_info['Phone'] }}</span></p>
+                                <p class="mb-0"><i class="fas fa-envelope text-muted me-1"></i> <span id="dept_email">{{ dept_info['Email'] }}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <span class="badge bg-info p-2">
+                            <i class="fas fa-brain me-1"></i>AI Classified
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department Correction Option -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Department Correction (Optional)</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-3">If you think the AI classified your complaint incorrectly, you can select the correct department below:</p>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <label for="correct_department" class="form-label fw-medium">Select Correct Department:</label>
+                        <select class="form-control" name="correct_department" id="correct_department">
+                            {% for dept in departments_data %}
+                                <option value="{{ dept['Department'] }}"
+                                    data-phone="{{ dept['Contact'] }}"
+                                    data-email="{{ dept['Email'] }}"
+                                    {% if dept['Department'] == dept_info['Department'] %}selected{% endif %}>
+                                    {{ dept['Department'] }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <span class="badge bg-warning">
+                            <i class="fas fa-hand-paper me-1"></i>Manual Override
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Submission -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Submit to Blockchain</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info border-0">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-info-circle fa-2x text-info me-3"></i>
+                        <div>
+                            <h6 class="mb-1">Blockchain Submission</h6>
+                            <p class="mb-0 small">Your complaint will be permanently recorded on the Ethereum blockchain for transparency and immutability. You will receive a transaction hash for verification.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="{{ url_for('confirm_complaint') }}" method="POST">
+                    <!-- Hidden fields -->
+                    <input type="hidden" name="name" value="{{ name }}">
+                    <input type="hidden" name="phone" value="{{ phone }}">
+                    <input type="hidden" name="email" value="{{ email }}">
+                    <input type="hidden" name="address" value="{{ address }}">
+                    <input type="hidden" name="city" value="{{ city }}">
+                    <input type="hidden" name="state" value="{{ state }}">
+                    <input type="hidden" name="zip" value="{{ zip }}">
+                    <input type="hidden" name="complaint" value="{{ complaint }}">
+                    <input type="hidden" name="department" id="hidden_department" value="{{ dept_info['Department'] }}">
+                    <input type="hidden" name="temp_id" value="{{ temp_id }}">
+
+                    {% if media_previews %}
+                    <div class="alert alert-success border-0 mb-4">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                            <div>
+                                <h6 class="mb-1"><i class="fas fa-paperclip me-2"></i>Uploaded Evidence</h6>
+                                <div class="d-flex flex-wrap gap-2 mt-2">
+                                    {% for m in media_previews %}
+                                    <span class="badge bg-light text-dark border px-2 py-2">
+                                        <i class="fas fa-{% if m.type == 'video' %}video{% else %}image{% endif %} me-1 text-{% if m.type == 'video' %}danger{% else %}primary{% endif %}"></i>
+                                        {{ m.name }}
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                <small class="text-muted mt-1 d-block">Files will be uploaded to secure storage when you submit.</small>
+                            </div>
+                            {% if temp_media_urls %}
+                            <button type="button" class="btn btn-outline-info btn-sm"
+                                    onclick="openMediaGallery('{{ temp_media_urls }}')">
+                                <i class="fas fa-photo-video me-1"></i>View Uploaded Media
+                                <span class="badge bg-info ms-1" style="font-size:.68rem;">
+                                    {{ media_previews|length }}
+                                </span>
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('home') }}" class="btn btn-outline-secondary btn-lg me-md-2">
+                            <i class="fas fa-edit me-2"></i>Edit Details
+                        </a>
+                        <button type="submit" class="btn btn-gradient btn-lg">
+                            <i class="fas fa-shield-alt me-2"></i>Submit to Blockchain
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Update Script -->
+<script>
+document.getElementById("correct_department").addEventListener("change", function() {
+    var selected = this.options[this.selectedIndex];
+    document.getElementById("dept_name").textContent = selected.value;
+    document.getElementById("dept_phone").textContent = selected.getAttribute("data-phone");
+    document.getElementById("dept_email").textContent = selected.getAttribute("data-email");
+    document.getElementById("hidden_department").value = selected.value;
+});
+</script>
+{% endblock %}

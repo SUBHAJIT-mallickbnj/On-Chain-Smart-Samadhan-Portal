@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: complaint-classifier
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: complaint_classifier
+      - key: FLASK_SECRET_KEY
+        generateValue: true

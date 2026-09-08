@@ -1,0 +1,11 @@
+.env
+.venv/
+.venv-1/
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+complaints.db
+static/uploads/temp/
+static/uploads/complaints/
+embedding_model/model.safetensors
