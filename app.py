@@ -121,11 +121,14 @@ def classify_complaint(complaint):
     if keyword_matches[strongest_department] > 0:
         return strongest_department
 
-    if model is None or embedding_model is None:
+    if model is None:
         print("[ERROR] Complaint classification unavailable: ML model or embedding model is not loaded")
         return "General"
     try:
-        complaint_embedding = embedding_model.encode([complaint])
+        current_embedding_model = get_embedding_model()
+        if current_embedding_model is None:
+            return "General"
+        complaint_embedding = current_embedding_model.encode([complaint])
         return model.predict(complaint_embedding)[0]
     except Exception as error:
         print(f"[ERROR] Complaint classification failed: {error}")
@@ -140,21 +143,31 @@ except Exception as error:
     print(f"[WARN] Complaint model unavailable. ML classification disabled: {error}")
     model = None
 
-try:
-    embedding_model = SentenceTransformer("embedding_model") if SentenceTransformer else None
-    if embedding_model is None:
-        raise RuntimeError("SentenceTransformer is unavailable")
-    print("[OK] Embedding model loaded successfully")
-except Exception as error:
-    print(f"[WARN] Local embedding model unavailable; loading the same multilingual model from Hugging Face: {error}")
+embedding_model = None
+_embedding_model_attempted = False
+
+
+def get_embedding_model():
+    """Load embeddings only when keyword classification needs semantic fallback."""
+    global embedding_model, _embedding_model_attempted
+    if embedding_model is not None or _embedding_model_attempted:
+        return embedding_model
+    _embedding_model_attempted = True
+    if SentenceTransformer is None:
+        return None
     try:
-        embedding_model = SentenceTransformer(
-            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-        ) if SentenceTransformer else None
-        print("[OK] Remote multilingual embedding model loaded successfully")
-    except Exception as fallback_error:
-        print(f"[ERROR] Embedding model loading failed. Using fallback: {fallback_error}")
-        embedding_model = None
+        embedding_model = SentenceTransformer("embedding_model")
+        print("[OK] Local embedding model loaded successfully")
+    except Exception as error:
+        print(f"[WARN] Local embedding model unavailable; loading multilingual model remotely: {error}")
+        try:
+            embedding_model = SentenceTransformer(
+                "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+            )
+            print("[OK] Remote multilingual embedding model loaded successfully")
+        except Exception as fallback_error:
+            print(f"[ERROR] Embedding model loading failed. Using fallback: {fallback_error}")
+    return embedding_model
 
 try:
     dept_contacts = pd.read_csv("department_contacts.csv")
