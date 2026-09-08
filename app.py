@@ -25,11 +25,8 @@ import activity_log as alog
 import media_manager as mmgr
 from mongo_store import get_database, load_complaints, replace_complaints, mongo_enabled
 
-try:
-    from sentence_transformers import SentenceTransformer
-except Exception as error:
-    SentenceTransformer = None
-    print(f"[WARN] Sentence-transformers unavailable. ML classification disabled: {error}")
+# The optional semantic model is imported only for an unmatched complaint.
+SentenceTransformer = None
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -148,12 +145,16 @@ _embedding_model_attempted = False
 
 
 def get_embedding_model():
-    """Load embeddings only when keyword classification needs semantic fallback."""
-    global embedding_model, _embedding_model_attempted
+    """Load the optional semantic model only when a complaint needs it."""
+    global SentenceTransformer, embedding_model, _embedding_model_attempted
     if embedding_model is not None or _embedding_model_attempted:
         return embedding_model
     _embedding_model_attempted = True
-    if SentenceTransformer is None:
+    try:
+        from sentence_transformers import SentenceTransformer as sentence_transformer_class
+        SentenceTransformer = sentence_transformer_class
+    except Exception as error:
+        print(f"[WARN] Optional semantic model unavailable: {error}")
         return None
     try:
         embedding_model = SentenceTransformer("embedding_model")
