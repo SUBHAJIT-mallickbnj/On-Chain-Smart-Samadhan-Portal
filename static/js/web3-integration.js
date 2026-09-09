@@ -4,10 +4,17 @@ class WalletManager {
         this.web3 = null;
         this.account = null;
         this.isConnected = false;
+        this.mobileConnectRequested = new URLSearchParams(window.location.search).get('metamask') === 'connect';
         this.init();
     }
 
     async init() {
+        if (this.mobileConnectRequested) {
+            const url = new URL(window.location.href);
+            url.searchParams.delete('metamask');
+            window.history.replaceState({}, document.title, url.toString());
+        }
+
         // Check if MetaMask is installed
         if (typeof window.ethereum !== 'undefined') {
             this.web3 = new Web3(window.ethereum);
@@ -19,6 +26,8 @@ class WalletManager {
                 this.account = accounts[0];
                 this.isConnected = true;
                 this.updateUI();
+            } else if (this.mobileConnectRequested && this.isMobileDevice()) {
+                await this.connectMetaMask();
             }
         } else {
             console.log('MetaMask not detected');
@@ -26,9 +35,25 @@ class WalletManager {
         }
     }
 
+    isMobileDevice() {
+        return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    openMetaMaskMobile() {
+        const dappUrl = new URL(window.location.href);
+        dappUrl.searchParams.set('metamask', 'connect');
+        const dappPath = `${dappUrl.host}${dappUrl.pathname}${dappUrl.search}${dappUrl.hash}`;
+        const metamaskUrl = `https://metamask.app.link/dapp/${dappPath}`;
+        window.location.assign(metamaskUrl);
+    }
+
     async connectMetaMask() {
         try {
             if (!window.ethereum) {
+                if (this.isMobileDevice()) {
+                    this.openMetaMaskMobile();
+                    return;
+                }
                 throw new Error('MetaMask not installed');
             }
 
